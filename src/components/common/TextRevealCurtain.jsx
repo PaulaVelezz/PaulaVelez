@@ -17,6 +17,8 @@ const TextRevealCurtain = forwardRef(function TextRevealCurtain(
     barDuration = 0.45, // duración de cada barra individual al destaparse
     start = "top 80%",
     once = true,
+    startDelay = 0,
+    onComplete,
   },
   forwardedRef,
 ) {
@@ -29,6 +31,8 @@ const TextRevealCurtain = forwardRef(function TextRevealCurtain(
 
     const ctx = gsap.context(() => {
       const tl = gsap.timeline({
+        delay: startDelay,
+        onComplete,
         scrollTrigger: {
           trigger: container,
           start,

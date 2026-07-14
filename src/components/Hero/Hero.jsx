@@ -58,6 +58,7 @@ function Hero({ setPage }) {
                 as="h1"
                 className="text-4xl md:text-6xl font-extrabold font-korium tracking-wider leading-none text-neutral-500"
                 lines={["Sensory logic."]}
+                onComplete={() => setStartSecondaryReveal(true)}
               />
             </div>
           </div>

@@ -33,29 +33,23 @@ const ProjectsPage = ({ setPage }) => {
               lines={["SELECTED WORK"]}
             />
           </div>
-
-          <div className="lg:col-span-4 flex flex-col items-start lg:items-end gap-6 lg:pt-0">
-            <p className="text-xs font-grotesk font-medium tracking-wider text-[#0a0a0c] max-w-sm lg:text-right">
-              Una selección de trabajos hechos con equipos de producto, agencias
-              y startups. Cada card abre una vista completa del proyecto.
-            </p>
-          </div>
         </div>
         <div className="grid grid-cols-1 gap-8">
           <aside className="max-w-3xl border-l border-violet pl-5">
             <p className="text-sm leading-relaxed text-muted-foreground">
-              <span className="text-accent font-bold">Nota:</span> Parte de los
-              proyectos presentados fueron desarrollados durante mi experiencia
-              como Front-end Developer en una agencia digital. En cada caso
-              participé en el desarrollo e implementación del sitio, trabajando
-              junto a equipos de diseño, UX y gestión de proyectos.
+              <span className="text-accent font-bold">Nota:</span> Algunos de
+              estos proyectos fueron desarrollados como parte de mi trabajo en
+              una agencia digital. Colaborando de cerca con equipos de diseño,
+              UX/UI y Project Management, además de participar en reuniones
+              directas con clientes para entender bien la necesidad detrás de
+              cada desarrollo.
             </p>
           </aside>
         </div>
       </section>
 
       {/* 2. Projects Grid*/}
-      <div className="max-w-7xl mx-auto w-full grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16">
+      <div className="max-w-7xl mx-auto w-full grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 pl-10 pr-10">
         {projectDetailData.map((project) => {
           const cardRef = useRef(null);
           const imgRef = useRef(null);
