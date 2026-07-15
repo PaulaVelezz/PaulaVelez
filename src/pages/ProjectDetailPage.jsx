@@ -20,6 +20,10 @@ function ProjectDetailPage({ setPage }) {
   const nextTitleRef = useRef(null);
   const transitionTriggered = useRef(false);
 
+  const projectCardRef = useRef(null);
+  const overviewRef = useRef(null);
+  const challengeRef = useRef(null);
+
   const { slug } = useParams();
   const projectDetail = projectDetailData.find(
     (p) => p.slug === slug || p.id === slug,
@@ -99,6 +103,41 @@ function ProjectDetailPage({ setPage }) {
     };
   }, [setPage]);
 
+  useEffect(() => {
+    if (
+      !projectCardRef.current ||
+      !overviewRef.current ||
+      !challengeRef.current
+    )
+      return;
+
+    const card = projectCardRef.current;
+
+    gsap.to(card, {
+      y: 280,
+
+      ease: "none",
+
+      scrollTrigger: {
+        trigger: overviewRef.current,
+
+        start: "top top+=120",
+
+        endTrigger: challengeRef.current,
+
+        end: "top center",
+
+        scrub: true,
+      },
+    });
+
+    return () => {
+      ScrollTrigger.getAll().forEach((st) => {
+        if (st.trigger === overviewRef.current) st.kill();
+      });
+    };
+  }, []);
+
   return (
     <>
       <article>
@@ -125,12 +164,12 @@ function ProjectDetailPage({ setPage }) {
                     lines={[projectDetail.title]}
                   />
 
-                  <p className="mt-10 max-w-3xl text-xl md:text-2xl leading-relaxed text-white/80">
+                  <p className="mt-10 max-w-3xl text-xl leading-relaxed text-white/80">
                     {projectDetail.summary}
                   </p>
 
                   {/* Overview */}
-                  <section className="mt-20 max-w-5xl">
+                  <section ref={overviewRef} className="mt-20 max-w-5xl">
                     <span className="text-[#A3E635] text-sm tracking-[0.2em] uppercase">
                       (00) — Project Overview
                     </span>
@@ -143,7 +182,7 @@ function ProjectDetailPage({ setPage }) {
 
                 {/* RIGHT COLUMN */}
                 <aside className="col-span-12 lg:col-span-5">
-                  <div className="sticky top-28">
+                  <div className="max-w-[430px]" ref={projectCardRef}>
                     <div
                       className="
                         rounded-3xl
@@ -155,6 +194,12 @@ function ProjectDetailPage({ setPage }) {
                       "
                     >
                       {/* Header */}
+                      <div className="px-2 pt-2 pb-2 text-center bg-[#6d28d9]/10 border-b border-white/10">
+                        <span className="text-[12px] uppercase tracking-[0.35em] font-extrabold text-[#6d28d9]">
+                          Project Info
+                        </span>
+                      </div>
+
                       {/* Grid */}
                       <div className="grid grid-cols-2">
                         <div className="border-r border-b border-white/10 p-4 pt-6">
@@ -162,7 +207,7 @@ function ProjectDetailPage({ setPage }) {
                             Categoría
                           </p>
 
-                          <p className="text-white font-medium leading-relaxed">
+                          <p className="text-white text-sm font-medium leading-relaxed">
                             {projectDetail.projectType}
                           </p>
                         </div>
@@ -172,7 +217,7 @@ function ProjectDetailPage({ setPage }) {
                             Año
                           </p>
 
-                          <p className="text-white font-medium">
+                          <p className="text-white text-sm font-medium">
                             {projectDetail.year}
                           </p>
                         </div>
@@ -182,7 +227,7 @@ function ProjectDetailPage({ setPage }) {
                             Rol
                           </p>
 
-                          <p className="text-white font-medium">
+                          <p className="text-white text-sm font-medium">
                             {projectDetail.role}
                           </p>
                         </div>
@@ -192,7 +237,7 @@ function ProjectDetailPage({ setPage }) {
                             Cliente
                           </p>
 
-                          <p className="text-white font-medium">
+                          <p className="text-white text-sm font-medium">
                             Trabajo realizado para
                             <br />
                             {projectDetail.client}
@@ -252,7 +297,10 @@ function ProjectDetailPage({ setPage }) {
           </header>
 
           {/* CHALLENGE / LEARNINGS */}
-          <section className="container-editorial mb-10 mt-10 grid grid-cols-12 gap-10">
+          <section
+            ref={challengeRef}
+            className="container-editorial mb-10 mt-10 grid grid-cols-12 gap-10"
+          >
             <div className="col-span-12 md:col-span-6">
               <div className="text-[#a3e635]">(01) — Challenge</div>
               <p className="editorial mt-6 text-xl text-foreground">
@@ -474,11 +522,6 @@ function ProjectDetailPage({ setPage }) {
           </section>
         </>
       </article>
-
-      {/* Para sumarle:
-    - Banner de tenes un proyecto similar 
-    - links para el sitio o github repo 
-    - data Project info Cliente, Empresa, Año, Tipo Landing inmobiliaria, Industria, Rol, Front-end Developer, Estado, Publicado, Equipo, UX/UI Project Manager · Frontend  */}
     </>
   );
 }
