@@ -57,7 +57,7 @@ const projectDetailData = [
     summary:
       "Landing inmobiliaria para comercialización de espacios comerciales.",
     year: "2026",
-    client: "Personal Concept",
+    client: "Agencia digital",
     role: "Frontend Developer",
     stack: [
       "React",

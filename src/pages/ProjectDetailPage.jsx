@@ -6,6 +6,8 @@ import { motion } from "framer-motion";
 import projectDetailData from "../data/ProjectDetailData.js";
 import { Link } from "react-router-dom";
 import TextRevealCurtain from "../components/common/TextRevealCurtain.jsx";
+import HighlightCard from "../components/Projects/HighlightCard.jsx";
+import { FiGithub, FiLinkedin, FiMail } from "react-icons/fi";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -105,44 +107,146 @@ function ProjectDetailPage({ setPage }) {
           className="relative w-full z-10 bg-[#0a0a0c] text-white"
         >
           {/* HERO */}
-          <header className="relative min-h-[90svh] pt-32">
+          <header className="relative pt-32 pb-24">
             <div className="container-editorial">
-              <div className="flex items-center gap-4">
-                <Link to="/projects" className="link-underline">
-                  ← Volver a Proyectos
-                </Link>
-              </div>
+              <div className="grid grid-cols-12 gap-20 items-start">
+                {/* LEFT COLUMN */}
+                <div className="col-span-12 lg:col-span-7">
+                  <Link
+                    to="/projects"
+                    className="inline-flex items-center gap-2 text-white/60 hover:text-[#A3E635] transition-colors"
+                  >
+                    ← Volver a proyectos
+                  </Link>
 
-              <TextRevealCurtain
-                as="h1"
-                className="text-4xl md:text-7xl mb-4 mt-10 font-extrabold font-korium tracking-wider text-foreground"
-                lines={[projectDetail.title]}
-              />
+                  <TextRevealCurtain
+                    as="h1"
+                    className="mt-10 text-5xl md:text-7xl xl:text-8xl font-korium font-extrabold tracking-wider leading-[0.9]"
+                    lines={[projectDetail.title]}
+                  />
 
-              <div className="mt-8 grid grid-cols-12 gap-6">
-                <p className="editorial col-span-12 text-xl text-foreground/85 md:col-span-8">
-                  {projectDetail.summary}
-                </p>
-                <dl className="col-span-12 grid grid-cols-2 gap-6 text-sm md:col-span-4">
-                  <div>
-                    <dt className="mb-1 text-[#a3e635]">Rol</dt>
-                    <dd>{projectDetail.role}</dd>
-                  </div>
-                  <div>
-                    <dt className="mb-1 text-[#a3e635]">Año</dt>
-                    <dd>{projectDetail.year}</dd>
-                  </div>
-                </dl>
-              </div>
-            </div>
-            <div className="container-editorial mt-20">
-              <div className="col-span-12 md:col-span-6">
-                <div className=" mb-5 text-[#a3e635]">
-                  (00) — Project Overview
+                  <p className="mt-10 max-w-3xl text-xl md:text-2xl leading-relaxed text-white/80">
+                    {projectDetail.summary}
+                  </p>
+
+                  {/* Overview */}
+                  <section className="mt-20 max-w-5xl">
+                    <span className="text-[#A3E635] text-sm tracking-[0.2em] uppercase">
+                      (00) — Project Overview
+                    </span>
+
+                    <p className="mt-8 text-xl leading-relaxed text-white/90">
+                      {projectDetail.overview}
+                    </p>
+                  </section>
                 </div>
-                <p className="text-xl text-foreground">
-                  {projectDetail.overview}
-                </p>
+
+                {/* RIGHT COLUMN */}
+                <aside className="col-span-12 lg:col-span-5">
+                  <div className="sticky top-28">
+                    <div
+                      className="
+                        rounded-3xl
+                        border
+                        border-white/10
+                        bg-white/[0.03]
+                        backdrop-blur-xl
+                        overflow-hidden
+                      "
+                    >
+                      {/* Header */}
+                      {/* Grid */}
+                      <div className="grid grid-cols-2">
+                        <div className="border-r border-b border-white/10 p-4 pt-6">
+                          <p className="text-[10px] uppercase tracking-[0.25em] text-[#A3E635] mb-3">
+                            Categoría
+                          </p>
+
+                          <p className="text-white font-medium leading-relaxed">
+                            {projectDetail.projectType}
+                          </p>
+                        </div>
+
+                        <div className="border-b border-white/10 p-4">
+                          <p className="text-[10px] uppercase tracking-[0.25em] text-[#A3E635] mb-3">
+                            Año
+                          </p>
+
+                          <p className="text-white font-medium">
+                            {projectDetail.year}
+                          </p>
+                        </div>
+
+                        <div className="border-r border-white/10 p-4">
+                          <p className="text-[10px] uppercase tracking-[0.25em] text-[#A3E635] mb-3">
+                            Rol
+                          </p>
+
+                          <p className="text-white font-medium">
+                            {projectDetail.role}
+                          </p>
+                        </div>
+
+                        <div className="p-4">
+                          <p className="text-[10px] uppercase tracking-[0.25em] text-[#A3E635] mb-3">
+                            Cliente
+                          </p>
+
+                          <p className="text-white font-medium">
+                            Trabajo realizado para
+                            <br />
+                            {projectDetail.client}
+                          </p>
+                        </div>
+                      </div>
+
+                      {/* CTA */}
+                      <div className="border-t border-white/10 p-6">
+                        <h3 className="font-grotesk font-bold tracking-tighter text-xl mb-4">
+                          ¿Tenés un proyecto similar? ¿Queres saber cómo puedo
+                          aportar valor a tu equipo?
+                        </h3>
+
+                        <p className="text-sm leading-relaxed text-white/60">
+                          Estoy abierta a nuevas oportunidades, colaboraciones y
+                          proyectos. Hablemos!
+                        </p>
+
+                        <div className="mt-5 flex flex-col gap-3 text-sm">
+                          <div className="flex gap-4 text-white/40 text-sm">
+                            <a
+                              href="mailto:velezpaula.a@gmail.com"
+                              target="_blank"
+                              rel="noreferrer"
+                              data-cursor="pointer"
+                              aria-label="Email"
+                            >
+                              <FiMail className="hover:text-[#A3E635] transition-colors" />
+                            </a>
+                            <a
+                              href="https://github.com/PaulaVelezz"
+                              target="_blank"
+                              rel="noreferrer"
+                              data-cursor="pointer"
+                              aria-label="GitHub"
+                            >
+                              <FiGithub className="hover:text-[#A3E635] transition-colors" />
+                            </a>
+                            <a
+                              href="https://linkedin.com/in/paula-velez/"
+                              target="_blank"
+                              rel="noreferrer"
+                              data-cursor="pointer"
+                              aria-label="LinkedIn"
+                            >
+                              <FiLinkedin className="hover:text-[#A3E635] transition-colors" />
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </aside>
               </div>
             </div>
           </header>
@@ -171,7 +275,7 @@ function ProjectDetailPage({ setPage }) {
             {projectDetail.stack.map((s) => (
               <li
                 key={s}
-                className="rounded-full border border-hairline px-4 py-2 font-mono text-[11px] uppercase tracking-[0.12em] text-foreground/80"
+                className="border-[#6d28d9] bg-[#6d28d9]/10 hover:bg-[#6d28d9] rounded-full border border-hairline px-4 py-2 font-mono text-[11px] uppercase tracking-[0.12em] text-foreground/80"
               >
                 {s}
               </li>
@@ -180,19 +284,21 @@ function ProjectDetailPage({ setPage }) {
         </section>
 
         {/* HIGHLIGHTS */}
-        <section className="container-editorial mt-20 mb-10 ">
+        <section className="container-editorial mt-20">
           <div className="text-[#a3e635]">(04) — Highlights</div>
-          <div className="grid grid-cols-2 gap-2.5 md:grid-cols-3 lg:grid-cols-4">
+          <div className="grid grid-cols-2 gap-4 mt-10 md:grid-cols-3 lg:grid-cols-4">
             {projectDetail.highlights.map((h, i) => (
               <motion.div
                 key={h}
-                initial={{ opacity: 0, y: 12 }}
+                initial={{ opacity: 0, y: 15 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-40px" }}
-                transition={{ duration: 0.4, delay: i * 0.02 }}
-                className="rounded-xl bg-surface-muted px-4 py-4 text-sm text-foreground/85"
+                viewport={{ once: true }}
+                transition={{
+                  duration: 0.45,
+                  delay: i * 0.05,
+                }}
               >
-                {h}
+                <HighlightCard text={h} />
               </motion.div>
             ))}
           </div>
@@ -200,23 +306,23 @@ function ProjectDetailPage({ setPage }) {
 
         {/* 2. Pinned Horizontal Gallery Section (Screenshot 9) */}
         <>
-          <div className="container-editorial mt-20 mb-10 text-[#a3e635]">
+          <div className="container-editorial mt-14 mb-10 text-[#a3e635]">
             (05) — Gallery
           </div>
           <section
             ref={triggerRef}
-            className="relative h-screen w-full overflow-hidden bg-[#0d0d0f]"
+            className="relative h-screen w-full overflow-hidden bg-[#0a0a0c]"
           >
             {/* Horizontal Container scrolling right */}
             <div
               ref={scrollRef}
-              className="absolute top-0 left-0 h-full flex items-center gap-12 pl-12 pr-0 select-none"
+              className="absolute top-0 left-0 h-full flex items-center gap-6 pl-12 pr-0 select-none"
             >
               {/* Gallery Cards - dinámico según projectDetail.gallery */}
               {projectDetail.gallery.map((img, i) => (
                 <div
                   key={i}
-                  className="w-[480px] h-[580px] flex-shrink-0 flex flex-col justify-between p-10 bg-black rounded-3xl border border-white/5 shadow-2xl relative overflow-hidden group"
+                  className="w-[520px] h-[560px] flex-shrink-0 flex flex-col justify-between p-10 bg-[#0a0a0c] rounded-3xl border border-white/5 shadow-2xl relative overflow-hidden group"
                 >
                   <div className="absolute inset-0 opacity-40">
                     <img
@@ -229,9 +335,6 @@ function ProjectDetailPage({ setPage }) {
                   <div className="w-full flex justify-between items-start z-10 text-[9px] font-space tracking-widest text-neutral-400">
                     <span>
                       EXP 0{i + 1} / {projectDetail.year}
-                    </span>
-                    <span className="w-6 h-6 border border-white/30 rounded-full flex items-center justify-center text-xs">
-                      ●
                     </span>
                   </div>
 

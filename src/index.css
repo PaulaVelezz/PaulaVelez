@@ -237,3 +237,26 @@ body {
 .animate-sweep {
   animation: sweep 3s linear infinite;
 }
+
+/* index.css o globals.css */
+.custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: #7c3aed transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: var(--gradient-brand);
+  border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  opacity: 0.85;
+}
