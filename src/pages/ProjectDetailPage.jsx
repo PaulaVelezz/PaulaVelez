@@ -174,7 +174,7 @@ function ProjectDetailPage({ setPage }) {
                       (00) — Project Overview
                     </span>
 
-                    <p className="mt-8 text-xl leading-relaxed text-white/90">
+                    <p className="editorial mt-8 text-xl leading-relaxed text-white/90">
                       {projectDetail.overview}
                     </p>
                   </section>
@@ -194,7 +194,7 @@ function ProjectDetailPage({ setPage }) {
                       "
                     >
                       {/* Header */}
-                      <div className="px-2 pt-2 pb-2 text-center bg-[#6d28d9]/10 border-b border-white/10">
+                      <div className="px-2 pt-2 pb-2 text-center bg-[#6d28d9]/20 border-b border-white/10">
                         <span className="text-[12px] uppercase tracking-[0.35em] font-extrabold text-[#6d28d9]">
                           Project Info
                         </span>
@@ -303,13 +303,13 @@ function ProjectDetailPage({ setPage }) {
           >
             <div className="col-span-12 md:col-span-6">
               <div className="text-[#a3e635]">(01) — Challenge</div>
-              <p className="editorial mt-6 text-xl text-foreground">
+              <p className="editorial mt-6 text-xl text-foreground leading-relaxed">
                 {projectDetail.challenge}
               </p>
             </div>
             <div className="col-span-12 md:col-span-6">
               <div className="text-[#a3e635]">(02) — Learnings</div>
-              <p className="editorial mt-6 text-xl text-foreground">
+              <p className="editorial mt-6 text-xl text-foreground leading-relaxed">
                 {projectDetail.learnings}
               </p>
             </div>

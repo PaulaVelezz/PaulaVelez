@@ -15,6 +15,9 @@ const CertificatesSection = lazy(
 const ProjectDetails = lazy(
   () => import("../components/Projects/ProjectDetails.jsx"),
 );
+const ServicesHome = lazy(
+  () => import("../components/ServicesSection/ServicesHome.jsx"),
+);
 
 const HomePage = ({ setPage }) => {
   return (
@@ -22,7 +25,7 @@ const HomePage = ({ setPage }) => {
       <div className="w-full flex flex-col min-h-screen bg-[#0a0a0c]">
         <Hero setPage={setPage} />
         <About />
-        {/* <Services />*/}
+        <ServicesHome />
         <ProjectsScroll />
         <ProjectDetails />
         <CertificatesSection />
