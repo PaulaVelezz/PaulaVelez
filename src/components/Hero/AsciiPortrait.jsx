@@ -253,19 +253,20 @@ export default function AsciiPortrait({ isRevealed = false }) {
             "
           />
 
-          {/* CORNER PEEL: z-30, siempre encima */}
-          <div className="absolute bottom-0 right-0 z-30 w-16 h-16 pointer-events-none">
+          {/* Reveal CORNER */}
+          <div className="absolute bottom-0 right-0 z-30 w-30 h-24 pointer-events-none">
             <div
               className="
-                absolute bottom-0 right-0 w-full h-full
+                absolute bottom-0 right-0 w-full h-full rounded-br-[32px]
                 bg-gradient-to-tl from-white/20 to-transparent
                 [clip-path:polygon(100%_100%,0_100%,100%_0)]
                 transition-transform duration-500
                 group-hover:scale-110
               "
             />
-            <div className="absolute bottom-3 right-3 text-[8px] tracking-[0.25em] text-white/60 font-space uppercase">
-              REVEAL
+            <div className="flex flex-row items-center gap-2 absolute bottom-3 right-3 text-[8px] tracking-[0.25em] text-white/60 font-space uppercase">
+              <span>REVEAL</span>
+              <span className="text-[#A3E635] text-sm">↗</span>
             </div>
           </div>
 

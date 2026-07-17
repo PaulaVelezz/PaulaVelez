@@ -1,11 +1,12 @@
-import React, { useEffect, useRef, useState } from "react";
-import PROFILE from "/Perfil_2026.png";
+import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/all";
 import { FaGithubSquare, FaLinkedin } from "react-icons/fa";
 import { ImMail } from "react-icons/im";
-import { motion, useScroll } from "framer-motion";
+import { motion } from "framer-motion";
 import TextRevealCurtain from "../common/TextRevealCurtain";
+import ProfileIdentityCard from "./ProfileIdentityCard";
+import { TbCircleArrowDown, TbCircleArrowRight } from "react-icons/tb";
 
 const About = () => {
   const profile = useRef(null);
@@ -13,6 +14,7 @@ const About = () => {
   const aboutRef = useRef(null);
   const header = useRef(null);
   const aboutBody = useRef(null);
+  const buttonsRef = useRef(null);
 
   useEffect(() => {
     ScrollTrigger.create({
@@ -39,6 +41,16 @@ const About = () => {
             duration: 1.25,
           },
           0.2,
+        )
+        .to(
+          buttonsRef.current,
+          {
+            opacity: 1,
+            y: 0,
+            duration: 1,
+            ease: "power3.out",
+          },
+          0.45,
         ),
 
       toggleActions: "play none none none",
@@ -50,24 +62,6 @@ const About = () => {
   return (
     <section ref={aboutRef} className="p-4 mt-4 mb-4">
       <div className="mt-10 mb-10 p-4 gap-2 flex flex-col items-start md:flex-row">
-        {/* <div
-            className="
-              flex items-center gap-3
-              rounded-full
-              border border-white/10
-              bg-white/[0.02]
-              px-4
-              py-2
-              backdrop-blur-md
-              w-fit
-            "
-          >
-            <span className="status-dot" />
-
-            <span className="font-mono text-xs tracking-wide text-white/70">
-              Disponible para nuevas oportunidades.
-            </span>
-          </div> */}
         <motion.div
           ref={profile}
           className="justify-center flex-shrink-0 flex top-28 overflow-hidden rounded-md md:sticky md:w-1/2"
@@ -80,17 +74,10 @@ const About = () => {
             delay: 0.5,
           }}
         >
-          <img
-            src={PROFILE}
-            width={"100%"}
-            height={"auto"}
-            loading="lazy"
-            className="hidden object-cover bg-lime-400 object-center rounded-lg border border-r-[7px] border-b-[7px] border-violet-700 md:w-64 md:h-auto md:block sm:hidden"
-            alt="profile"
-          />
+          <ProfileIdentityCard />
         </motion.div>
 
-        <div className="top-20 sm:sticky md:top-28 lg:top-32 md:w-1/2">
+        <div className="top-24 sm:sticky max-w-[560px]">
           <div className="w-full font-space pl-4 pr-9">
             <TextRevealCurtain
               ref={header}
@@ -99,44 +86,157 @@ const About = () => {
               lines={["About"]}
             />
             <p
-              className="translate-y-10 font-grotesk 2xl:text-4xl"
+              className="font-grotesk 2xl:text-4xl text-sm md:text-base"
               ref={aboutBody}
             >
-              Hi there! &#128075;&#127996; I&#39;m Paula a frontend developer
-              based in Argentina &#127758;. I&#39;m passionate about
-              transforming concepts or ideas into reality, by crafting visually
-              engaging and effective web solutions.
-              <br></br>
-              <br></br>I believe that encouraging a calm and collaborative
-              approach, and ensuring clear communication are key throughout the
-              development process.
-              <br></br>
-              <br></br>
-              I&#39;m currently open to job opportunities, both remote and ,
-              where I can contribute, learn, and grow.
-              <br></br>
-              <br></br>
+              Hi there! 👋🏼 I'm Paula, a Frontend Developer based in Argentina.
+              <br />
+              <br />
+              I specialize in building digital solutions and modern, responsive,
+              and accessible interfaces, with a strong focus on design, user
+              experience, and thoughtful motion that makes digital products feel
+              polished, intuitive, and engaging.
+              <br />
+              <br />
+              I believe that collaboration, clear communication, and attention
+              to detail are essential to creating successful digital
+              experiences. I enjoy working closely with designers, developers,
+              and product teams.
+              <br />
+              <br />
+              I'm currently open to remote and hybrid job opportunities where I
+              can contribute, continue growing professionally.
             </p>
-            <ul className="flex text-xl gap-4">
-              <li>
-                <a href="https://github.com/PaulaVelezz" aria-label="GitHub">
-                  <FaGithubSquare />
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://www.linkedin.com/in/paula-velez/"
-                  aria-label="LinkedIn"
+
+            {/* Interactive CTAs */}
+            <div
+              ref={buttonsRef}
+              className="opacity-0 translate-y-6 mt-8 flex flex-wrap items-center gap-4"
+            >
+              <div className="relative group">
+                <button
+                  className="h-11 px-8 bg-[#84CC16] hover:bg-[#a3e635] flex items-center gap-2 text-white text-xs font-space font-bold tracking-widest  uppercase transition-colors cursor-pointer rounded-2xl"
+                  data-cursor="magnetic"
                 >
-                  <FaLinkedin />
-                </a>
-              </li>
-              <li>
-                <a href="mailto:velezpaula.a@gmail.com" aria-label="Email">
-                  <ImMail />
-                </a>
-              </li>
-            </ul>
+                  <span>Connect with me</span>
+                  <span>
+                    <TbCircleArrowDown />
+                  </span>
+                </button>
+
+                <div
+                  className="
+                            absolute
+                            top-full
+                            left-0
+                            mt-2
+                            min-w-[180px]
+                            bg-[#070708]
+                            border
+                            border-white/10
+                            opacity-0
+                            invisible
+                            translate-y-2
+                            group-hover:opacity-100
+                            group-hover:visible
+                            group-hover:translate-y-0
+                            transition-all
+                            duration-300
+                            rounded-2xl
+                            overflow-hidden
+                          "
+                >
+                  <a
+                    href="https://github.com/PaulaVelezz"
+                    aria-label="GitHub"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="
+                  flex
+    items-center
+    justify-between
+                  px-5
+                  py-4
+                  text-xs
+                  tracking-widest
+                  font-space
+                  text-white
+                  hover:bg-white/5 "
+                  >
+                    <span>GitHub</span>
+                    <FaGithubSquare className="text-2xl" />
+                  </a>
+
+                  <a
+                    href="https://www.linkedin.com/in/paula-velez/"
+                    rel="noopener noreferrer"
+                    aria-label="LinkedIn"
+                    target="_blank"
+                    className="
+                 flex
+    items-center
+    justify-between
+                  px-5
+                  py-4
+                  text-xs
+                  tracking-widest
+                  font-space
+                  text-white
+                  hover:bg-white/5 "
+                  >
+                    <span>Linkedin</span>
+                    <FaLinkedin className="text-2xl" />
+                  </a>
+
+                  <a
+                    href="mailto:velezpaula.a@gmail.com"
+                    rel="noopener noreferrer"
+                    arialabel="Send me an email"
+                    className="
+                            flex
+    items-center
+    justify-between
+                              px-5
+                              py-4
+                              text-xs
+                              tracking-widest
+                              font-space
+                              text-white
+                              hover:bg-white/5 "
+                  >
+                    <span>Email</span>
+                    <ImMail className="text-2xl" />
+                  </a>
+                </div>
+              </div>
+              <button
+                onClick={() => setPage("experience")}
+                className="
+                          text-zinc-900
+                           bg-white
+                          hover:text-[#6d28d9]
+                          h-11
+                          px-6
+                          rounded-2xl
+                          text-xs
+                          font-space
+                          font-bold
+                          tracking-widest
+                          transition-colors
+                          flex
+                          items-center
+                          gap-2
+                          cursor-pointer
+                          uppercase
+                        "
+                data-cursor="magnetic"
+              >
+                View Experience
+                <span>
+                  <TbCircleArrowRight />
+                </span>
+              </button>
+            </div>
           </div>
         </div>
       </div>
