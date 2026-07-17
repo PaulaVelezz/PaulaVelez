@@ -59,17 +59,30 @@ export default function HamburgerMenu({ isOpen, setPage, onClose }) {
       number: "01",
       preview: {
         title: "Paula Velez",
-        subtitle: "Creative Technology Studio",
-        category: "Interactive / code",
+        subtitle: "2026",
+        category: "Frontend / Creative Development",
         description:
           "Interactive frontend engineer sculpting hardware accelerated interfaces.",
         type: "home",
       },
     },
     {
+      label: "About",
+      page: "/about",
+      number: "02",
+      preview: {
+        title: "Our Philosophy",
+        subtitle: "Studio Mission Brief",
+        category: "Design / Motion",
+        description:
+          "Bridging the gap between conceptual design boundaries and technical frontend math.",
+        type: "about",
+      },
+    },
+    {
       label: "Projects",
       page: "/projects",
-      number: "02",
+      number: "03",
       preview: {
         title: "Selected Works",
         subtitle: "Case Archive (12)",
@@ -82,7 +95,7 @@ export default function HamburgerMenu({ isOpen, setPage, onClose }) {
     {
       label: "Services",
       page: "/services",
-      number: "03",
+      number: "04",
       preview: {
         title: "Expertise Deck",
         subtitle: "Area of Expertise",
@@ -90,19 +103,6 @@ export default function HamburgerMenu({ isOpen, setPage, onClose }) {
         description:
           "Concept strategy, WebGL performance audits, and high-fidelity motion systems.",
         type: "services",
-      },
-    },
-    {
-      label: "About",
-      page: "about",
-      number: "04",
-      preview: {
-        title: "Our Philosophy",
-        subtitle: "Studio Mission Brief",
-        category: "Design / Motion",
-        description:
-          "Bridging the gap between conceptual design boundaries and technical frontend math.",
-        type: "about",
       },
     },
     {
@@ -309,19 +309,10 @@ export default function HamburgerMenu({ isOpen, setPage, onClose }) {
       case "home":
         return (
           <div className="w-full h-full bg-[#0a0a0c] border border-white/5 rounded-2xl flex flex-col justify-between p-6 relative overflow-hidden text-left">
-            <div className="flex justify-between items-start">
-              <span className="text-[9px] font-space tracking-widest text-[#A3E635] uppercase">
-                // Studio Core
-              </span>
-              <span className="text-[10px] text-white/20 font-space font-bold">
-                2026
-              </span>
-            </div>
-
             <div className="my-auto z-10">
               <h4 className="text-xl sm:text-2xl font-syne font-black tracking-tight text-white leading-[1.1]">
-                Interactive code. <br />
-                <span className="text-[#A3E635]">Sensory logic.</span>
+                Frontend & <br />
+                <span className="text-[#A3E635]">Creative Developer.</span>
               </h4>
             </div>
 
@@ -444,10 +435,6 @@ export default function HamburgerMenu({ isOpen, setPage, onClose }) {
                 </span>
               </div>
             </div>
-
-            <div className="text-[9px] font-space text-white/40 tracking-wider">
-              CÓRDOBA CAPITAL // REMOTE
-            </div>
           </div>
         );
 
@@ -455,8 +442,9 @@ export default function HamburgerMenu({ isOpen, setPage, onClose }) {
         return (
           <div className="w-full h-full bg-[#0a0a0c] border border-white/5 rounded-2xl flex flex-col justify-between p-5 relative overflow-hidden text-left">
             <div className="flex justify-between items-center text-[9px] font-space tracking-widest text-neutral-400">
-              <span>COMMUNICATION CHANNEL</span>
-              <span className="text-[#A3E635] animate-pulse">● SECURE</span>
+              <span className="text-[#A3E635] animate-pulse">
+                ● OPEN TO WORK
+              </span>
             </div>
 
             <div className="my-auto z-10">

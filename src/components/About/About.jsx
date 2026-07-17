@@ -50,6 +50,24 @@ const About = () => {
   return (
     <section ref={aboutRef} className="p-4 mt-4 mb-4">
       <div className="mt-10 mb-10 p-4 gap-2 flex flex-col items-start md:flex-row">
+        {/* <div
+            className="
+              flex items-center gap-3
+              rounded-full
+              border border-white/10
+              bg-white/[0.02]
+              px-4
+              py-2
+              backdrop-blur-md
+              w-fit
+            "
+          >
+            <span className="status-dot" />
+
+            <span className="font-mono text-xs tracking-wide text-white/70">
+              Disponible para nuevas oportunidades.
+            </span>
+          </div> */}
         <motion.div
           ref={profile}
           className="justify-center flex-shrink-0 flex top-28 overflow-hidden rounded-md md:sticky md:w-1/2"
@@ -84,25 +102,18 @@ const About = () => {
               className="translate-y-10 font-grotesk 2xl:text-4xl"
               ref={aboutBody}
             >
-              Hi there! &#128075;&#127996; Nice to meet you! I&#39;m Paula, and
-              I&#39;m a frontend developer based in Argentina &#127758;. I&#39;m
-              passionate about transforming concepts or ideas into reality, by
-              crafting visually engaging and effective web solutions.
+              Hi there! &#128075;&#127996; I&#39;m Paula a frontend developer
+              based in Argentina &#127758;. I&#39;m passionate about
+              transforming concepts or ideas into reality, by crafting visually
+              engaging and effective web solutions.
               <br></br>
               <br></br>I believe that encouraging a calm and collaborative
               approach, and ensuring clear communication are key throughout the
               development process.
               <br></br>
-              <br></br>I thrive working collaborative with clients, designers,
-              and developers to ensure that every project is a harmonious blend
-              of creativity and functionality. &#129308;&#127996;
-              ✨&#129307;&#127996;
               <br></br>
-              <br></br>
-              I&#39;m currently open to job opportunities, both remote and
-              non-remote, where I can contribute, learn, and grow. If you have
-              an exciting opportunity that aligns with my skills and experience,
-              I&#39;d love to hear from you!
+              I&#39;m currently open to job opportunities, both remote and ,
+              where I can contribute, learn, and grow.
               <br></br>
               <br></br>
             </p>

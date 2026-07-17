@@ -1,8 +1,7 @@
-import React, { lazy, Suspense, useEffect, useState } from "react";
+import React, { lazy, Suspense } from "react";
 
 const Hero = lazy(() => import("../components/Hero/Hero.jsx"));
 const Footer = lazy(() => import("../components/Footer/Footer.jsx"));
-const About = lazy(() => import("../components/About/About.jsx"));
 const Testimonials = lazy(
   () => import("../components/Testimonials/Testimonials.jsx"),
 );
@@ -24,7 +23,6 @@ const HomePage = ({ setPage }) => {
     <Suspense fallback={<div className="min-h-screen bg-[#0a0a0c]" />}>
       <div className="w-full flex flex-col min-h-screen bg-[#0a0a0c]">
         <Hero setPage={setPage} />
-        <About />
         <ServicesHome />
         <ProjectsScroll />
         <ProjectDetails />

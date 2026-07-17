@@ -30,7 +30,7 @@ function Hero({ setPage }) {
   }, [startSecondaryReveal]);
 
   return (
-    <section className="relative min-h-screen w-full bg-[#0a0a0c] text-white flex flex-col justify-between z-10 border-b border-white/5">
+    <section className="relative min-h-screen w-full bg-[#0a0a0c] text-white flex flex-col justify-between z-10 pb-5">
       <div className="w-full flex justify-between items-center px-6 py-6 md:px-12 border-b border-white/5">
         <button
           onClick={() => setPage("home")}
@@ -49,7 +49,7 @@ function Hero({ setPage }) {
               <TextRevealCurtain
                 as="h1"
                 className="text-4xl md:text-6xl font-extrabold font-korium tracking-wider leading-none text-white"
-                lines={["Interactive code."]}
+                lines={["Frontend & "]}
               />
             </div>
 
@@ -57,22 +57,28 @@ function Hero({ setPage }) {
               <TextRevealCurtain
                 as="h1"
                 className="text-4xl md:text-6xl font-extrabold font-korium tracking-wider leading-none text-neutral-500"
-                lines={["Sensory logic."]}
+                lines={["Creative Developer."]}
                 onComplete={() => setStartSecondaryReveal(true)}
               />
             </div>
           </div>
 
-          <div className="hero-sub-reveal opacity-0 max-w-lg">
-            <p className="text-sm md:text-base text-neutral-400 font-grotesk leading-relaxed">
-              Paula Velez is an interactive developer sculpting
-              hardware-accelerated interfaces. Focused on motion design,
-              interactive physics, and high-performance WebGL modules.
+          <div className="hero-sub-reveal opacity-0 max-w-[540px]">
+            <p className="text-sm md:text-base text-neutral-400 font-grotesk">
+              Soy Paula. Me especializo en desarrollar soluciones digitales e
+              interfaces modernas, responsivas y accesibles, con especial
+              atención al diseño, la experiencia de usuario y las animaciones
+              que hacen que un producto se sienta cuidado.
+              <br />
+              <br />
+              Actualmente estoy abierta a oportunidades remotas e híbridas donde
+              pueda aportar valor, seguir creciendo profesionalmente y colaborar
+              con equipos en la creación de productos digitales con impacto.
             </p>
           </div>
 
           {/* Interactive CTAs */}
-          <div className="hero-sub-reveal opacity-0 flex items-center gap-6 mt-4">
+          <div className="hero-sub-reveal opacity-0 flex items-center gap-6 ">
             <div className="relative group">
               <button
                 className="h-11 px-8 bg-[#84CC16] hover:bg-[#a3e635] flex items-center  gap-2 text-white text-xs font-space font-bold tracking-widest transition-colors cursor-pointer rounded-2xl"
@@ -175,7 +181,7 @@ function Hero({ setPage }) {
           </div>
         </div>
         <div className="lg:col-span-5 flex justify-center lg:justify-end overflow-hidden w-full">
-          <div className="w-full max-w-[420px]">
+          <div className="w-full max-w-[420px] max-h-[440px]">
             <AsciiPortrait isRevealed={portraitRevealed} />
           </div>
         </div>

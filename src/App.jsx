@@ -11,6 +11,7 @@ import HamburgerMenu from "./components/Header/HamburgerMenu";
 import ServicesSection from "./components/ServicesSection/ServicesSection.jsx";
 import { gsap } from "gsap";
 import PageTransitionOverlay from "./components/PageTransitionOverlay";
+import AboutPage from "./pages/AboutPage";
 
 function App() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -86,6 +87,7 @@ function App() {
           path="/services"
           element={<ServicesSection setPage={changePage} />}
         />
+        <Route path="/about" element={<AboutPage setPage={changePage} />} />
         <Route path="/contact" element={<ContactPage setPage={changePage} />} />
       </Routes>
       <FloatingWhatsApp />

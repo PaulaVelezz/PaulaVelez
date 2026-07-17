@@ -1,7 +1,7 @@
 import React from "react";
 import TextRevealCurtain from "../common/TextRevealCurtain.jsx";
 import ExpertiseServicesData from "../../data/ExpertiseServicesData.js";
-import ExpertiseCardsStack from "../Expertise/ExpertiseCardsStack.jsx";
+import ExpertiseIntroStack from "../Expertise/ExpertiseIntroStack.jsx";
 
 const ServicesHome = () => {
   return (
@@ -15,43 +15,30 @@ const ServicesHome = () => {
         text-zinc-950
       "
     >
-      <div className="max-w-7xl mx-auto px-6 md:px-12">
-        {/* Header */}
-
-        <div className="mb-24">
-          <span
-            className="
-              text-[#6d28d9]
-              uppercase
-              tracking-[0.35em]
-              text-xs
-              block
-              mb-4
-            "
-          >
-            // WHAT I DO
-          </span>
-          <TextRevealCurtain
-            as="h2"
-            className="text-4xl md:text-6xl font-extrabold font-korium tracking-wider"
-            lines={["SERVICES"]}
-          />
-
-          <p
-            className="
-              mt-4
-              max-w-xl
-               text-zinc-900
-            "
-          >
-            I specialize in creating custom solutions that meet objectives and
-            deliver results through design and technology.
-          </p>
-        </div>
-
-        {/* Content */}
-        <ExpertiseCardsStack services={ExpertiseServicesData} />
-      </div>
+      <ExpertiseIntroStack
+        services={ExpertiseServicesData}
+        header={
+          <>
+            <span className="text-[#6d28d9] uppercase tracking-[0.35em] text-xs block mb-4">
+              // WHAT I DO
+            </span>
+            <div className="flex justify-center mt-6">
+              <TextRevealCurtain
+                as="h2"
+                className="text-4xl md:text-6xl font-extrabold font-korium tracking-wider"
+                lines={["SERVICES"]}
+              />
+            </div>
+            <p className="mt-4 max-w-xl text-zinc-900 mx-auto">
+              I specialize in creating custom solutions that meet objectives and
+              deliver results through design and technology.
+            </p>
+          </>
+        }
+        onViewMore={(service) => {
+          setPage("/services");
+        }}
+      />
     </section>
   );
 };
