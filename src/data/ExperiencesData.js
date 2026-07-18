@@ -1,0 +1,65 @@
+const experiencesData = [
+  {
+    company: "Agencia Lader",
+    role: "Desarrolladora Web",
+    period: "DIC 2024 — JUNIO 2026",
+    location: "Buenos Aires, Argentina - (Remoto)",
+    tasks: [
+      "Desarrollé y mantuve sitios en WordPress (Elementor, JetEngine, Code Snippets) y tiendas online en WooCommerce y Tienda Nube para múltiples clientes de la agencia.",
+      "Construí componentes e interfaces con React.js y Tailwind CSS, integrando lógica custom con AJAX y PHP.",
+      "Diseñé e implementé automatizaciones con Google AppScript, incluyendo un bot de Telegram conectado a Google Sheets, Drive y Mail para agilizar procesos internos.",
+      "Colaboré directamente con el equipo de diseño para llevar mockups de Figma a producción con alta fidelidad visual.",
+    ],
+    stack: [
+      "WordPress",
+      "Elementor y Elementor Pro",
+      "JetEngine",
+      "Code Snippets",
+      "WooCommerce",
+      "Shopify",
+      "LearnDash - E-learning",
+      "Wix",
+      "AppScript",
+      "Telegram Bot API",
+      "n8n",
+      "PHP",
+      "React",
+      "Tailwind CSS",
+    ],
+  },
+  {
+    company: "Desarrolladora Freelance",
+    role: "Frontend Developer — Autónomo",
+    period: "2024 — ACTUALIDAD",
+    location: "Córdoba Capital, Argentina - (Remoto)",
+    tasks: [
+      "Gestioné el ciclo completo de proyectos freelance: relevamiento de necesidades, propuesta, desarrollo y entrega, en contacto directo 1 a 1 con cada cliente.",
+      "Desarrollé tiendas online en Tienda Nube y landing pages a medida, priorizando velocidad de carga y conversión.",
+      "Adapté el alcance y los tiempos de cada proyecto a las necesidades puntuales del cliente, manteniendo comunicación clara durante todo el proceso.",
+    ],
+    stack: [
+      "Tienda Nube",
+      "HTML5",
+      "CSS3",
+      "JavaScript",
+      "Figma",
+      "GSAP",
+      "Framer Motion",
+      "Canva",
+    ],
+  },
+  {
+    company: "Expresia",
+    role: "Frontend Developer — Autónomo",
+    period: "JUL 2024 — DIC 2024",
+    location: "Burnaby, Columbia Británica, Canadá (Remoto)",
+    tasks: [
+      "Desarrollé interfaces frontend utilizando HTML5, CSS y JavaScript sobre un CMS basado en DXP y Handlebars.js.",
+      "Implementé animaciones y microinteracciones con GSAP para mejorar la experiencia de usuario en distintas secciones del sitio.",
+      "Trabajé con Bootstrap para maquetar componentes responsivos, adaptándome a los estándares del equipo remoto en Canadá.",
+    ],
+    stack: ["HTML5", "JavaScript", "CSS", "Handlebars.js", "GSAP", "Bootstrap"],
+  },
+];
+
+export default experiencesData;

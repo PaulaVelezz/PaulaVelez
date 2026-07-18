@@ -30,7 +30,7 @@ function Hero({ setPage }) {
   }, [startSecondaryReveal]);
 
   return (
-    <section className="relative min-h-screen w-full bg-[#0a0a0c] text-white flex flex-col justify-between z-10 pb-5">
+    <section className="relative min-h-screen w-full bg-[#0a0a0c] text-white flex flex-col justify-between z-10 pb-16">
       <div className="w-full flex justify-between items-center px-6 py-6 md:px-12 border-b border-white/5">
         <button
           onClick={() => setPage("home")}
@@ -42,7 +42,7 @@ function Hero({ setPage }) {
         </button>
       </div>
 
-      <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-12 px-6 md:px-12 my-auto py-12 items-center">
+      <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-12 px-6 md:px-12 my-auto py-16 items-center">
         <div className="lg:col-span-7 flex flex-col gap-8 select-none">
           <div className="flex flex-col gap-2">
             <div className="overflow-hidden">

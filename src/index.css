@@ -292,3 +292,19 @@ body {
     opacity: 1;
   }
 }
+
+/* ANIMACIONES EXPERIENCIA */
+.experience-card {
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background-color: transparent;
+  transition:
+    border-color 0.35s ease,
+    box-shadow 0.35s ease,
+    background-color 0.35s ease;
+}
+
+.experience-card.is-active {
+  border-color: #6d28d9;
+  background-color: rgba(109, 40, 217, 0.05);
+  box-shadow: var(--shadow-glow);
+}

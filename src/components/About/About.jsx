@@ -126,25 +126,25 @@ const About = () => {
 
                 <div
                   className="
-                            absolute
-                            top-full
-                            left-0
-                            mt-2
-                            min-w-[180px]
-                            bg-[#070708]
-                            border
-                            border-white/10
-                            opacity-0
-                            invisible
-                            translate-y-2
-                            group-hover:opacity-100
-                            group-hover:visible
-                            group-hover:translate-y-0
-                            transition-all
-                            duration-300
-                            rounded-2xl
-                            overflow-hidden
-                          "
+                    absolute
+                    top-full
+                    left-0
+                    mt-2
+                    min-w-[180px]
+                    bg-[#070708]
+                    border
+                    border-white/10
+                    opacity-0
+                    invisible
+                    translate-y-2
+                    group-hover:opacity-100
+                    group-hover:visible
+                    group-hover:translate-y-0
+                    transition-all
+                    duration-300
+                    rounded-2xl
+                    overflow-hidden
+                  "
                 >
                   <a
                     href="https://github.com/PaulaVelezz"
@@ -153,8 +153,8 @@ const About = () => {
                     rel="noopener noreferrer"
                     className="
                   flex
-    items-center
-    justify-between
+                  items-center
+                  justify-between
                   px-5
                   py-4
                   text-xs
@@ -173,9 +173,9 @@ const About = () => {
                     aria-label="LinkedIn"
                     target="_blank"
                     className="
-                 flex
-    items-center
-    justify-between
+                  flex
+                  items-center
+                  justify-between
                   px-5
                   py-4
                   text-xs
@@ -193,16 +193,16 @@ const About = () => {
                     rel="noopener noreferrer"
                     arialabel="Send me an email"
                     className="
-                            flex
-    items-center
-    justify-between
-                              px-5
-                              py-4
-                              text-xs
-                              tracking-widest
-                              font-space
-                              text-white
-                              hover:bg-white/5 "
+                      flex
+                      items-center
+                      justify-between
+                      px-5
+                      py-4
+                      text-xs
+                      tracking-widest
+                      font-space
+                      text-white
+                      hover:bg-white/5 "
                   >
                     <span>Email</span>
                     <ImMail className="text-2xl" />
@@ -212,23 +212,23 @@ const About = () => {
               <button
                 onClick={() => setPage("experience")}
                 className="
-                          text-zinc-900
-                           bg-white
-                          hover:text-[#6d28d9]
-                          h-11
-                          px-6
-                          rounded-2xl
-                          text-xs
-                          font-space
-                          font-bold
-                          tracking-widest
-                          transition-colors
-                          flex
-                          items-center
-                          gap-2
-                          cursor-pointer
-                          uppercase
-                        "
+                  text-zinc-900
+                    bg-white
+                  hover:text-[#6d28d9]
+                  h-11
+                  px-6
+                  rounded-2xl
+                  text-xs
+                  font-space
+                  font-bold
+                  tracking-widest
+                  transition-colors
+                  flex
+                  items-center
+                  gap-2
+                  cursor-pointer
+                  uppercase
+                "
                 data-cursor="magnetic"
               >
                 View Experience

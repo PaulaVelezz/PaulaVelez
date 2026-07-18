@@ -175,9 +175,7 @@ const ProfileIdentityCard = () => {
 
         <Info label="role" value="Frontend & Creative Developer" />
 
-        <Info label="focus" value="React · GSAP · UI Motion" />
-
-        <Info label="based" value="Argentina · Remote" />
+        <Info label="based" value="Córdoba, Argentina · Remote" />
 
         <div className="flex justify-between px-6 py-4">
           <span className="font-space text-white/35">status</span>
