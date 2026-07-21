@@ -80,7 +80,7 @@ const TextRevealCurtain = forwardRef(function TextRevealCurtain(
       {lines.map((line, lineIndex) => (
         <span
           key={lineIndex}
-          className={`curtain-line-${lineIndex} relative block w-fit overflow-hidden`}
+          className={`curtain-line-${lineIndex} relative block w-fit overflow-hidden rounded-md`}
           style={{ lineHeight: 1.05 }}
         >
           <span className="curtain-text inline-block will-change-transform">

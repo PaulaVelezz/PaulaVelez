@@ -5,6 +5,7 @@ import experiencesData from "../data/ExperiencesData.js";
 import TextRevealCurtain from "../components/common/TextRevealCurtain.jsx";
 import ExperienceTimeline from "../components/Experience/ExperienceTimeline.jsx";
 import StackIntroStack from "../components/About/StackIntroStack.jsx";
+import ContactClosing from "../components/Contact/ContactClosing.jsx";
 
 const AboutPage = () => {
   return (
@@ -50,6 +51,8 @@ const AboutPage = () => {
           </div>
         }
       />
+
+      <ContactClosing />
     </>
   );
 };
