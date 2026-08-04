@@ -7,9 +7,39 @@ import projectDetailData from "../data/ProjectDetailData.js";
 import { Link } from "react-router-dom";
 import TextRevealCurtain from "../components/common/TextRevealCurtain.jsx";
 import HighlightCard from "../components/Projects/HighlightCard.jsx";
-import { FiGithub, FiLinkedin, FiMail } from "react-icons/fi";
+import {
+  FiGithub,
+  FiLinkedin,
+  FiMail,
+  FiFigma,
+  FiExternalLink,
+} from "react-icons/fi";
 
 gsap.registerPlugin(ScrollTrigger);
+
+const projectLinks = [
+  {
+    key: "live",
+    label: "Live Demo",
+    icon: <FiExternalLink />,
+    className:
+      "border-[#A3E635]/30 bg-[#A3E635]/10 text-[#A3E635] hover:bg-[#A3E635] hover:text-black",
+  },
+  {
+    key: "github",
+    label: "GitHub Repository",
+    icon: <FiGithub />,
+    className:
+      "border-white/10 bg-white/5 text-white hover:border-[#6d28d9] hover:bg-[#6d28d9]/20",
+  },
+  {
+    key: "figma",
+    label: "Figma File",
+    icon: <FiFigma />,
+    className:
+      "border-white/10 bg-white/5 text-white hover:border-[#6d28d9] hover:bg-[#6d28d9]/20",
+  },
+];
 
 function ProjectDetailPage({ setPage }) {
   const containerRef = useRef(null);
@@ -146,7 +176,7 @@ function ProjectDetailPage({ setPage }) {
           className="relative w-full z-10 bg-[#0a0a0c] text-white"
         >
           {/* HERO */}
-          <header className="relative pt-32 pb-24">
+          <header className="relative pt-32 pb-14">
             <div className="container-editorial">
               <div className="grid grid-cols-12 gap-20 items-start">
                 {/* LEFT COLUMN */}
@@ -177,6 +207,49 @@ function ProjectDetailPage({ setPage }) {
                     <p className="editorial mt-8 text-xl leading-relaxed text-white/90">
                       {projectDetail.overview}
                     </p>
+                  </section>
+
+                  {/* Links */}
+                  <section ref={overviewRef} className="mt-16 max-w-5xl">
+                    <span className="text-[#A3E635] text-sm tracking-[0.2em] uppercase">
+                      (01) — Project Links
+                    </span>
+
+                    <div className="mt-6 flex flex-wrap gap-3">
+                      {projectLinks.map((link) => {
+                        const url = projectDetail.links?.[link.key];
+
+                        if (!url) return null;
+
+                        return (
+                          <a
+                            key={link.key}
+                            href={url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className={`
+            inline-flex
+            items-center
+            gap-2
+            rounded-full
+            border
+            px-5
+            py-2.5
+            text-xs
+            font-space
+            font-bold
+            tracking-[0.18em]
+            uppercase
+            transition-all
+            ${link.className}
+          `}
+                          >
+                            {link.label}
+                            {link.icon}
+                          </a>
+                        );
+                      })}
+                    </div>
                   </section>
                 </div>
 
@@ -302,13 +375,13 @@ function ProjectDetailPage({ setPage }) {
             className="container-editorial mb-10 mt-10 grid grid-cols-12 gap-10"
           >
             <div className="col-span-12 md:col-span-6">
-              <div className="text-[#a3e635]">(01) — Challenge</div>
+              <div className="text-[#a3e635]">(02) — Challenge</div>
               <p className="editorial mt-6 text-xl text-foreground leading-relaxed">
                 {projectDetail.challenge}
               </p>
             </div>
             <div className="col-span-12 md:col-span-6">
-              <div className="text-[#a3e635]">(02) — Learnings</div>
+              <div className="text-[#a3e635]">(03) — Learnings</div>
               <p className="editorial mt-6 text-xl text-foreground leading-relaxed">
                 {projectDetail.learnings}
               </p>
@@ -318,7 +391,7 @@ function ProjectDetailPage({ setPage }) {
 
         {/* STACK */}
         <section className="container-editorial mt-20 mb-10 ">
-          <div className="text-[#a3e635]">(03) — Stack</div>
+          <div className="text-[#a3e635]">(04) — Development Stack</div>
           <ul className="mt-6 flex flex-wrap gap-2">
             {projectDetail.stack.map((s) => (
               <li
@@ -333,7 +406,7 @@ function ProjectDetailPage({ setPage }) {
 
         {/* HIGHLIGHTS */}
         <section className="container-editorial mt-20">
-          <div className="text-[#a3e635]">(04) — Highlights</div>
+          <div className="text-[#a3e635]">(05) — Highlights</div>
           <div className="grid grid-cols-2 gap-4 mt-10 md:grid-cols-3 lg:grid-cols-4">
             {projectDetail.highlights.map((h, i) => (
               <motion.div
@@ -355,7 +428,7 @@ function ProjectDetailPage({ setPage }) {
         {/* 2. Pinned Horizontal Gallery Section (Screenshot 9) */}
         <>
           <div className="container-editorial mt-14 mb-10 text-[#a3e635]">
-            (05) — Gallery
+            (06) — Gallery
           </div>
           <section
             ref={triggerRef}

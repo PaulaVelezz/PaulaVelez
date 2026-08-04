@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import About from "../components/About/About.jsx";
 import stackData from "../data/StackData.js";
 import experiencesData from "../data/ExperiencesData.js";
@@ -6,13 +6,32 @@ import TextRevealCurtain from "../components/common/TextRevealCurtain.jsx";
 import ExperienceTimeline from "../components/Experience/ExperienceTimeline.jsx";
 import StackIntroStack from "../components/About/StackIntroStack.jsx";
 import ContactClosing from "../components/Contact/ContactClosing.jsx";
+import { useLocation } from "react-router-dom";
 
 const AboutPage = () => {
+  const { hash } = useLocation();
+
+  useEffect(() => {
+    if (!hash) return;
+
+    const section = document.querySelector(hash);
+
+    if (section) {
+      setTimeout(() => {
+        section.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+      }, 150);
+    }
+  }, [hash]);
+
   return (
     <>
       <About />
 
       <StackIntroStack
+        id="services"
         stacks={stackData}
         header={
           <>
@@ -26,9 +45,6 @@ const AboutPage = () => {
                 lines={["Habilidades y Herramientas"]}
               />
             </div>
-            {/* <p className="mt-4 max-w-xl text-zinc-900 mx-auto">
-            
-            </p> */}
           </>
         }
       />
@@ -45,9 +61,6 @@ const AboutPage = () => {
               className="text-4xl md:text-6xl font-extrabold font-korium tracking-wider"
               lines={["TRAYECTORIA PROFESIONAL"]}
             />
-            {/* <p className="mt-4 max-w-lg text-white/60 mx-auto text-sm">
-              Dónde trabajé y qué construí en el camino.
-            </p> */}
           </div>
         }
       />

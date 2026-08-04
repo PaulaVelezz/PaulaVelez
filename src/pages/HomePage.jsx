@@ -24,7 +24,7 @@ const HomePage = ({ setPage }) => {
       <div className="w-full flex flex-col min-h-screen bg-[#0a0a0c]">
         <Hero setPage={setPage} />
         <ServicesHome />
-        <ProjectsScroll />
+        {/* <ProjectsScroll /> */}
         <ProjectDetails />
         <CertificatesSection />
         <Testimonials />

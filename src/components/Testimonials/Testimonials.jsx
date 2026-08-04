@@ -3,6 +3,7 @@ import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import TextRevealCurtain from "../common/TextRevealCurtain";
+import { FaLinkedinIn } from "react-icons/fa";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -14,6 +15,7 @@ const TESTIMONIALS_DATA = [
     author: "Elena Rostova",
     role: "Creative Director",
     company: "Studio Luma",
+    linkedin: "https://linkedin....",
     rating: "★★★★★",
   },
   {
@@ -23,6 +25,7 @@ const TESTIMONIALS_DATA = [
     author: "Marc Vanhoutte",
     role: "Co-Founder",
     company: "Lusion Systems",
+    linkedin: "https://linkedin....",
     rating: "★★★★★",
   },
   {
@@ -32,6 +35,7 @@ const TESTIMONIALS_DATA = [
     author: "Sophia Alvarez",
     role: "Product Owner",
     company: "Vertex Labs",
+    linkedin: "https://linkedin....",
     rating: "★★★★★",
   },
   {
@@ -41,6 +45,7 @@ const TESTIMONIALS_DATA = [
     author: "Kenji Sato",
     role: "Technical Lead",
     company: "Nippon Media",
+    linkedin: "https://linkedin....",
     rating: "★★★★★",
   },
 ];
@@ -135,16 +140,43 @@ function TestimonialCard({ data }) {
         style={{ transform: "translateZ(20px)" }}
       >
         <div className="text-left">
-          <h4 className="text-sm font-space font-bold text-white uppercase tracking-tight">
-            {data.author}
-          </h4>
-          <span className="text-[10px] font-space text-white/40 tracking-wider uppercase">
-            {data.role}
-          </span>
+          <div className="flex items-center gap-2">
+            <h4 className="text-sm font-space font-bold text-white uppercase">
+              {data.author}
+            </h4>
+            -
+            <p className="text-[10px] text-white/40 uppercase tracking-wider">
+              {data.role}
+            </p>
+          </div>
+
+          <p className="text-[10px] text-[#a3e635] uppercase tracking-wider mt-1">
+            {data.company}
+          </p>
         </div>
-        <span className="text-[16px] font-korium font-black text-[#a3e635] tracking-widest uppercase">
-          {data.company}
-        </span>
+
+        <a
+          href={data.linkedin}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="
+      w-11
+      h-11
+      rounded-full
+      border
+      border-white/10
+      flex
+      items-center
+      justify-center
+      hover:border-[#A3E635]
+      hover:bg-[#A3E635]/10
+      transition-all
+      duration-300
+      group
+    "
+        >
+          <FaLinkedinIn className="text-lg text-white/60 group-hover:text-[#A3E635]" />
+        </a>
       </div>
     </motion.div>
   );
@@ -216,8 +248,9 @@ export default function Testimonials() {
           </div>
           <div className="lg:col-span-4 text-left lg:text-right">
             <p className="text-xs text-neutral-400 font-grotesk leading-relaxed max-w-sm ml-auto">
-              Scrutinizing motion curves, layout proportions, and sensory
-              mechanics to build memorable interactive websites.
+              Clientes, desarrolladores, diseñadores y otros profesionales con
+              quienes tuve la oportunidad de colaborar comparten su experiencia
+              trabajando conmigo.
             </p>
           </div>
         </div>

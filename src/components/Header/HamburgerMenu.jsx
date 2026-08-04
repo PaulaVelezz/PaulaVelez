@@ -7,39 +7,6 @@ import devinImg from "../../assets/devin_project.png";
 import fluidImg from "../../assets/fluid_project.png";
 import { SERVICES, openWhatsApp } from "../../services/whatsAppService.js";
 
-// Mini Animated ASCII (for Home Visual Fragment)
-function MiniAsciiGrid() {
-  const [grid, setGrid] = useState([]);
-  const cols = 20;
-  const rows = 10;
-  const chars = "vczXYUJQLOZdhbka*M#w+-?10{}[]()/|\\".split("");
-
-  useEffect(() => {
-    // Generate initial grid
-    const generate = () => {
-      const tempGrid = [];
-      for (let r = 0; r < rows; r++) {
-        const row = [];
-        for (let c = 0; c < cols; c++) {
-          row.push(chars[Math.floor(Math.random() * chars.length)]);
-        }
-        tempGrid.push(row);
-      }
-      setGrid(tempGrid);
-    };
-
-    generate();
-    const interval = setInterval(generate, 80);
-    return () => clearInterval(interval);
-  }, []);
-
-  return (
-    <pre className="font-grotesk text-[7px] leading-none tracking-widest text-[#A3E635] opacity-40 select-none">
-      {grid.map((row) => row.join("")).join("\n")}
-    </pre>
-  );
-}
-
 export default function HamburgerMenu({ isOpen, setPage, onClose }) {
   const containerRef = useRef(null);
   const bgRef = useRef(null);
@@ -62,7 +29,7 @@ export default function HamburgerMenu({ isOpen, setPage, onClose }) {
         subtitle: "2026",
         category: "Frontend / Creative Development",
         description:
-          "Interactive frontend engineer sculpting hardware accelerated interfaces.",
+          "Design-driven interfaces, scalable frontend architecture and custom WordPress solutions.",
         type: "home",
       },
     },
@@ -71,11 +38,11 @@ export default function HamburgerMenu({ isOpen, setPage, onClose }) {
       page: "/about",
       number: "02",
       preview: {
-        title: "Our Philosophy",
-        subtitle: "Studio Mission Brief",
-        category: "Design / Motion",
+        title: "Behind the Code",
+        subtitle: "Profile & Experience",
+        category: "Frontend / WordPress Development",
         description:
-          "Bridging the gap between conceptual design boundaries and technical frontend math.",
+          "Get to know my background, technical expertise and collaborative approach to building digital experiences.",
         type: "about",
       },
     },
@@ -86,22 +53,22 @@ export default function HamburgerMenu({ isOpen, setPage, onClose }) {
       preview: {
         title: "Selected Works",
         subtitle: "Case Archive (12)",
-        category: "WebGL / GLSL Shaders",
+        category: "Client Projects",
         description:
-          "A curation of hardware-accelerated frontend experiments and custom shader loops.",
+          "A curated collection of projects exploring interfaces, visual systems, and frontend solutions.",
         type: "projects",
       },
     },
     {
       label: "Services",
-      page: "/services",
+      page: "/about#services",
       number: "04",
       preview: {
-        title: "Expertise Deck",
-        subtitle: "Area of Expertise",
+        title: "Capabilities",
+        subtitle: "Services & Stack",
         category: "Creative / Development",
         description:
-          "Concept strategy, WebGL performance audits, and high-fidelity motion systems.",
+          "Frontend development, UI implementation, motion design, WordPress and AI integrations.",
         type: "services",
       },
     },
@@ -308,16 +275,12 @@ export default function HamburgerMenu({ isOpen, setPage, onClose }) {
     switch (type) {
       case "home":
         return (
-          <div className="w-full h-full bg-[#0a0a0c] border border-white/5 rounded-2xl flex flex-col justify-between p-6 relative overflow-hidden text-left">
+          <div className="w-full h-full bg-[#0a0a0c] border border-white/5 rounded-2xl flex flex-col justify-between p-5 relative overflow-hidden text-left">
             <div className="my-auto z-10">
               <h4 className="text-xl sm:text-2xl font-syne font-black tracking-tight text-white leading-[1.1]">
                 Frontend & <br />
                 <span className="text-[#A3E635]">Creative Developer.</span>
               </h4>
-            </div>
-
-            <div className="absolute bottom-4 right-4 pointer-events-none opacity-40">
-              <MiniAsciiGrid />
             </div>
           </div>
         );
@@ -358,45 +321,66 @@ export default function HamburgerMenu({ isOpen, setPage, onClose }) {
 
       case "services":
         return (
-          <div className="w-full h-full bg-[#0a0a0c] border border-white/5 rounded-2xl flex flex-col justify-between p-5 relative overflow-hidden text-left">
+          <div className="w-full h-full bg-[#0a0a0c] border border-white/5 rounded-2xl p-5 relative overflow-hidden">
+            {/* Header */}
             <div className="flex justify-between items-start">
-              <span className="text-[9px] font-space tracking-widest text-[#A3E635] uppercase">
-                // EXPERTISE DECK
+              <span className="text-[9px] font-space tracking-[0.25em] uppercase text-[#A3E635]">
+                // MY STACK
               </span>
-              <span className="text-[9px] font-space text-white/30">
-                S C T P STACK
-              </span>
+
+              <span className="text-[9px] font-space text-white/30">04</span>
             </div>
 
-            <div className="relative w-full h-24 my-auto flex items-center justify-center">
-              {["S", "C", "T", "P"].map((letter, index) => {
-                const rot = (index - 1.5) * 8;
-                const xShift = (index - 1.5) * 35;
-                return (
-                  <div
-                    key={letter}
-                    style={{
-                      transform: `translateX(${xShift}px) rotate(${rot}deg)`,
-                      zIndex: index,
-                    }}
-                    className="absolute w-14 h-20 bg-[#0d0d0f] border border-white/15 rounded-md flex flex-col justify-between p-2 shadow-lg hover:border-[#A3E635] transition-colors duration-300"
+            {/* Cards */}
+            <div className="relative flex justify-center items-end h-28 mt-2">
+              {[
+                { title: "WP", color: "#A3E635", rotate: -16, x: -58 },
+                { title: "FE", color: "#fff", rotate: -6, x: -18 },
+                { title: "UI", color: "#6D28D9", rotate: 6, x: 18 },
+                { title: "AI", color: "#A3E635", rotate: 16, x: 58 },
+              ].map((card, i) => (
+                <div
+                  key={i}
+                  style={{
+                    transform: `translateX(${card.x}px) rotate(${card.rotate}deg)`,
+                    zIndex: i + 1,
+                  }}
+                  className="
+              absolute
+              w-16
+              h-24
+              rounded-xl
+              bg-[#141416]
+              border
+              border-white/10
+              shadow-xl
+              flex
+              flex-col
+              justify-between
+              p-2
+            "
+                >
+                  <span className="text-[7px] font-space text-white/25">
+                    0{i + 1}
+                  </span>
+
+                  <span
+                    className="text-lg font-black font-korium text-center"
+                    style={{ color: card.color }}
                   >
-                    <span className="text-[8px] font-space font-bold text-white/30 text-left">
-                      {letter}
-                    </span>
-                    <span className="text-xs font-syne font-black text-[#A3E635] text-center">
-                      {letter}
-                    </span>
-                    <span className="text-[8px] font-space font-bold text-white/30 text-right rotate-180">
-                      {letter}
-                    </span>
-                  </div>
-                );
-              })}
+                    {card.title}
+                  </span>
+
+                  <span className="h-[2px] rounded-full bg-white/10" />
+                </div>
+              ))}
             </div>
 
-            <div className="text-[9px] font-space text-center text-white/45 tracking-widest uppercase">
-              STRATEGY // CREATIVE // TECH // PRODUCTION
+            {/* Footer */}
+            <div className="mt-4 text-center">
+              <p className="text-[8px] font-space uppercase tracking-[0.3em] text-white/45">
+                WORDPRESS · FRONTEND · UI · AI
+              </p>
             </div>
           </div>
         );
@@ -405,33 +389,42 @@ export default function HamburgerMenu({ isOpen, setPage, onClose }) {
         return (
           <div className="w-full h-full bg-[#0a0a0c] border border-white/5 rounded-2xl flex flex-col justify-between p-5 relative overflow-hidden text-left">
             <div className="flex justify-between items-center text-[9px] font-space tracking-widest text-neutral-400">
-              <span>PHILOSOPHY INDEX</span>
-              <span className="text-[#6D28D9]">STUDIO METRICS</span>
+              <span className="text-[9px] font-space tracking-[0.25em] uppercase text-[#A3E635]">
+                // PROFESSIONAL PROFILE
+              </span>
             </div>
 
-            <div className="grid grid-cols-3 gap-2 my-auto z-10 border-y border-white/5 py-4">
-              <div>
+            <div className="grid grid-cols-3 gap-2 my-auto z-10 border-y border-white/5 py-6">
+              <div className="flex flex-col items-center justify-center text-center">
                 <span className="block text-2xl font-syne font-black text-white leading-none">
-                  5+
+                  2+
                 </span>
-                <span className="text-[8px] font-space text-white/40 uppercase tracking-widest leading-none">
-                  Years Exp
+                <span className="mt-2 text-[8px] font-space text-white/40 uppercase tracking-[0.2em] leading-tight">
+                  Years
+                  <br />
+                  Experience
                 </span>
               </div>
-              <div>
+
+              <div className="flex flex-col items-center justify-center text-center">
                 <span className="block text-2xl font-syne font-black text-[#A3E635] leading-none">
-                  50+
+                  35+
                 </span>
-                <span className="text-[8px] font-space text-white/40 uppercase tracking-widest leading-none">
+                <span className="mt-2 text-[8px] font-space text-white/40 uppercase tracking-[0.2em] leading-tight">
                   Projects
+                  <br />
+                  Delivered
                 </span>
               </div>
-              <div>
+
+              <div className="flex flex-col items-center justify-center text-center">
                 <span className="block text-2xl font-syne font-black text-white leading-none">
-                  20+
+                  10+
                 </span>
-                <span className="text-[8px] font-space text-white/40 uppercase tracking-widest leading-none">
-                  Clients
+                <span className="mt-2 text-[8px] font-space text-white/40 uppercase tracking-[0.2em] leading-tight">
+                  Industries
+                  <br />
+                  Sectors
                 </span>
               </div>
             </div>

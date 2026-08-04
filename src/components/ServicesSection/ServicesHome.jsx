@@ -36,7 +36,8 @@ const ServicesHome = () => {
           </>
         }
         onViewMore={(service) => {
-          setPage("/services");
+          // setPage("/services");
+          setPage("/about#services");
         }}
       />
     </section>

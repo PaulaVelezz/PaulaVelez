@@ -13,7 +13,7 @@ const ProjectDetails = () => {
   const scaleX = useSpring(scrollYProgress, { stiffness: 100, damping: 30 });
 
   return (
-    <section ref={ProjectRef} className="relative bg-[#0a0a0c] py-32">
+    <section ref={ProjectRef} className="relative bg-[#f5f5f4] pt-10 pb-10 ">
       <div className="sticky top-0 left-0 flex flex-col items-center justify-center text-center text-zinc-950 mt-14 pt-3 bg-[#f5f5f4bd] backdrop:filter backdrop-blur-sm rounded-md z-30">
         <TextRevealCurtain
           as="h1"

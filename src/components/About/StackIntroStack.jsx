@@ -12,7 +12,7 @@ function getFanTransform(index, total) {
   return { rotate, offsetX: `${offsetX}%` };
 }
 
-function StackIntroStack({ stacks, header }) {
+function StackIntroStack({ id, stacks, header }) {
   const sectionRef = useRef(null);
   const headerRef = useRef(null);
   const cardsRef = useRef([]);
@@ -129,6 +129,7 @@ function StackIntroStack({ stacks, header }) {
 
   return (
     <section
+      id={id}
       ref={sectionRef}
       className="relative h-screen w-full overflow-hidden flex items-center justify-center"
     >

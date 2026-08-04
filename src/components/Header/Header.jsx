@@ -36,7 +36,7 @@ export default function Header({
   const navLinks = [
     { label: "HOME", page: "/" },
     { label: "PROJECTS", page: "/projects" },
-    { label: "SERVICES", page: "/services" },
+    { label: "SERVICES", page: "/about#services" },
     { label: "CONTACT", page: "/contact" },
   ];
 

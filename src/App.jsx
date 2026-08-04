@@ -8,7 +8,6 @@ import ContactPage from "./pages/ContactPage";
 import ProjectDetailPage from "./pages/ProjectDetailPage";
 import Header from "./components/Header/Header";
 import HamburgerMenu from "./components/Header/HamburgerMenu";
-import ServicesSection from "./components/ServicesSection/ServicesSection.jsx";
 import { gsap } from "gsap";
 import PageTransitionOverlay from "./components/PageTransitionOverlay";
 import AboutPage from "./pages/AboutPage";
@@ -19,29 +18,6 @@ function App() {
   const overlayRef = useRef(null);
   const navigate = useNavigate();
 
-  // const changePage = (path) => {
-  //   const tl = gsap.timeline();
-
-  //   tl.to(overlayRef.current, {
-  //     scaleY: 1,
-  //     transformOrigin: "bottom left",
-  //     duration: 0.5,
-  //     ease: "power3.inOut",
-  //     onComplete: () => {
-  //       navigate(path);
-  //       window.scrollTo({
-  //         top: 0,
-  //         behavior: "instant",
-  //       });
-  //     },
-  //   }).to(overlayRef.current, {
-  //     scaleY: 0,
-  //     transformOrigin: "top left",
-  //     duration: 0.5,
-  //     ease: "power3.inOut",
-  //     delay: 0.1,
-  //   });
-  // };
   // Animación inicial al cargar la Home por primera vez
   useEffect(() => {
     if (!overlayRef.current) return;
@@ -82,10 +58,6 @@ function App() {
         <Route
           path="/project/:slug"
           element={<ProjectDetailPage setPage={changePage} />}
-        />
-        <Route
-          path="/services"
-          element={<ServicesSection setPage={changePage} />}
         />
         <Route path="/about" element={<AboutPage setPage={changePage} />} />
         <Route path="/contact" element={<ContactPage setPage={changePage} />} />
