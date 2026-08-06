@@ -5,9 +5,7 @@ const Footer = lazy(() => import("../components/Footer/Footer.jsx"));
 const Testimonials = lazy(
   () => import("../components/Testimonials/Testimonials.jsx"),
 );
-const ProjectsScroll = lazy(
-  () => import("../components/ProjectsScroll/ProjectsScroll.jsx"),
-);
+
 const CertificatesSection = lazy(
   () => import("../components/Certifications/CertificatesSection.jsx"),
 );
@@ -24,7 +22,6 @@ const HomePage = ({ setPage }) => {
       <div className="w-full flex flex-col min-h-screen bg-[#0a0a0c]">
         <Hero setPage={setPage} />
         <ServicesHome />
-        {/* <ProjectsScroll /> */}
         <ProjectDetails />
         <CertificatesSection />
         <Testimonials />

@@ -2,8 +2,11 @@ import React from "react";
 import TextRevealCurtain from "../common/TextRevealCurtain.jsx";
 import ExpertiseServicesData from "../../data/ExpertiseServicesData.js";
 import ExpertiseIntroStack from "../Expertise/ExpertiseIntroStack.jsx";
+import { useNavigate } from "react-router-dom";
 
 const ServicesHome = () => {
+  const navigate = useNavigate();
+
   return (
     <section
       id="services_home"
@@ -35,9 +38,8 @@ const ServicesHome = () => {
             </p>
           </>
         }
-        onViewMore={(service) => {
-          // setPage("/services");
-          setPage("/about#services");
+        onViewMore={() => {
+          navigate("/about#services");
         }}
       />
     </section>

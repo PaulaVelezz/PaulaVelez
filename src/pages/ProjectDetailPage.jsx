@@ -15,6 +15,8 @@ import {
   FiExternalLink,
 } from "react-icons/fi";
 
+import darkbg from "../assets/darkbg.png";
+
 gsap.registerPlugin(ScrollTrigger);
 
 const projectLinks = [
@@ -228,21 +230,21 @@ function ProjectDetailPage({ setPage }) {
                             target="_blank"
                             rel="noopener noreferrer"
                             className={`
-            inline-flex
-            items-center
-            gap-2
-            rounded-full
-            border
-            px-5
-            py-2.5
-            text-xs
-            font-space
-            font-bold
-            tracking-[0.18em]
-            uppercase
-            transition-all
-            ${link.className}
-          `}
+                              inline-flex
+                              items-center
+                              gap-2
+                              rounded-full
+                              border
+                              px-5
+                              py-2.5
+                              text-xs
+                              font-space
+                              font-bold
+                              tracking-[0.18em]
+                              uppercase
+                              transition-all
+                              ${link.className}
+                            `}
                           >
                             {link.label}
                             {link.icon}
@@ -437,32 +439,70 @@ function ProjectDetailPage({ setPage }) {
             {/* Horizontal Container scrolling right */}
             <div
               ref={scrollRef}
-              className="absolute top-0 left-0 h-full flex items-center gap-6 pl-12 pr-0 select-none"
+              className="absolute top-0 left-0 h-full flex items-center gap-4 pl-12 pr-0 select-none"
             >
               {/* Gallery Cards - dinámico según projectDetail.gallery */}
               {projectDetail.gallery.map((img, i) => (
                 <div
                   key={i}
-                  className="w-[520px] h-[560px] flex-shrink-0 flex flex-col justify-between p-10 bg-[#0a0a0c] rounded-3xl border border-white/5 shadow-2xl relative overflow-hidden group"
+                  className="
+                    group
+                    w-[520px]
+                    h-[620px]
+                    flex-shrink-0
+                    relative
+                    overflow-hidden
+                    rounded-3xl
+                    border border-white/5
+                    shadow-2xl
+                  "
                 >
-                  <div className="absolute inset-0 opacity-40">
-                    <img
-                      src={img}
-                      alt={`${projectDetail.title} shot ${i + 1}`}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                    />
-                  </div>
+                  {/* Frame */}
+                  <img
+                    src={darkbg}
+                    alt=""
+                    className="absolute inset-0 w-full h-full object-cover pointer-events-none"
+                  />
 
-                  <div className="w-full flex justify-between items-start z-10 text-[9px] font-space tracking-widest text-neutral-400">
+                  {/* Header */}
+                  <div className="absolute top-10 left-10 right-10 z-20 flex justify-between items-start text-[9px] font-space tracking-widest text-neutral-400">
                     <span>
                       EXP 0{i + 1} / {projectDetail.year}
                     </span>
                   </div>
 
-                  <div className="z-10 text-left">
-                    <h3 className="text-4xl font-extrabold mb-4 mt-4 font-korium tracking-wider text-white">
+                  {/* Screenshot */}
+                  <div
+                    className="
+                      absolute
+                      left-[9%]
+                      top-[15%]
+                      w-[82%]
+                      h-[63%]
+                      overflow-hidden
+                      rounded-2xl
+                      z-10
+                    "
+                  >
+                    <img
+                      src={img}
+                      alt={`${projectDetail.title} shot ${i + 1}`}
+                      className="
+                        w-full
+                        h-auto
+                        transition-transform
+                        duration-700
+                        group-hover:scale-105
+                      "
+                    />
+                  </div>
+
+                  {/* Footer */}
+                  <div className="absolute bottom-10 left-10 right-10 z-20">
+                    <h3 className="text-4xl font-extrabold mb-3 font-korium tracking-wider text-white">
                       {projectDetail.title}
                     </h3>
+
                     <span className="text-[10px] font-space tracking-widest text-[#84cc16]">
                       {projectDetail.category?.toUpperCase()}
                     </span>

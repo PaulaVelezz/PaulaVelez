@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
 import { gsap } from "gsap";
-import AsciiPortrait from "./AsciiPortrait.jsx";
 import { LiaFileDownloadSolid } from "react-icons/lia";
 import { TbCircleArrowDown, TbCircleArrowRight } from "react-icons/tb";
 import ResumeENG from "/CV_Paula_Velez_ Frontend_Developer_(ENG).pdf";
 import ResumeESP from "/CV_Paula_Velez_ Desarrollador_Frontend_(ESP).pdf";
 import TextRevealCurtain from "../common/TextRevealCurtain.jsx";
+import AsciiPortrait from "./AsciiPortrait.jsx";
 
 function Hero({ setPage }) {
   const [startSecondaryReveal, setStartSecondaryReveal] = useState(false);
@@ -182,7 +182,7 @@ function Hero({ setPage }) {
         </div>
         <div className="lg:col-span-5 flex justify-center lg:justify-end overflow-hidden w-full">
           <div className="w-full max-w-[420px] max-h-[440px]">
-            <AsciiPortrait isRevealed={portraitRevealed} />
+            <AsciiPortrait />
           </div>
         </div>
       </div>

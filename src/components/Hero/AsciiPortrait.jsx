@@ -1,204 +1,460 @@
 import { useEffect, useRef, useState } from "react";
-import { gsap } from "gsap";
 
-export default function AsciiPortrait({ isRevealed = false }) {
-  const canvasRef = useRef(null);
-  const containerRef = useRef(null);
-  const [asciiGrid, setAsciiGrid] = useState(null);
-  const [loading, setLoading] = useState(true);
+const IMAGE_SRC = "/Perfil_2026.png";
 
-  // Animation values using refs for high-frequency canvas render updates without React re-renders
-  const revealProgress = useRef(0);
-  const mouseRef = useRef({ x: -1000, y: -1000 });
-  const lerpedMouseRef = useRef({ x: -1000, y: -1000 });
+class TextHeatReveal {
+  constructor(canvas, imgSrc, options = {}) {
+    this.canvas = canvas;
+    this.ctx = canvas.getContext("2d", { willReadFrequently: true });
+    this.W = canvas.width;
+    this.H = canvas.height;
+    this.res = options.resolution || 96;
+    this.characters = options.characters || "GSAPHEATEFFECT!@#$%&*()_+";
+    this.fontSize = options.fontSize || 10;
+    this.fontFamily = options.fontFamily || "monospace";
 
-  useEffect(() => {
-    // Fetch raw ASCII file from public path
-    fetch("/ascii-profile.txt")
-      .then((res) => res.text())
-      .then((text) => {
-        const lines = text.split("\n").filter((line) => line.length > 0);
-        const grid = lines.map((line) => line.split(""));
-        setAsciiGrid(grid);
-        setLoading(false);
-      })
-      .catch((err) => {
-        console.error("Failed to load ASCII portrait:", err);
-        setLoading(false);
-      });
-  }, []);
+    this.heat = {
+      current: new Float32Array(this.res * this.res).fill(0),
+      lastTime: 0,
+      active: false,
+      maxValue: 0,
+    };
 
-  // Trigger reveal animation when isRevealed changes
-  useEffect(() => {
-    if (loading || !asciiGrid) return;
-    if (isRevealed) {
-      gsap.to(revealProgress, {
-        current: 1.2,
-        duration: 1.8,
-        ease: "power3.out",
-        delay: 0.4,
-      });
-    } else {
-      revealProgress.current = 0;
+    this.P = {
+      grid: {
+        size: options.gridSize || 20,
+        weight: options.textWeight || 1,
+        contrast: options.contrast || 1.2,
+        minBrightness: options.minBrightness || 0.25,
+        textOpacity: options.textOpacity || 0.85,
+      },
+      effect: {
+        diffusion: options.diffusion || 0.92,
+        decay: options.decay || 0.98,
+        threshold: options.threshold || 0.04,
+      },
+      image: {
+        brightness: options.imageBrightness || 1.2,
+        contrast: options.imageContrast || 1.3,
+      },
+    };
+
+    this.scrambleInterval = options.scrambleInterval || 500;
+    this.scrambleAmount = options.scrambleAmount || 0.08;
+    this.scrambleActive = true;
+
+    this.coverCanvas = document.createElement("canvas");
+    this.coverCanvas.width = this.W;
+    this.coverCanvas.height = this.H;
+    this.coverCtx = this.coverCanvas.getContext("2d");
+    this.coverData = null;
+
+    this.staticCanvas = document.createElement("canvas");
+    this.staticCanvas.width = this.W;
+    this.staticCanvas.height = this.H;
+    this.staticCtx = this.staticCanvas.getContext("2d");
+
+    this.charGrid = [];
+    this.onReady = options.onReady || (() => {});
+
+    this._move = this._move.bind(this);
+    this._down = this._down.bind(this);
+    this._leave = this._leave.bind(this);
+    this._visibilityChange = this._visibilityChange.bind(this);
+
+    this.img = new Image();
+    this.img.crossOrigin = "anonymous";
+    this.img.onload = () => this._prepareCover();
+    this.img.onerror = () => {
+      console.error(`No se pudo cargar la imagen: ${imgSrc}`);
+    };
+    this.img.src = imgSrc;
+  }
+
+  _prepareCover() {
+    this.coverCtx.fillStyle = "black";
+    this.coverCtx.fillRect(0, 0, this.W, this.H);
+    const scale = Math.max(this.W / this.img.width, this.H / this.img.height);
+    const sw = this.img.width * scale;
+    const sh = this.img.height * scale;
+    const ox = (this.W - sw) / 2;
+    const oy = (this.H - sh) / 2;
+    this.coverCtx.filter = `brightness(${this.P.image.brightness}) contrast(${this.P.image.contrast})`;
+    this.coverCtx.drawImage(this.img, ox, oy, sw, sh);
+    this.coverCtx.filter = "none";
+    this.coverData = this.coverCtx.getImageData(0, 0, this.W, this.H);
+
+    this._clearHeat();
+    this._generateCharGrid();
+    this._renderStaticGrid();
+    this._render();
+    this._bindEvents();
+    this._startScrambling();
+
+    this.onReady();
+  }
+
+  _generateCharGrid() {
+    const { W, H, P } = this;
+    const gridSize = P.grid.size;
+    const minBrightness = P.grid.minBrightness;
+
+    this.charGrid = [];
+
+    for (let y = 0; y < H; y += gridSize) {
+      for (let x = 0; x < W; x += gridSize) {
+        const pi = (Math.floor(y) * W + Math.floor(x)) * 4;
+        let gray =
+          (this.coverData.data[pi] * 0.299 +
+            this.coverData.data[pi + 1] * 0.587 +
+            this.coverData.data[pi + 2] * 0.114) /
+          255;
+
+        gray = Math.max(
+          minBrightness,
+          Math.min(1, (gray - 0.5) * P.grid.contrast + 0.5),
+        );
+
+        this.charGrid.push({
+          x,
+          y,
+          char: this._getRandomChar(),
+          weight: gray * P.grid.weight,
+          brightness: gray,
+        });
+      }
     }
-  }, [isRevealed, loading, asciiGrid]);
+  }
+
+  _renderStaticGrid() {
+    const { staticCtx, W, H, P } = this;
+
+    staticCtx.clearRect(0, 0, W, H);
+    staticCtx.fillStyle = "black";
+    staticCtx.fillRect(0, 0, W, H);
+
+    staticCtx.textAlign = "center";
+    staticCtx.textBaseline = "middle";
+
+    this.charGrid.forEach((cell) => {
+      const { x, y, char, brightness } = cell;
+      const size = this.fontSize * (0.5 + brightness * 0.8);
+
+      staticCtx.font = `${size}px ${this.fontFamily}`;
+
+      const finalBrightness =
+        Math.min(1, brightness * 1.1) * P.grid.textOpacity;
+      staticCtx.fillStyle = `rgba(255, 255, 255, ${finalBrightness})`;
+      staticCtx.fillText(char, x + P.grid.size / 2, y + P.grid.size / 2);
+    });
+  }
+
+  _getRandomChar() {
+    return this.characters.charAt(
+      Math.floor(Math.random() * this.characters.length),
+    );
+  }
+
+  _startScrambling() {
+    this.scrambleTimer = setInterval(() => {
+      if (this.scrambleActive && !this.heat.active) {
+        this._scrambleRandomChars();
+      }
+    }, this.scrambleInterval);
+  }
+
+  _scrambleRandomChars() {
+    if (this.heat.active && this.heat.maxValue > 0.5) return;
+
+    const numChars = Math.floor(this.charGrid.length * this.scrambleAmount);
+    for (let i = 0; i < numChars; i++) {
+      const randomIndex = Math.floor(Math.random() * this.charGrid.length);
+      this.charGrid[randomIndex].char = this._getRandomChar();
+    }
+
+    this._renderStaticGrid();
+    if (!this.heat.active) this._render();
+  }
+
+  _bindEvents() {
+    const c = this.canvas;
+    c.addEventListener("pointermove", this._move, { passive: true });
+    c.addEventListener("pointerdown", this._down, { passive: true });
+    c.addEventListener("pointerleave", this._leave, { passive: true });
+    c.addEventListener("pointercancel", this._leave, { passive: true });
+    document.addEventListener("visibilitychange", this._visibilityChange);
+  }
+
+  _visibilityChange() {
+    this.scrambleActive = !document.hidden;
+  }
+
+  _start() {
+    if (!this.heat.active) {
+      this.heat.active = true;
+      this._anim();
+    }
+  }
+
+  _stop() {
+    this.heat.active = false;
+    cancelAnimationFrame(this._raf);
+    this._render();
+  }
+
+  _anim = () => {
+    this._update();
+    this._render();
+    if (this.heat.active) {
+      this._raf = requestAnimationFrame(this._anim);
+    }
+  };
+
+  _render() {
+    const { ctx, W, H, res, P, heat, coverCanvas, staticCanvas } = this;
+    ctx.clearRect(0, 0, W, H);
+    ctx.drawImage(staticCanvas, 0, 0);
+
+    if (heat.active || heat.maxValue > 0) {
+      const gridSize = P.grid.size;
+      const threshold = P.effect.threshold;
+      for (let y = 0; y < H; y += gridSize) {
+        for (let x = 0; x < W; x += gridSize) {
+          const idx =
+            Math.floor((y / H) * res) * res + Math.floor((x / W) * res);
+          if (heat.current[idx] > threshold) {
+            ctx.save();
+            ctx.beginPath();
+            ctx.rect(x, y, gridSize, gridSize);
+            ctx.clip();
+            ctx.drawImage(coverCanvas, 0, 0);
+            ctx.restore();
+          }
+        }
+      }
+    }
+  }
+
+  _update() {
+    const now = performance.now();
+    if (!this.heat.lastTime) {
+      this.heat.lastTime = now;
+      return;
+    }
+    const H = this.heat;
+    const P = this.P.effect;
+    H.lastTime = now;
+    H.maxValue = 0;
+
+    const res = this.res;
+    const tempGrid = new Float32Array(res * res);
+
+    for (let y = 1; y < res - 1; y++) {
+      for (let x = 1; x < res - 1; x++) {
+        const idx = y * res + x;
+        if (
+          H.current[idx] < P.threshold &&
+          H.current[idx - res] < P.threshold &&
+          H.current[idx + res] < P.threshold &&
+          H.current[idx - 1] < P.threshold &&
+          H.current[idx + 1] < P.threshold
+        ) {
+          continue;
+        }
+
+        const up = H.current[idx - res];
+        const down = H.current[idx + res];
+        const left = H.current[idx - 1];
+        const right = H.current[idx + 1];
+        const upLeft = H.current[idx - res - 1];
+        const upRight = H.current[idx - res + 1];
+        const downLeft = H.current[idx + res - 1];
+        const downRight = H.current[idx + res + 1];
+
+        const neighbors =
+          (up + down + left + right) * 0.15 +
+          (upLeft + upRight + downLeft + downRight) * 0.05;
+
+        tempGrid[idx] =
+          H.current[idx] * (1 - P.diffusion) + neighbors * P.diffusion;
+        tempGrid[idx] *= P.decay;
+
+        if (tempGrid[idx] < P.threshold) {
+          tempGrid[idx] = 0;
+        } else {
+          H.maxValue = Math.max(H.maxValue, tempGrid[idx]);
+        }
+      }
+    }
+
+    H.current.set(tempGrid);
+
+    for (let i = 0; i < res; i++) {
+      H.current[i] *= P.decay;
+      H.current[(res - 1) * res + i] *= P.decay;
+      H.current[i * res] *= P.decay;
+      H.current[i * res + (res - 1)] *= P.decay;
+    }
+
+    if (H.maxValue <= P.threshold) {
+      this._stop();
+    }
+  }
+
+  _addHeat(px, py, amount = 1) {
+    const nx = (px / this.W) * this.res;
+    const ny = (py / this.H) * this.res;
+    const rad = 12;
+
+    for (let i = -rad; i <= rad; i++) {
+      for (let j = -rad; j <= rad; j++) {
+        const x = Math.floor(nx + i);
+        const y = Math.floor(ny + j);
+        if (x < 0 || x >= this.res || y < 0 || y >= this.res) continue;
+
+        const idx = y * this.res + x;
+        const d = Math.hypot(i, j);
+
+        if (d <= rad) {
+          const intensity = amount * Math.pow(1 - d / rad, 1.5);
+          this.heat.current[idx] += intensity;
+          this.heat.current[idx] = Math.min(1, this.heat.current[idx]);
+          this.heat.maxValue = Math.max(
+            this.heat.maxValue,
+            this.heat.current[idx],
+          );
+        }
+      }
+    }
+
+    this._start();
+  }
+
+  _move(e) {
+    const now = performance.now();
+    if (now - (this._lastEvt || 0) < 30) return;
+    this._lastEvt = now;
+
+    const { x, y } = this._coords(e);
+    if (this._lastX != null) {
+      const d = Math.hypot(x - this._lastX, y - this._lastY);
+      if (d > 2) this._addHeat(x, y, Math.min(d * 0.03, 0.8));
+    }
+    this._lastX = x;
+    this._lastY = y;
+  }
+
+  _down(e) {
+    const { x, y } = this._coords(e);
+    this._addHeat(x, y, 1.5);
+    this._lastX = x;
+    this._lastY = y;
+  }
+
+  _leave() {
+    this._lastX = this._lastY = null;
+  }
+
+  _coords(e) {
+    const r = this.canvas.getBoundingClientRect();
+    const cx =
+      (e.clientX !== undefined ? e.clientX : e.touches[0].clientX) - r.left;
+    const cy =
+      (e.clientY !== undefined ? e.clientY : e.touches[0].clientY) - r.top;
+    return {
+      x: cx * (this.W / r.width),
+      y: cy * (this.H / r.height),
+    };
+  }
+
+  _clearHeat() {
+    this.heat.current.fill(0);
+    this.heat.lastTime = 0;
+    this.heat.maxValue = 0;
+  }
+
+  destroy() {
+    if (this.scrambleTimer) clearInterval(this.scrambleTimer);
+    this._stop();
+    this.canvas.removeEventListener("pointermove", this._move);
+    this.canvas.removeEventListener("pointerdown", this._down);
+    this.canvas.removeEventListener("pointerleave", this._leave);
+    this.canvas.removeEventListener("pointercancel", this._leave);
+    document.removeEventListener("visibilitychange", this._visibilityChange);
+  }
+}
+
+function useTextHeatReveal(canvasRef, imgSrc, options) {
+  const [isReady, setIsReady] = useState(false);
+  const instanceRef = useRef(null);
 
   useEffect(() => {
     const canvas = canvasRef.current;
-    const container = containerRef.current;
-    if (!canvas || !container || loading || !asciiGrid) return;
+    const container = canvas?.parentElement;
+    if (!canvas || !container) return;
 
-    const ctx = canvas.getContext("2d");
-    if (!ctx) return;
+    let resizeTimeout;
 
-    let animFrameId;
-    const rows = asciiGrid.length;
-    const cols = asciiGrid[0].length;
-
-    // Track mouse coordinates relative to the canvas
-    const handleMouseMove = (e) => {
-      const rect = canvas.getBoundingClientRect();
-      mouseRef.current = {
-        x: e.clientX - rect.left,
-        y: e.clientY - rect.top,
-      };
-    };
-
-    const handleMouseLeave = () => {
-      mouseRef.current = { x: -1000, y: -1000 };
-    };
-
-    container.addEventListener("mousemove", handleMouseMove);
-    container.addEventListener("mouseleave", handleMouseLeave);
-
-    // Characters list for scrambling
-    const scramblePool = "vczXYUJQLOZdhbka*M#w+-?10{}[]()/|\\".split("");
-
-    // Handle Resize
-    const handleResize = () => {
+    const initEngine = () => {
       const rect = container.getBoundingClientRect();
       const dpr = window.devicePixelRatio || 1;
+      canvas.width = Math.round(rect.width * dpr);
+      canvas.height = Math.round(rect.height * dpr);
 
-      // Make canvas size fit container and scale for retina displays
-      canvas.width = rect.width * dpr;
-      canvas.height = rect.height * dpr;
-      canvas.style.width = `${rect.width}px`;
-      canvas.style.height = `${rect.height}px`;
+      setIsReady(false);
+      const instance = new TextHeatReveal(canvas, imgSrc, {
+        ...options,
+        onReady: () => setIsReady(true),
+      });
+      instanceRef.current = instance;
+    };
 
-      ctx.scale(dpr, dpr);
+    initEngine();
+
+    const handleResize = () => {
+      clearTimeout(resizeTimeout);
+      resizeTimeout = setTimeout(() => {
+        instanceRef.current?.destroy();
+        initEngine();
+      }, 200);
     };
 
     window.addEventListener("resize", handleResize);
-    handleResize();
-
-    // Core Canvas Render Loop
-    const draw = () => {
-      const rect = canvas.getBoundingClientRect();
-      const width = rect.width;
-      const height = rect.height;
-
-      ctx.clearRect(0, 0, width, height);
-
-      // Setup typography: compute cell sizes to fit the container grid perfectly
-      const cellWidth = width / cols;
-      const cellHeight = height / rows;
-      const fontSize = Math.max(5, cellHeight * 1.05); // ensure text fills cell height
-
-      ctx.font = `${fontSize}px "Space Mono", monospace`;
-      ctx.textBaseline = "top";
-
-      // Lerp mouse coordinate for premium lag momentum effect
-      const mouse = mouseRef.current;
-      const lerpedMouse = lerpedMouseRef.current;
-      lerpedMouse.x += (mouse.x - lerpedMouse.x) * 0.1;
-      lerpedMouse.y += (mouse.y - lerpedMouse.y) * 0.1;
-
-      const progress = revealProgress.current;
-
-      for (let r = 0; r < rows; r++) {
-        for (let c = 0; c < cols; c++) {
-          const char = asciiGrid[r][c];
-
-          // Compute character grid world positions
-          const posX = c * cellWidth;
-          const posY = r * cellHeight;
-
-          // Reveal time for this cell (diagonal scan: top-left to bottom-right)
-          const revealThreshold = (r / rows) * 0.6 + (c / cols) * 0.3;
-
-          // Cell state based on reveal timeline
-          if (progress < revealThreshold) {
-            // Not revealed yet - render nothing
-            continue;
-          }
-
-          // Compute distance to mouse cursor for interactive effects
-          const dx = posX + cellWidth / 2 - lerpedMouse.x;
-          const dy = posY + cellHeight / 2 - lerpedMouse.y;
-          const dist = Math.sqrt(dx * dx + dy * dy);
-          const isNearMouse = dist < 90;
-
-          // Compute character scrambling state during reveal sequence
-          const isRecentlyRevealed = progress - revealThreshold < 0.15;
-
-          let displayChar = char;
-          let color = "#e2e2e2";
-          let opacity = 0.85;
-
-          // Reveal Scrambling logic
-          if (isRecentlyRevealed) {
-            // Flash random character
-            const poolIndex = Math.floor(Math.random() * scramblePool.length);
-            displayChar = scramblePool[poolIndex];
-            color = "#6d28d9"; // vibrant purple flash
-            opacity = 0.95;
-          }
-          // Interactive Cursor Proximity logic
-          else if (isNearMouse) {
-            const proximityFactor = 1.0 - dist / 90; // 0 to 1
-
-            // 1. Symbol scrambling / replacement
-            if (Math.random() < 0.15 * proximityFactor) {
-              const poolIndex = Math.floor(Math.random() * scramblePool.length);
-              displayChar = scramblePool[poolIndex];
-            } else if (Math.random() < 0.08 * proximityFactor) {
-              // Binary digital transformation
-              displayChar = Math.random() > 0.5 ? "1" : "0";
-            }
-
-            const rVal = Math.round(226 + (109 - 226) * proximityFactor);
-            const gVal = Math.round(226 + (40 - 226) * proximityFactor);
-            const bVal = Math.round(226 + (217 - 226) * proximityFactor);
-            color = `rgb(${rVal}, ${gVal}, ${bVal})`;
-
-            opacity = 0.7 + 0.3 * proximityFactor;
-          }
-
-          // Apply opacity to graphics context
-          ctx.fillStyle = color;
-          ctx.globalAlpha = opacity;
-
-          // Draw character to screen grid
-          ctx.fillText(displayChar, posX, posY);
-        }
-      }
-
-      animFrameId = requestAnimationFrame(draw);
-    };
-
-    draw();
 
     return () => {
-      container.removeEventListener("mousemove", handleMouseMove);
-      container.removeEventListener("mouseleave", handleMouseLeave);
+      clearTimeout(resizeTimeout);
       window.removeEventListener("resize", handleResize);
-      cancelAnimationFrame(animFrameId);
+      instanceRef.current?.destroy();
+      instanceRef.current = null;
     };
-  }, [loading, asciiGrid]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [imgSrc]);
+
+  return { isReady };
+}
+
+export default function AsciiPortrait() {
+  const canvasRef = useRef(null);
+
+  const { isReady } = useTextHeatReveal(canvasRef, IMAGE_SRC, {
+    gridSize: 14,
+    fontSize: 10,
+    characters: "vczXYUJQLOZdhbka*M#w+-?10{}[]()/|\\",
+    resolution: 96,
+    diffusion: 0.92,
+    decay: 0.98,
+    threshold: 0.04,
+    contrast: 1.25,
+    minBrightness: 0.15,
+    textOpacity: 0.55,
+    imageBrightness: 1,
+    imageContrast: 1.0,
+    scrambleInterval: 1500,
+    scrambleAmount: 0.08,
+  });
 
   return (
     <div
-      ref={containerRef}
       className="
         group
         w-full h-full relative aspect-[0.8]
@@ -206,74 +462,63 @@ export default function AsciiPortrait({ isRevealed = false }) {
         border border-white/5
         backdrop-blur-md shadow-2xl select-none
       "
-      aria-label="Interactive computational ASCII portrait of Paula Velez"
+      aria-label="Retrato ASCII interactivo de Paula Velez"
       role="img"
     >
-      {loading ? (
-        <div className="absolute inset-0 flex items-center justify-center">
-          <div className="text-neutral-500 font-space text-[10px] tracking-widest uppercase animate-pulse">
+      <img
+        src={IMAGE_SRC}
+        alt="Paula Velez"
+        className="
+          absolute inset-0 z-0
+          w-full h-full object-cover
+          scale-100
+          transition-all duration-700 ease-out
+          group-hover:scale-105
+        "
+      />
+      <div
+        className="
+          absolute inset-0 z-10
+          bg-[#0a0a0c]/90
+          transition-all duration-700 ease-out
+          [clip-path:polygon(100%_0,100%_0,100%_100%,100%_100%)]
+          group-hover:[clip-path:polygon(0_0,100%_0,100%_100%,0_100%)]
+        "
+      />
+      <canvas
+        ref={canvasRef}
+        className="
+          absolute inset-0 z-20
+          w-full h-full touch-none cursor-pointer
+          transition-all duration-700 ease-out
+          [clip-path:polygon(100%_0,100%_0,100%_100%,100%_100%)]
+          group-hover:[clip-path:polygon(0_0,100%_0,100%_100%,0_100%)]
+        "
+      />
+
+      {!isReady && (
+        <div className="absolute inset-0 z-40 flex items-center justify-center pointer-events-none">
+          <div className="text-neutral-500 font-mono text-[10px] tracking-widest uppercase animate-pulse">
             Loading system matrix...
           </div>
         </div>
-      ) : (
-        <>
-          {/* FOTO: siempre visible, base */}
-          <img
-            src="/Perfil_2026.png"
-            alt="Paula Velez"
-            className="
-              absolute inset-0 z-0
-              w-full h-full object-cover
-              scale-100
-              transition-all duration-700 ease-out
-              group-hover:scale-105
-            "
-          />
-
-          {/* FONDO OSCURO DEL ASCII: oculto por defecto, se expande en hover */}
-          <div
-            className="
-              absolute inset-0 z-10
-              bg-[#0a0a0c]/90
-              transition-all duration-700 ease-out
-              [clip-path:polygon(100%_0,100%_0,100%_100%,100%_100%)]
-              group-hover:[clip-path:polygon(0_0,100%_0,100%_100%,0_100%)]
-            "
-          />
-
-          {/* ASCII LAYER: mismo clip-path que el fondo */}
-          <canvas
-            ref={canvasRef}
-            className="
-              absolute inset-0 z-20
-              w-full h-full
-              transition-all duration-700 ease-out
-              [clip-path:polygon(100%_0,100%_0,100%_100%,100%_100%)]
-              group-hover:[clip-path:polygon(0_0,100%_0,100%_100%,0_100%)]
-            "
-          />
-
-          {/* Reveal CORNER */}
-          <div className="absolute bottom-0 right-0 z-30 w-30 h-24 pointer-events-none">
-            <div
-              className="
-                absolute bottom-0 right-0 w-full h-full rounded-br-[32px]
-                bg-gradient-to-tl from-white/20 to-transparent
-                [clip-path:polygon(100%_100%,0_100%,100%_0)]
-                transition-transform duration-500
-                group-hover:scale-110
-              "
-            />
-            <div className="flex flex-row items-center gap-2 absolute bottom-3 right-3 text-[8px] tracking-[0.25em] text-white/60 font-space uppercase">
-              <span>REVEAL</span>
-              <span className="text-[#A3E635] text-sm">↗</span>
-            </div>
-          </div>
-
-          {/* Overlay sutil */}
-          <div className="absolute inset-0 z-10 bg-gradient-to-t from-black/20 via-transparent to-transparent pointer-events-none" />
-        </>
       )}
+      <div className="absolute bottom-0 right-0 z-30 w-30 h-24 pointer-events-none">
+        <div
+          className="
+            absolute bottom-0 right-0 w-full h-full rounded-br-[32px]
+            bg-gradient-to-tl from-white/20 to-transparent
+            [clip-path:polygon(100%_100%,0_100%,100%_0)]
+            transition-transform duration-500
+            group-hover:scale-110
+          "
+        />
+        <div className="flex flex-row items-center gap-2 absolute bottom-3 right-3 text-[8px] tracking-[0.25em] text-white/60 font-space uppercase">
+          <span>REVEAL</span>
+          <span className="text-[#A3E635] text-sm">↗</span>
+        </div>
+      </div>
+      <div className="absolute inset-0 z-10 bg-gradient-to-t from-black/20 via-transparent to-transparent pointer-events-none" />
     </div>
   );
 }
