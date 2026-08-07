@@ -15,7 +15,7 @@ const ProjectCard = ({ title, slug, categories, stack, cover, AbsBG }) => {
       viewport={{ once: true }}
     >
       <div
-        className="relative aspect-square overflow-hidden group"
+        className="relative aspect-[1.15/1] overflow-hidden group"
         onMouseEnter={() => setIsHoveredTitle(title)}
         onMouseLeave={() => setIsHoveredTitle(null)}
       >
@@ -25,19 +25,49 @@ const ProjectCard = ({ title, slug, categories, stack, cover, AbsBG }) => {
             src={AbsBG}
             alt="abstract bg"
           />
+
           <div
             className={`absolute inset-0 opacity-50 bg-[url('${grain}')]`}
           ></div>
         </div>
 
+        {/* CATEGORIES — TOP RIGHT */}
+        <div className="absolute top-4 right-4 z-20 flex flex-wrap justify-end gap-2 max-w-[65%]">
+          {categories &&
+            categories.map((category, index) => (
+              <span
+                key={index}
+                className="
+              px-3
+              py-1
+              text-xs
+              md:text-sm
+              font-semibold
+              rounded-md
+              bg-lime-400
+              text-zinc-800
+              text-center
+              leading-tight
+              shadow-sm
+            "
+              >
+                {category}
+              </span>
+            ))}
+        </div>
+
         <div className="absolute inset-0 flex items-center justify-center p-12">
           <motion.div
-            className={`relative w-full aspect-square transition-all duration-700 ${isHoveredTitle === title ? "scale-110" : "scale-90"}`}
+            className={`relative w-full
+      h-[70%]
+      flex
+      items-center
+      justify-center transition-all duration-700 ${isHoveredTitle === title ? "scale-105" : "scale-100"}`}
           >
             <img
               src={cover}
               alt="project mockup"
-              className="object-cover rounded-lg"
+              className="w-full h-full object-cover rounded-lg"
             />
           </motion.div>
         </div>
@@ -68,8 +98,8 @@ const ProjectCard = ({ title, slug, categories, stack, cover, AbsBG }) => {
           </Link>
         </div>
 
-        <div className="absolute bottom-14 left-0 right-0 flex flex-wrap gap-2 p-4">
-          {stack.slice(0, 5).map((tech, index) => (
+        <div className="absolute bottom-14 left-0 right-0 flex flex-wrap gap-2 p-2 pl-12 pr-12">
+          {stack.slice(0, 4).map((tech, index) => (
             <span
               key={index}
               className="inline-flex px-3 py-1 text-xs md:px-2 lg:text-sm md:text-xs font-light rounded-md bg-black/80 hover:bg-black/90 transition-colors text-stone-50 backdrop-blur-sm"
@@ -77,26 +107,17 @@ const ProjectCard = ({ title, slug, categories, stack, cover, AbsBG }) => {
               {tech}
             </span>
           ))}
-          {stack.length > 5 && (
+          {stack.length > 4 && (
             <span className="inline-flex px-3 py-1 text-xs md:px-2 lg:text-sm md:text-xs font-light rounded-md bg-black/40 text-stone-300 backdrop-blur-sm">
-              +{stack.length - 5}
+              +{stack.length - 4}
             </span>
           )}
         </div>
 
-        <div className="absolute bottom-0 left-0 right-0 flex justify-between items-center p-4 bg-gradient-to-t from-black/70 to-transparent">
-          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-stone-100">
+        <div className="absolute bottom-0 left-0 right-0 flex justify-between items-center p-4 pl-12 pr-12 bg-gradient-to-t from-black/70 to-transparent">
+          <h2 className="text-2xl md:text-2xl lg:text-3xl font-bold text-stone-100">
             {title}
           </h2>
-          {categories &&
-            categories.map((category, index) => (
-              <span
-                key={index}
-                className="p-1 text-xs lg:text-sm md:text-xs font-semibold rounded-md bg-lime-400 text-zinc-800"
-              >
-                {category}
-              </span>
-            ))}
         </div>
       </div>
     </motion.article>

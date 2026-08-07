@@ -4,6 +4,15 @@ import projectDetailData from "../../data/ProjectDetailData.js";
 import { motion, useScroll, useSpring } from "framer-motion";
 import TextRevealCurtain from "../common/TextRevealCurtain.jsx";
 
+const PROJECTS_TO_SHOW = [
+  "impulso_academico",
+  "modena_autos",
+  "maprim_sur",
+  "groven_agency",
+  "atlantic_village",
+  "real_billion",
+];
+
 const ProjectDetails = () => {
   const ProjectRef = useRef(null);
   const { scrollYProgress } = useScroll({
@@ -12,14 +21,24 @@ const ProjectDetails = () => {
   });
   const scaleX = useSpring(scrollYProgress, { stiffness: 100, damping: 30 });
 
+  const featuredProjects = projectDetailData.filter((project) =>
+    PROJECTS_TO_SHOW.includes(project.id),
+  );
+
   return (
-    <section ref={ProjectRef} className="relative bg-[#f5f5f4] pt-10 pb-10 ">
+    <section ref={ProjectRef} className="relative bg-[#f5f5f4] pb-10 ">
       <div className="sticky top-0 left-0 flex flex-col items-center justify-center text-center text-zinc-950 mt-14 pt-3 bg-[#f5f5f4bd] backdrop:filter backdrop-blur-sm rounded-md z-30">
         <TextRevealCurtain
           as="h1"
           className="text-4xl md:text-6xl font-extrabold font-korium tracking-wider"
           lines={["Projects"]}
         />
+        <p className="mt-4 mb-4 max-w-5xl text-zinc-900 mx-auto">
+          A curated selection of projects that represent different technical
+          challenges, industries and product goals. From e-learning platforms
+          and booking engines to custom WordPress solutions and
+          conversion-focused landing pages.
+        </p>
         <motion.div
           style={{ scaleX }}
           className="w-[95%] h-[2px] bg-violet-700 rounded-sm mt-3"
@@ -30,7 +49,7 @@ const ProjectDetails = () => {
         id="project-details"
         className="max-w-7xl mx-auto p-5 mt-6 mb-14 grid grid-cols-1 md:grid-cols-2 gap-11"
       >
-        {projectDetailData.map((project) => (
+        {featuredProjects.map((project) => (
           <ProjectCard
             key={project.id}
             slug={project.slug}

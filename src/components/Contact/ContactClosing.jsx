@@ -339,6 +339,9 @@ function ContactClosing({ showFooterVisual = false }) {
       {showFooterVisual && (
         <>
           <div className="relative w-full mt-30">
+            <p className="text-center mb-2 text-[11px] uppercase tracking-[0.25em] text-stone-200 font-space">
+              Copyright © 2026 - Designed & Developed by
+            </p>
             <ContactFooterVisual />
           </div>
 
@@ -356,22 +359,7 @@ function ContactClosing({ showFooterVisual = false }) {
                   to-[#A3E635]
                   "
             />
-            <div className="max-w-6xl mx-auto h-10 flex items-center justify-between">
-              <p className="text-[11px] uppercase tracking-[0.25em] text-stone-200 font-space">
-                Designed & Developed by{" "}
-                <span>
-                  <a
-                    href="https://www.linkedin.com/in/paula-velez/"
-                    rel="noopener noreferrer"
-                    target="_blank"
-                  >
-                    {" "}
-                    Paula Velez
-                  </a>
-                </span>
-                © 2026
-              </p>
-
+            <div className="max-w-6xl mx-auto h-10 flex items-center justify-center">
               <p className="text-[11px] uppercase tracking-[0.25em] text-stone-200 font-space">
                 Thanks for your visit 👋
               </p>

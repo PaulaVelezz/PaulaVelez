@@ -57,7 +57,7 @@ import SMA2 from "../assets/proyectos individuales/Modena Autos/SMA2.png";
 import SMA3 from "../assets/proyectos individuales/Modena Autos/SMA3.png";
 import SMA4 from "../assets/proyectos individuales/Modena Autos/SMA4.png";
 
-import GrupoPensarMockup from "../assets/proyectos individuales/Grupo Pensar/grupopensar-fullpage.png";
+import GrupoPensarMockup from "../assets/proyectos individuales/Grupo Pensar/GPMockup.png";
 import SGP1 from "../assets/proyectos individuales/Grupo Pensar/SGP1.png";
 import SGP2 from "../assets/proyectos individuales/Grupo Pensar/SGP2.png";
 import SGP3 from "../assets/proyectos individuales/Grupo Pensar/SGP3.png";
