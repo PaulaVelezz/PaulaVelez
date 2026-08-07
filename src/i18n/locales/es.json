@@ -1,0 +1,13 @@
+{
+  "nav": {
+    "home": "INICIO",
+    "projects": "PROYECTOS",
+    "about": "SOBRE MÍ",
+    "services": "SERVICIOS",
+    "contact": "CONTACTO",
+    "menu": "MENÚ",
+    "close": "CERRAR",
+    "openMenu": "Abrir menú de navegación",
+    "closeMenu": "Cerrar menú de navegación"
+  }
+}

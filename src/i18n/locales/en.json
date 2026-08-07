@@ -1,0 +1,13 @@
+{
+  "nav": {
+    "home": "HOME",
+    "projects": "PROJECTS",
+    "about": "ABOUT",
+    "services": "SERVICES",
+    "contact": "CONTACT",
+    "menu": "MENU",
+    "close": "CLOSE",
+    "openMenu": "Open navigation menu",
+    "closeMenu": "Close navigation menu"
+  }
+}
