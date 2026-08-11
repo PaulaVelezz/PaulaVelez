@@ -651,5 +651,12 @@
         "Adaptive Learning Technology"
       ]
     }
+  },
+  "CTA_banner": {
+    "eyebrow": "Freelance · Collaborations · Job Opportunities",
+    "title": "Let's talk about your project",
+    "titleHighlight": "or about joining your team.",
+    "description": "From freelance to full-time — if you have an idea, a project or an opportunity, this is the place to start the conversation.",
+    "button": "Go to contact form"
   }
 }

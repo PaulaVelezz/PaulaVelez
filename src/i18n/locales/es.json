@@ -648,5 +648,12 @@
         "Tecnología de Aprendizaje Adaptativo"
       ]
     }
+  },
+  "CTA_banner": {
+    "eyebrow": "Freelance · Colaboraciones · Oportunidades laborales",
+    "title": "Hablemos de tu proyecto",
+    "titleHighlight": "o de sumarme a tu equipo.",
+    "description": "Desde freelance hasta full-time — si tenés una idea, un proyecto o una propuesta, este es el lugar para empezar la conversación.",
+    "button": "Ir al formulario de contacto"
   }
 }

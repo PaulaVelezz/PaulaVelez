@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useTranslation } from "react-i18next";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -17,6 +18,7 @@ const CTABanner = ({ fromBg = LIGHT_BG, fromText = LIGHT_TEXT }) => {
   const headlineRef = useRef(null);
   const subRef = useRef(null);
   const eyebrowRef = useRef(null);
+  const { t } = useTranslation();
 
   useEffect(() => {
     const section = sectionRef.current;
@@ -89,29 +91,31 @@ const CTABanner = ({ fromBg = LIGHT_BG, fromText = LIGHT_TEXT }) => {
         ref={eyebrowRef}
         className="relative text-xs md:text-sm uppercase tracking-[0.3em] font-space mb-6 opacity-70"
       >
-        Freelance · Colaboraciones · Oportunidades laborales
+        {t("CTA_banner.eyebrow")}
       </p>
 
       <h2
         ref={headlineRef}
         className="relative font-korium text-4xl md:text-6xl lg:text-7xl leading-[1.05] max-w-4xl"
       >
-        Hablemos de tu proyecto
+        {t("CTA_banner.title")}
         <br />
-        <span className="text-[#A3E635]">o de sumarme a tu equipo.</span>
+        <span className="text-[#A3E635]">
+          {" "}
+          {t("CTA_banner.titleHighlight")}
+        </span>
       </h2>
 
       <p
         ref={subRef}
         className="relative mt-6 max-w-xl text-base md:text-lg opacity-80 font-space"
       >
-        Desde freelance hasta full-time — si tenés una idea, un proyecto o una
-        propuesta, este es el lugar para empezar la conversación.
+        {t("CTA_banner.description")}
       </p>
 
       <button
         onClick={scrollToForm}
-        aria-label="Ir al formulario de contacto"
+        aria-label={t("CTA_banner.button")}
         className="
           relative mt-14 w-14 h-14 rounded-full border border-current
           flex items-center justify-center
