@@ -2,6 +2,7 @@ import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { FiArrowRight } from "react-icons/fi";
+import { useTranslation } from "react-i18next";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -21,6 +22,7 @@ function ExpertiseIntroStack({ services, header, onViewMore }) {
   const cardsRef = useRef([]);
   const bgRef = useRef(null);
   const baseRotations = useRef([]);
+  const { t } = useTranslation();
 
   useEffect(() => {
     const section = sectionRef.current;
@@ -138,7 +140,7 @@ function ExpertiseIntroStack({ services, header, onViewMore }) {
       <div className="relative w-[300px] md:w-[340px] h-[440px] md:h-[480px] z-20">
         {services.map((service, i) => (
           <div
-            key={service.title}
+            key={service.key}
             ref={(el) => (cardsRef.current[i] = el)}
             onMouseEnter={() => handleCardEnter(i)}
             onMouseLeave={() => handleCardLeave(i)}
@@ -156,14 +158,14 @@ function ExpertiseIntroStack({ services, header, onViewMore }) {
               <div className="p-5 flex-1 flex flex-col items-center justify-center">
                 <img
                   src={service.image}
-                  alt={service.title}
+                  alt={t(`services.services.${service.key}.title`)}
                   className="w-32 h-32 object-contain mb-4"
                 />
-                <h3 className="text-xl font-black text-white uppercase font-space mb-2">
-                  {service.title}
+                <h3 className=" text-center text-xl font-black text-white uppercase font-space mb-2">
+                  {t(`services.services.${service.key}.title`)}
                 </h3>
-                <p className="text-[13px] text-white/60 leading-relaxed">
-                  {service.description}
+                <p className="pl-2 pr-2 text-center text-[13px] text-white/60 leading-relaxed">
+                  {t(`services.services.${service.key}.description`)}
                 </p>
               </div>
               <div className="p-5 pt-0">
@@ -172,7 +174,7 @@ function ExpertiseIntroStack({ services, header, onViewMore }) {
                   className="w-full border-[#6d28d9] bg-[#6d28d9]/10 hover:bg-[#6d28d9] rounded-full border flex items-center justify-center gap-2 px-5 py-2 text-[12px] font-bold text-white transition-colors"
                   data-cursor="pointer"
                 >
-                  VIEW MORE
+                  {t("common.viewMore")}
                   <FiArrowRight className="w-3.5 h-3.5" />
                 </button>
               </div>

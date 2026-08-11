@@ -6,10 +6,12 @@ import ResumeENG from "/CV_Paula_Velez_ Frontend_Developer_(ENG).pdf";
 import ResumeESP from "/CV_Paula_Velez_ Desarrollador_Frontend_(ESP).pdf";
 import TextRevealCurtain from "../common/TextRevealCurtain.jsx";
 import AsciiPortrait from "./AsciiPortrait.jsx";
+import { useTranslation } from "react-i18next";
 
 function Hero({ setPage }) {
   const [startSecondaryReveal, setStartSecondaryReveal] = useState(false);
   const [portraitRevealed, setPortraitRevealed] = useState(false);
+  const { t } = useTranslation();
 
   useEffect(() => {
     if (startSecondaryReveal) {
@@ -56,15 +58,10 @@ function Hero({ setPage }) {
 
           <div className="hero-sub-reveal opacity-0 max-w-[540px]">
             <p className="text-sm md:text-base text-neutral-400 font-grotesk">
-              Soy Paula. Me especializo en desarrollar soluciones digitales e
-              interfaces modernas, responsivas y accesibles, con especial
-              atención al diseño, la experiencia de usuario y las animaciones
-              que hacen que un producto se sienta cuidado.
+              {t("hero.description")}
               <br />
               <br />
-              Actualmente estoy abierta a oportunidades remotas e híbridas donde
-              pueda aportar valor, seguir creciendo profesionalmente y colaborar
-              con equipos en la creación de productos digitales con impacto.
+              {t("hero.availability")}
             </p>
           </div>
 
@@ -75,7 +72,7 @@ function Hero({ setPage }) {
                 className="h-11 px-8 bg-[#84CC16] hover:bg-[#a3e635] flex items-center  gap-2 text-white text-xs font-space font-bold tracking-widest transition-colors cursor-pointer rounded-2xl"
                 data-cursor="magnetic"
               >
-                CV / RESUME
+                {t("hero.cv")}
                 <span>
                   <TbCircleArrowDown />
                 </span>
@@ -164,7 +161,7 @@ function Hero({ setPage }) {
             "
               data-cursor="magnetic"
             >
-              EXPLORE WORK
+              {t("hero.exploreWork")}
               <span>
                 <TbCircleArrowRight />
               </span>

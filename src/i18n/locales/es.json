@@ -9,5 +9,298 @@
     "close": "CERRAR",
     "openMenu": "Abrir menú de navegación",
     "closeMenu": "Cerrar menú de navegación"
+  },
+  "menu": {
+    "preview": {
+      "section": "SECCIÓN"
+    },
+    "aria": {
+      "navigateTo": "Navegar a la sección {{section}}"
+    },
+    "items": {
+      "home": {
+        "label": "Home",
+        "title": "Paula Velez",
+        "subtitle": "2026",
+        "category": "Frontend / Desarrollo Creativo",
+        "description": "Interfaces pensadas desde el diseño, arquitectura frontend escalable y soluciones WordPress a medida."
+      },
+      "about": {
+        "label": "Sobre mí",
+        "title": "Detrás del código",
+        "subtitle": "Perfil & Experiencia",
+        "category": "Frontend / Desarrollo WordPress",
+        "description": "Conocé mi recorrido, experiencia técnica y forma de trabajar en la creación de experiencias digitales."
+      },
+      "projects": {
+        "label": "Proyectos",
+        "title": "Trabajos seleccionados",
+        "subtitle": "Archivo de proyectos (12)",
+        "category": "Proyectos para clientes",
+        "description": "Una selección de proyectos donde exploro interfaces, sistemas visuales y soluciones frontend."
+      },
+      "services": {
+        "label": "Servicios",
+        "title": "Capacidades",
+        "subtitle": "Servicios & Stack",
+        "category": "Creatividad / Desarrollo",
+        "description": "Desarrollo frontend, implementación UI, motion design, WordPress e integraciones con IA."
+      },
+      "contact": {
+        "label": "Contacto",
+        "title": "Hablemos",
+        "subtitle": "Disponible para consultas",
+        "category": "Córdoba Capital / Remoto",
+        "description": "Disponible para proyectos freelance, consultoría técnica y colaboraciones creativas."
+      }
+    }
+  },
+  "hero": {
+    "description": "Soy Paula. Me especializo en desarrollar soluciones digitales e interfaces modernas, responsivas y accesibles, con especial atención al diseño, la experiencia de usuario y las animaciones que hacen que un producto se sienta cuidado.",
+    "availability": "Actualmente estoy abierta a oportunidades remotas e híbridas donde pueda aportar valor, seguir creciendo profesionalmente y colaborar con equipos en la creación de productos digitales con impacto.",
+    "cv": "CV / RESUMEN",
+    "exploreWork": "EXPLORAR PROYECTOS"
+  },
+  "services": {
+    "label": "QUÉ HAGO",
+    "title": "SERVICIOS",
+    "description": "Creo soluciones digitales a medida que combinan diseño y tecnología para responder a objetivos reales y generar resultados.",
+    "services": {
+      "webDesign": {
+        "title": "Diseño Web",
+        "description": "Interfaces que se ven tan bien como funcionan. Diseño cada detalle pensando en cómo tu marca se percibe a primera vista."
+      },
+      "corporateWebsites": {
+        "title": "Páginas Corporativas",
+        "description": "Tu carta de presentación digital. Sitios institucionales sólidos que transmiten confianza desde el primer contacto."
+      },
+      "landingPages": {
+        "title": "Landing Pages",
+        "description": "Una sola meta: convertir visitas en clientes. Flujos simples, sin distracciones, con cada elemento apuntando a la acción."
+      },
+      "onlineStores": {
+        "title": "Tiendas Online",
+        "description": "Vender sin fricción. Checkouts rápidos y catálogos claros, para que nada se interponga entre la visita y la conversión."
+      },
+      "webRedesign": {
+        "title": "Rediseño Web",
+        "description": "Una segunda vida para sitios que quedaron atrás. Mantengo la esencia de la marca y la llevo a una experiencia más moderna, rápida y funcional."
+      },
+      "maintenanceSecurity": {
+        "title": "Mantenimiento & Seguridad",
+        "description": "Tu web funcionando sin sorpresas. Actualizaciones, backups y buenas prácticas para mantenerla estable y segura."
+      }
+    }
+  },
+  "common": {
+    "viewMore": "VER MÁS"
+  },
+  "projects": {
+    "label": "// PROYECTOS",
+    "title": "PROYECTOS",
+    "description": "Una selección de proyectos que representan distintos desafíos técnicos, industrias y objetivos de negocio. Desde plataformas de e-learning y sistemas de reservas hasta soluciones a medida en WordPress y landing pages orientadas a la conversión."
+  },
+  "certifications": {
+    "label": "// FORMACIÓN VERIFICADA",
+    "title": "CERTIFICACIONES",
+    "description": "Educación continua, formación especializada y certificaciones técnicas que forman parte de mi recorrido en desarrollo frontend y creativo.",
+    "verified": "VERIFICADO",
+    "certificate": "CERTIFICACIÓN",
+    "items": {
+      "fullstackDeveloper": "_Certificado Fullstack Developer",
+      "frontendDeveloper": "_Certificado Frontend Developer",
+      "programmer": "_Certificado Programador",
+      "react": "_Certificado React.js",
+      "javascript": "_Certificado Javascript",
+      "webDesign": "_Certificado Diseño Web"
+    }
+  },
+  "testimonials": {
+    "label": "// EXPERIENCIAS Y OPINIONES",
+    "title": "ELEGIDA POR",
+    "description": "Clientes, desarrolladores, diseñadores y otros profesionales con quienes tuve la oportunidad de colaborar comparten su experiencia trabajando conmigo.",
+    "dragHint": "ARRASTRÁ EL CARRUSEL PARA NAVEGAR",
+    "swipeHint": "DESLIZÁ HORIZONTALMENTE",
+    "linkedinLabel": "Ver perfil de LinkedIn de {{name}}",
+    "items": {
+      "motionDesign": {
+        "quote": "La atención de Paula al motion design y la aceleración por hardware es excepcional. Logra transformar wireframes estáticos en experiencias vivas mediante una lógica fluida y dinámica.",
+        "role": "Directora Creativa"
+      },
+
+      "interactiveEngineering": {
+        "quote": "Los shaders topográficos y las secuencias de carga que desarrolló para nuestra plataforma son increíbles. Una verdadera especialista en ingeniería interactiva.",
+        "role": "Co-Fundador"
+      },
+
+      "interactiveExcellence": {
+        "quote": "Trabajar con Paula es una experiencia de excelencia interactiva. El rendimiento visual, los tiempos y el ritmo de la experiencia superaron todos los estándares.",
+        "role": "Product Owner"
+      },
+
+      "responsiveExperience": {
+        "quote": "El carrusel basado en drag y las respuestas del cursor personalizado se sienten increíblemente fluidos. La calidad del código es impecable y altamente performante.",
+        "role": "Líder Técnico"
+      }
+    }
+  },
+  "contact": {
+    "label": "CONTACTO",
+    "title": "Trabajemos juntos",
+    "availability": {
+      "freelance": "Abierta a proyectos freelance, colaboraciones y posiciones full-time.",
+      "roles": "Roles Junior / Semi Senior — Desarrollo WordPress y Frontend.",
+      "response": "Respuesta garantizada en menos de 48 horas.",
+      "location": "Remoto, Córdoba Capital o Buenos Aires."
+    },
+    "social": {
+      "github": "Contacto GitHub",
+      "linkedin": "Contacto LinkedIn",
+      "calendar": "Agendar reunión",
+      "whatsapp": "Contacto WhatsApp"
+    },
+    "footer": {
+      "copyright": "Copyright © 2026 - Diseñado y desarrollado por",
+      "thanks": "Gracias por tu visita 👋"
+    },
+    "form": {
+      "name": "Nombre",
+      "company": "Empresa",
+      "email": "Correo",
+      "phone": "WhatsApp / Teléfono",
+      "contactMethod": "¿Cómo te contactamos?",
+      "selectOption": "Elegí una opción",
+      "message": "Mensaje",
+      "submit": "ENVIAR MENSAJE",
+      "methods": {
+        "email": "Email",
+        "whatsapp": "WhatsApp",
+        "call": "Llamada",
+        "videoCall": "Videollamada"
+      }
+    },
+    "modes": {
+      "job": {
+        "label": "Ofrezco un puesto / trabajo",
+        "extraField": {
+          "label": "Tipo de rol",
+          "options": {
+            "junior": "Junior",
+            "juniorAdvanced": "Junior Advanced",
+            "semiSenior": "Semi Senior",
+            "other": "Otro"
+          }
+        }
+      },
+      "freelance": {
+        "label": "Busco un freelance",
+        "extraField": {
+          "label": "¿Qué necesitás?",
+          "options": {
+            "landingPage": "Landing page",
+            "corporateWebsite": "Sitio institucional",
+            "wordpress": "WordPress",
+            "woocommerce": "WooCommerce",
+            "tiendaNube": "TiendaNube",
+            "eLearning": "E-learning",
+            "redesign": "Rediseño",
+            "other": "Otro"
+          }
+        }
+      }
+    }
+  },
+  "about": {
+    "label": "SOBRE MÍ",
+    "body": {
+      "intro": "¡Hola! 👋🏼 Soy Paula, Frontend Developer radicada en Argentina.",
+      "expertise": "Me especializo en desarrollar soluciones digitales e interfaces modernas, responsivas y accesibles, con especial atención al diseño, la experiencia de usuario y las animaciones que hacen que los productos digitales se sientan cuidados, intuitivos y atractivos.",
+      "collaboration": "Creo que la colaboración, la comunicación clara y la atención al detalle son fundamentales para crear experiencias digitales exitosas. Disfruto trabajar en equipo junto a diseñadores, desarrolladores y equipos de producto.",
+      "availability": "Actualmente estoy abierta a oportunidades laborales remotas e híbridas donde pueda aportar valor y seguir creciendo profesionalmente."
+    },
+    "actions": {
+      "connect": "Conectemos",
+      "experience": "Ver experiencia"
+    },
+    "stack": {
+      "title": "Habilidades y Herramientas"
+    },
+    "profile": {
+      "label": "PERFIL",
+      "available": "Disponible",
+      "reveal": "REVEAL",
+      "info": {
+        "name": "nombre",
+        "role": "rol",
+        "based": "ubicación",
+        "basedValue": "Córdoba, Argentina · Remoto",
+        "status": "estado",
+        "openToWork": "Disponible para trabajar"
+      }
+    },
+    "experience": {
+      "label": "EXPERIENCIA",
+      "title": "TRAYECTORIA PROFESIONAL",
+
+      "entries": {
+        "lader": {
+          "company": "Agencia Lader",
+          "role": "Desarrolladora Web",
+          "period": "DIC 2024 — JUNIO 2026",
+          "location": "Buenos Aires, Argentina - (Remoto)",
+          "tasks": {
+            "task1": "Desarrollé y mantuve sitios en WordPress (Elementor, JetEngine, Code Snippets) y tiendas online en WooCommerce y Tienda Nube para múltiples clientes de la agencia.",
+            "task2": "Construí componentes e interfaces con React.js y Tailwind CSS, integrando lógica custom con AJAX y PHP.",
+            "task3": "Diseñé e implementé automatizaciones con Google AppScript, incluyendo un bot de Telegram conectado a Google Sheets, Drive y Mail para agilizar procesos internos.",
+            "task4": "Colaboré directamente con el equipo de diseño para llevar mockups de Figma a producción con alta fidelidad visual."
+          }
+        },
+
+        "freelance": {
+          "company": "Desarrolladora Freelance",
+          "role": "Frontend Developer — Autónoma",
+          "period": "2024 — ACTUALIDAD",
+          "location": "Córdoba Capital, Argentina - (Remoto)",
+          "tasks": {
+            "task1": "Gestioné el ciclo completo de proyectos freelance: relevamiento de necesidades, propuesta, desarrollo y entrega, en contacto directo 1 a 1 con cada cliente.",
+            "task2": "Desarrollé tiendas online en Tienda Nube y landing pages a medida, priorizando velocidad de carga y conversión.",
+            "task3": "Adapté el alcance y los tiempos de cada proyecto a las necesidades puntuales del cliente, manteniendo comunicación clara durante todo el proceso."
+          }
+        },
+
+        "expresia": {
+          "company": "Expresia",
+          "role": "Frontend Developer — Autónoma",
+          "period": "JUL 2024 — DIC 2024",
+          "location": "Burnaby, Columbia Británica, Canadá (Remoto)",
+          "tasks": {
+            "task1": "Desarrollé interfaces frontend utilizando HTML5, CSS y JavaScript sobre un CMS basado en DXP y Handlebars.js.",
+            "task2": "Implementé animaciones y microinteracciones con GSAP para mejorar la experiencia de usuario en distintas secciones del sitio.",
+            "task3": "Trabajé con Bootstrap para maquetar componentes responsivos, adaptándome a los estándares del equipo remoto en Canadá."
+          }
+        }
+      }
+    }
+  },
+  "stack": {
+    "title": "Habilidades y Herramientas",
+    "items": {
+      "wordpress": {
+        "category": "WordPress",
+        "subtitle": "Desarrollo, mantenimiento, seguridad y SEO"
+      },
+      "frontend": {
+        "category": "Frontend",
+        "subtitle": "Interfaces reactivas y performantes"
+      },
+      "designMotion": {
+        "category": "Design UI & Motion",
+        "subtitle": "Diseño y animación"
+      },
+      "aiIntegrations": {
+        "category": "IA e Integraciones",
+        "subtitle": "Inteligencia Artificial e integraciones"
+      }
+    }
   }
 }

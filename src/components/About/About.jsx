@@ -7,6 +7,7 @@ import { motion } from "framer-motion";
 import TextRevealCurtain from "../common/TextRevealCurtain";
 import ProfileIdentityCard from "./ProfileIdentityCard";
 import { TbCircleArrowDown, TbCircleArrowRight } from "react-icons/tb";
+import { useTranslation } from "react-i18next";
 
 const About = () => {
   const profile = useRef(null);
@@ -15,6 +16,7 @@ const About = () => {
   const header = useRef(null);
   const aboutBody = useRef(null);
   const buttonsRef = useRef(null);
+  const { t } = useTranslation();
 
   useEffect(() => {
     ScrollTrigger.create({
@@ -83,29 +85,25 @@ const About = () => {
               ref={header}
               as="h1"
               className="text-6xl font-extrabold mb-4 font-korium"
-              lines={["About"]}
+              lines={[t("about.label")]}
             />
             <p
               className="font-grotesk 2xl:text-4xl text-sm md:text-base"
               ref={aboutBody}
             >
-              Hi there! 👋🏼 I'm Paula, a Frontend Developer based in Argentina.
+              {t("about.body.intro")}
               <br />
               <br />
-              I specialize in building digital solutions and modern, responsive,
-              and accessible interfaces, with a strong focus on design, user
-              experience, and thoughtful motion that makes digital products feel
-              polished, intuitive, and engaging.
+
+              {t("about.body.expertise")}
               <br />
               <br />
-              I believe that collaboration, clear communication, and attention
-              to detail are essential to creating successful digital
-              experiences. I enjoy working closely with designers, developers,
-              and product teams.
+
+              {t("about.body.collaboration")}
               <br />
               <br />
-              I'm currently open to remote and hybrid job opportunities where I
-              can contribute, continue growing professionally.
+
+              {t("about.body.availability")}
             </p>
 
             {/* Interactive CTAs */}
@@ -118,7 +116,7 @@ const About = () => {
                   className="h-11 px-8 bg-[#84CC16] hover:bg-[#a3e635] flex items-center gap-2 text-white text-xs font-space font-bold tracking-widest  uppercase transition-colors cursor-pointer rounded-2xl"
                   data-cursor="magnetic"
                 >
-                  <span>Connect with me</span>
+                  <span>{t("about.actions.connect")}</span>
                   <span>
                     <TbCircleArrowDown />
                   </span>
@@ -231,7 +229,7 @@ const About = () => {
                 "
                 data-cursor="magnetic"
               >
-                View Experience
+                {t("about.actions.experience")}
                 <span>
                   <TbCircleArrowRight />
                 </span>

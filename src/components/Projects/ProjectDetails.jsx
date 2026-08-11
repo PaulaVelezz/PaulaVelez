@@ -3,6 +3,7 @@ import ProjectCard from "./ProjectCard.jsx";
 import projectDetailData from "../../data/ProjectDetailData.js";
 import { motion, useScroll, useSpring } from "framer-motion";
 import TextRevealCurtain from "../common/TextRevealCurtain.jsx";
+import { useTranslation } from "react-i18next";
 
 const PROJECTS_TO_SHOW = [
   "impulso_academico",
@@ -15,6 +16,7 @@ const PROJECTS_TO_SHOW = [
 
 const ProjectDetails = () => {
   const ProjectRef = useRef(null);
+  const { t } = useTranslation();
   const { scrollYProgress } = useScroll({
     target: ProjectRef,
     offset: ["end end", "start start"],
@@ -31,13 +33,10 @@ const ProjectDetails = () => {
         <TextRevealCurtain
           as="h1"
           className="text-4xl md:text-6xl font-extrabold font-korium tracking-wider"
-          lines={["Projects"]}
+          lines={[t("projects.title")]}
         />
         <p className="mt-4 mb-4 max-w-5xl text-zinc-900 mx-auto">
-          A curated selection of projects that represent different technical
-          challenges, industries and product goals. From e-learning platforms
-          and booking engines to custom WordPress solutions and
-          conversion-focused landing pages.
+          {t("projects.description")}
         </p>
         <motion.div
           style={{ scaleX }}

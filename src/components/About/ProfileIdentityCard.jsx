@@ -1,7 +1,9 @@
 import { motion } from "framer-motion";
 import PROFILE from "/Perfil_2026.png";
+import { useTranslation } from "react-i18next";
 
 const ProfileIdentityCard = () => {
+  const { t } = useTranslation();
   const visualVariants = {
     rest: {},
     hover: {},
@@ -85,14 +87,14 @@ const ProfileIdentityCard = () => {
 
       <div className="flex items-center justify-between px-6 py-4 border-b border-white/10">
         <span className="font-space text-[11px] tracking-[.35em] uppercase text-white/40">
-          // PROFILE
+          // {t("about.profile.label")}
         </span>
 
         <div className="flex items-center gap-2">
           <span className="w-2 h-2 rounded-full bg-[#A3E635] animate-pulse" />
 
           <span className="font-space uppercase tracking-widest text-[10px] text-[#A3E635]">
-            Available
+            {t("about.profile.available")}
           </span>
         </div>
       </div>
@@ -144,7 +146,7 @@ const ProfileIdentityCard = () => {
               "
             />
             <div className="flex flex-row items-center gap-2 absolute bottom-3 right-3 text-[8px] tracking-[0.25em] text-white/60 font-space uppercase">
-              <span>REVEAL</span>
+              <span>{t("about.profile.reveal")}</span>
               <span className="text-[#A3E635] text-sm">↗</span>
             </div>
           </div>
@@ -171,18 +173,26 @@ const ProfileIdentityCard = () => {
       {/* INFO */}
 
       <div className="divide-y divide-white/10">
-        <Info label="name" value="Paula Velez" />
+        <Info label={t("about.profile.info.name")} value="Paula Velez" />
 
-        <Info label="role" value="Frontend & Creative Developer" />
+        <Info
+          label={t("about.profile.info.role")}
+          value="Frontend & Creative Developer"
+        />
 
-        <Info label="based" value="Córdoba, Argentina · Remote" />
+        <Info
+          label={t("about.profile.info.based")}
+          value={t("about.profile.info.basedValue")}
+        />
 
         <div className="flex justify-between px-6 py-4">
-          <span className="font-space text-white/35">status</span>
+          <span className="font-space text-white/35">
+            {t("about.profile.info.status")}
+          </span>
 
           <span className="text-[#A3E635] font-medium flex items-center gap-2">
             <span className="w-2 h-2 rounded-full bg-[#A3E635] animate-pulse" />
-            Open to work
+            {t("about.profile.info.openToWork")}
           </span>
         </div>
       </div>

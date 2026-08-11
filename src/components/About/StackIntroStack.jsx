@@ -1,6 +1,7 @@
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useTranslation } from "react-i18next";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -19,6 +20,7 @@ function StackIntroStack({ id, stacks, header }) {
   const innerRefs = useRef([]);
   const bgRef = useRef(null);
   const baseRotations = useRef([]);
+  const { t } = useTranslation();
 
   useEffect(() => {
     const section = sectionRef.current;
@@ -145,7 +147,7 @@ function StackIntroStack({ id, stacks, header }) {
       <div className="relative w-[320px] md:w-[360px] h-[460px] md:h-[520px] z-20">
         {stacks.map((stackItem, i) => (
           <div
-            key={stackItem.category}
+            key={stackItem.key}
             ref={(el) => (cardsRef.current[i] = el)}
             onMouseEnter={() => handleCardEnter(i)}
             onMouseLeave={() => handleCardLeave(i)}
@@ -161,10 +163,10 @@ function StackIntroStack({ id, stacks, header }) {
               </span>
 
               <h3 className="text-2xl font-black text-white uppercase font-space mb-1.5 pr-10">
-                {stackItem.category}
+                {t(`stack.items.${stackItem.key}.category`)}
               </h3>
               <p className="text-[13px] text-white/50 leading-relaxed mb-5">
-                {stackItem.subtitle}
+                {t(`stack.items.${stackItem.key}.subtitle`)}
               </p>
 
               <ul className="flex-1 overflow-y-auto pr-1 space-y-2.5 custom-scrollbar">

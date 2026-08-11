@@ -12,30 +12,36 @@ import TextRevealCurtain from "../common/TextRevealCurtain.jsx";
 import { SERVICES, openWhatsApp } from "../../services/whatsAppService.js";
 import SocialIconTilt from "./SocialIconTilt.jsx";
 import ContactFooterVisual from "../Footer/ContactFooterVisual.jsx";
+import { useTranslation } from "react-i18next";
 
 const CONTACT_MODES = {
   job: {
-    label: "Ofrezco un puesto / trabajo",
+    label: "contact.modes.job.label",
     extraField: {
       key: "roleType",
-      label: "Tipo de rol",
-      options: ["Junior", "Junior Advanced", "Semi Senior", "Otro"],
+      label: "contact.modes.job.extraField.label",
+      options: [
+        "contact.modes.job.extraField.options.junior",
+        "contact.modes.job.extraField.options.juniorAdvanced",
+        "contact.modes.job.extraField.options.semiSenior",
+        "contact.modes.job.extraField.options.other",
+      ],
     },
   },
   freelance: {
-    label: "Busco un freelance",
+    label: "contact.modes.freelance.label",
     extraField: {
       key: "projectType",
-      label: "¿Qué necesitás?",
+      label: "contact.modes.freelance.extraField.label",
       options: [
-        "Landing page",
-        "Sitio institucional",
-        "WordPress",
-        "WooCommerce",
-        "TiendaNube",
-        "E-learning",
-        "Rediseño",
-        "Otro",
+        "contact.modes.freelance.extraField.options.landingPage",
+        "contact.modes.freelance.extraField.options.corporateWebsite",
+        "contact.modes.freelance.extraField.options.wordpress",
+        "contact.modes.freelance.extraField.options.woocommerce",
+        "contact.modes.freelance.extraField.options.tiendaNube",
+        "contact.modes.freelance.extraField.options.eLearning",
+        "contact.modes.freelance.extraField.options.redesign",
+        "contact.modes.freelance.extraField.options.other",
       ],
     },
   },
@@ -43,6 +49,7 @@ const CONTACT_MODES = {
 
 function ContactClosing({ showFooterVisual = false }) {
   const [mode, setMode] = useState("freelance");
+  const { t } = useTranslation();
   const [copied, setCopied] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
@@ -86,34 +93,32 @@ function ContactClosing({ showFooterVisual = false }) {
   return (
     <section className="relative bg-[#0a0a0c] py-16 px-6 md:px-12">
       <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16">
-        {/* Columna izquierda: intro + datos de contacto */}
         <div>
           <span className="text-[#6d28d9] uppercase tracking-[0.35em] text-xs block mb-4">
-            // CONTACTO
+            // {t("contact.label")}
           </span>
           <TextRevealCurtain
             as="h2"
             className="text-4xl md:text-6xl font-extrabold font-korium tracking-wider text-white mb-8"
-            lines={["Trabajemos juntos"]}
+            lines={[t("contact.title")]}
           />
 
           <div className="space-y-2 mb-5 text-sm text-white/70 leading-relaxed">
             <p className="flex items-center gap-2">
               <span className="w-1.5 h-1.5 rounded-full bg-[#a3e635]" />
-              Abierta a proyectos freelance, colaboraciones y posiciones
-              full-time.
+              {t("contact.availability.freelance")}
             </p>
             <p className="flex items-center gap-2">
               <span className="w-1.5 h-1.5 rounded-full bg-[#a3e635]" />
-              Roles Junior / Semi Senior — Desarrollo WordPress y Frontend.
+              {t("contact.availability.roles")}
             </p>
             <p className="flex items-center gap-2">
               <span className="w-1.5 h-1.5 rounded-full bg-[#a3e635]" />
-              Respuesta garantizada en menos de 48 horas.
+              {t("contact.availability.response")}
             </p>
             <p className="flex items-center gap-2">
               <span className="w-1.5 h-1.5 rounded-full bg-[#a3e635]" />
-              Remoto, Córdoba Capital, o Buenos Aires.
+              {t("contact.availability.location")}
             </p>
           </div>
 
@@ -148,11 +153,11 @@ function ContactClosing({ showFooterVisual = false }) {
             </span>
           </button>
 
-          {/* Redes — ahora con tilt 3D + glow + label */}
+          {/* Redes */}
           <div className="grid grid-cols-2 gap-4 max-w-[340px]">
             <SocialIconTilt
               href="https://github.com/PaulaVelezz"
-              label="Contacto GitHub"
+              label={t("contact.social.github")}
               target="_blank"
               rel="noreferrer"
               aria-label="GitHub"
@@ -161,7 +166,7 @@ function ContactClosing({ showFooterVisual = false }) {
             />
             <SocialIconTilt
               href="https://www.linkedin.com/in/paula-velez/"
-              label="Contacto LinkedIn"
+              label={t("contact.social.linkedin")}
               target="_blank"
               rel="noreferrer"
               data-cursor="pointer"
@@ -169,14 +174,14 @@ function ContactClosing({ showFooterVisual = false }) {
             />
             <SocialIconTilt
               href="https://calendly.com/velezpaula-a/30-minutes-meeting"
-              label="Agendar reunión"
+              label={t("contact.social.calendar")}
               target="_blank"
               rel="noreferrer"
               icon={FiCalendar}
             />
             <SocialIconTilt
               onClick={() => openWhatsApp(contactService)}
-              label="Contacto WhatsApp"
+              label={t("contact.social.whatsapp")}
               data-cursor="pointer"
               icon={FaWhatsapp}
             />
@@ -198,7 +203,7 @@ function ContactClosing({ showFooterVisual = false }) {
                 }`}
                 data-cursor="pointer"
               >
-                {label}
+                {t(label)}
               </button>
             ))}
           </div>
@@ -207,7 +212,7 @@ function ContactClosing({ showFooterVisual = false }) {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
               <div>
                 <label className="block text-xs text-white/50 mb-2">
-                  Nombre *
+                  {t("contact.form.name")} *
                 </label>
                 <input
                   required
@@ -219,7 +224,7 @@ function ContactClosing({ showFooterVisual = false }) {
               </div>
               <div>
                 <label className="block text-xs text-white/50 mb-2">
-                  Empresa
+                  {t("contact.form.company")}
                 </label>
                 <input
                   type="text"
@@ -233,7 +238,7 @@ function ContactClosing({ showFooterVisual = false }) {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
               <div>
                 <label className="block text-xs text-white/50 mb-2">
-                  Correo *
+                  {t("contact.form.email")} *
                 </label>
                 <input
                   required
@@ -245,7 +250,7 @@ function ContactClosing({ showFooterVisual = false }) {
               </div>
               <div>
                 <label className="block text-xs text-white/50 mb-2">
-                  WhatsApp / Teléfono
+                  {t("contact.form.phone")}
                 </label>
                 <input
                   type="tel"
@@ -255,10 +260,10 @@ function ContactClosing({ showFooterVisual = false }) {
                 />
               </div>
             </div>
-
+            {/* MÉTODO DE CONTACTO */}
             <div>
               <label className="block text-xs text-white/50 mb-2">
-                ¿Cómo te contactamos? *
+                {t("contact.form.contactMethod")} *
               </label>
               <select
                 required
@@ -267,19 +272,19 @@ function ContactClosing({ showFooterVisual = false }) {
                 className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm text-white outline-none focus:border-[#6d28d9] transition-colors"
               >
                 <option value="" disabled className="bg-[#141416]">
-                  Elegí una opción
+                  {t("contact.form.selectOption")}
                 </option>
                 <option value="email" className="bg-[#141416]">
-                  Email
+                  {t("contact.form.methods.email")}
                 </option>
                 <option value="whatsapp" className="bg-[#141416]">
-                  WhatsApp
+                  {t("contact.form.methods.whatsapp")}
                 </option>
                 <option value="llamada" className="bg-[#141416]">
-                  Llamada
+                  {t("contact.form.methods.call")}
                 </option>
                 <option value="otros" className="bg-[#141416]">
-                  Videollamada
+                  {t("contact.form.methods.videoCall")}
                 </option>
               </select>
             </div>
@@ -295,7 +300,7 @@ function ContactClosing({ showFooterVisual = false }) {
                 className="overflow-hidden"
               >
                 <label className="block text-xs text-white/50 mb-2">
-                  {currentMode.extraField.label}
+                  {t(currentMode.extraField.label)}
                 </label>
                 <select
                   value={formData.extraField}
@@ -303,20 +308,20 @@ function ContactClosing({ showFooterVisual = false }) {
                   className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm text-white outline-none focus:border-[#6d28d9] transition-colors"
                 >
                   <option value="" disabled className="bg-[#141416]">
-                    Elegí una opción
+                    {t("contact.form.selectOption")}
                   </option>
                   {currentMode.extraField.options.map((opt) => (
                     <option key={opt} value={opt} className="bg-[#141416]">
-                      {opt}
+                      {t(opt)}
                     </option>
                   ))}
                 </select>
               </motion.div>
             </AnimatePresence>
-
+            {/* MENSAJE */}
             <div>
               <label className="block text-xs text-white/50 mb-2">
-                Mensaje
+                {t("contact.form.message")}
               </label>
               <textarea
                 rows={4}
@@ -331,7 +336,7 @@ function ContactClosing({ showFooterVisual = false }) {
               className="w-full rounded-full bg-[#a3e635] hover:bg-[#84cc16] text-black text-sm font-bold py-3.5 transition-colors"
               data-cursor="pointer"
             >
-              ENVIAR MENSAJE
+              {t("contact.form.submit")}
             </button>
           </form>
         </div>
@@ -340,7 +345,7 @@ function ContactClosing({ showFooterVisual = false }) {
         <>
           <div className="relative w-full mt-30">
             <p className="text-center mb-2 text-[11px] uppercase tracking-[0.25em] text-stone-200 font-space">
-              Copyright © 2026 - Designed & Developed by
+              {t("contact.footer.copyright")}
             </p>
             <ContactFooterVisual />
           </div>
@@ -361,7 +366,7 @@ function ContactClosing({ showFooterVisual = false }) {
             />
             <div className="max-w-6xl mx-auto h-10 flex items-center justify-center">
               <p className="text-[11px] uppercase tracking-[0.25em] text-stone-200 font-space">
-                Thanks for your visit 👋
+                {t("contact.footer.thanks")}
               </p>
             </div>
           </div>

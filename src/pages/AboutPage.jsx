@@ -7,9 +7,11 @@ import ExperienceTimeline from "../components/Experience/ExperienceTimeline.jsx"
 import StackIntroStack from "../components/About/StackIntroStack.jsx";
 import ContactClosing from "../components/Contact/ContactClosing.jsx";
 import { useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 const AboutPage = () => {
   const { hash } = useLocation();
+  const { t } = useTranslation();
 
   useEffect(() => {
     if (!hash) return;
@@ -42,7 +44,7 @@ const AboutPage = () => {
               <TextRevealCurtain
                 as="h2"
                 className="uppercase text-4xl md:text-6xl font-extrabold font-korium tracking-wider text-zinc-950"
-                lines={["Habilidades y Herramientas"]}
+                lines={[t("about.stack.title")]}
               />
             </div>
           </>
@@ -54,12 +56,12 @@ const AboutPage = () => {
         header={
           <div className="flex flex-col justify-center items-center">
             <span className="text-[#6d28d9] uppercase tracking-[0.35em] text-xs block mb-4">
-              // EXPERIENCIA
+              // {t("about.experience.label")}
             </span>
             <TextRevealCurtain
               as="h2"
               className="text-4xl md:text-6xl font-extrabold font-korium tracking-wider"
-              lines={["TRAYECTORIA PROFESIONAL"]}
+              lines={[t("about.experience.title")]}
             />
           </div>
         }

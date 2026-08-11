@@ -1,6 +1,7 @@
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useTranslation } from "react-i18next";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -9,6 +10,7 @@ function ExperienceTimeline({ experiences, header }) {
   const lineRef = useRef(null);
   const itemsRef = useRef([]);
   const cardsRef = useRef([]);
+  const { t } = useTranslation();
 
   useEffect(() => {
     const section = sectionRef.current;
@@ -72,9 +74,9 @@ function ExperienceTimeline({ experiences, header }) {
           style={{ height: "0%" }}
         />
 
-        {experiences.map((exp, i) => (
+        {experiences.map((experience, i) => (
           <div
-            key={exp.company}
+            key={experience.company}
             ref={(el) => (itemsRef.current[i] = el)}
             className="flex gap-7 mb-14 last:mb-0 will-change-transform"
           >
@@ -94,39 +96,41 @@ function ExperienceTimeline({ experiences, header }) {
             >
               <div className="flex justify-between items-baseline flex-wrap gap-2 mb-1">
                 <h3 className="text-lg md:text-xl font-black text-white">
-                  {exp.company}
+                  {t(`about.experience.entries.${experience.key}.company`)}
                 </h3>
                 <span
                   className={`text-[10px] font-bold tracking-wider ${
                     i === 0 ? "text-[#a3e635]" : "text-white/40"
                   }`}
                 >
-                  {exp.period}
+                  {t(`about.experience.entries.${experience.key}.period`)}
                 </span>
               </div>
 
               <div className="flex justify-between items-center flex-wrap gap-1 mb-4">
-                <span className="text-xs text-white/50">{exp.role}</span>
+                <span className="text-xs text-white/50">
+                  {t(`about.experience.entries.${experience.key}.role`)}
+                </span>
                 <span className="text-[10px] text-white/35">
-                  {exp.location}
+                  {t(`about.experience.entries.${experience.key}.location`)}
                 </span>
               </div>
 
               <ul className="space-y-2 mb-4">
-                {exp.tasks.map((task, taskIndex) => (
+                {experience.tasks.map((taskKey) => (
                   <li
-                    key={taskIndex}
+                    key={taskKey}
                     className="flex gap-2.5 text-sm text-white/70 leading-relaxed"
                   >
                     <span className="text-[#a3e635] mt-1.5 flex-shrink-0 w-1 h-1 rounded-full bg-[#a3e635]" />
-                    {task}
+                    {t(`${taskKey}`)}
                   </li>
                 ))}
               </ul>
 
-              {exp.stack && (
+              {experience.stack && (
                 <div className="flex flex-wrap gap-1.5">
-                  {exp.stack.map((tech) => (
+                  {experience.stack.map((tech) => (
                     <span
                       key={tech}
                       className="text-[9px] font-bold text-white/60 border border-white/15 rounded-full px-2.5 py-1"

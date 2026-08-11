@@ -6,6 +6,7 @@ import abstractBg from "../../assets/abstract-6.webp";
 import devinImg from "../../assets/devin_project.png";
 import fluidImg from "../../assets/fluid_project.png";
 import { SERVICES, openWhatsApp } from "../../services/whatsAppService.js";
+import { useTranslation } from "react-i18next";
 
 export default function HamburgerMenu({ isOpen, setPage, onClose }) {
   const containerRef = useRef(null);
@@ -15,73 +16,50 @@ export default function HamburgerMenu({ isOpen, setPage, onClose }) {
   const metaRef = useRef(null);
   const contactService = SERVICES.find((s) => s.id === "portfolio-contact");
 
+  const { t } = useTranslation();
+
   const [hoveredIdx, setHoveredIdx] = useState(null);
   const [activeItem, setActiveItem] = useState(null);
   const [displayItem, setDisplayItem] = useState(null);
 
   const menuItems = [
     {
-      label: "Home",
+      key: "home",
       page: "/",
       number: "01",
       preview: {
-        title: "Paula Velez",
-        subtitle: "2026",
-        category: "Frontend / Creative Development",
-        description:
-          "Design-driven interfaces, scalable frontend architecture and custom WordPress solutions.",
         type: "home",
       },
     },
     {
-      label: "About",
+      key: "about",
       page: "/about",
       number: "02",
       preview: {
-        title: "Behind the Code",
-        subtitle: "Profile & Experience",
-        category: "Frontend / WordPress Development",
-        description:
-          "Get to know my background, technical expertise and collaborative approach to building digital experiences.",
         type: "about",
       },
     },
     {
-      label: "Projects",
+      key: "projects",
       page: "/projects",
       number: "03",
       preview: {
-        title: "Selected Works",
-        subtitle: "Case Archive (12)",
-        category: "Client Projects",
-        description:
-          "A curated collection of projects exploring interfaces, visual systems, and frontend solutions.",
         type: "projects",
       },
     },
     {
-      label: "Services",
+      key: "services",
       page: "/about#services",
       number: "04",
       preview: {
-        title: "Capabilities",
-        subtitle: "Services & Stack",
-        category: "Creative / Development",
-        description:
-          "Frontend development, UI implementation, motion design, WordPress and AI integrations.",
         type: "services",
       },
     },
     {
-      label: "Contact",
+      key: "contact",
       page: "/contact",
       number: "05",
       preview: {
-        title: "Get In Touch",
-        subtitle: "Open for Inquiries",
-        category: "Córdoba Capital / Remote",
-        description:
-          "Available for freelance projects, technical consulting, and creative collaborations.",
         type: "contact",
       },
     },
@@ -346,19 +324,19 @@ export default function HamburgerMenu({ isOpen, setPage, onClose }) {
                     zIndex: i + 1,
                   }}
                   className="
-              absolute
-              w-16
-              h-24
-              rounded-xl
-              bg-[#141416]
-              border
-              border-white/10
-              shadow-xl
-              flex
-              flex-col
-              justify-between
-              p-2
-            "
+                    absolute
+                    w-16
+                    h-24
+                    rounded-xl
+                    bg-[#141416]
+                    border
+                    border-white/10
+                    shadow-xl
+                    flex
+                    flex-col
+                    justify-between
+                    p-2
+                  "
                 >
                   <span className="text-[7px] font-space text-white/25">
                     0{i + 1}
@@ -523,7 +501,7 @@ export default function HamburgerMenu({ isOpen, setPage, onClose }) {
                 const isSibling = hoveredIdx !== null && hoveredIdx !== idx;
 
                 return (
-                  <div key={item.label} className="overflow-hidden">
+                  <div key={item.key} className="overflow-hidden">
                     <button
                       ref={(el) => (linksRef.current[idx] = el)}
                       onClick={() => handleLinkClick(item.page)}
@@ -531,7 +509,9 @@ export default function HamburgerMenu({ isOpen, setPage, onClose }) {
                       onMouseLeave={() => setHoveredIdx(null)}
                       className="group flex items-baseline gap-4 cursor-pointer py-1 bg-transparent border-none text-left focus:outline-none w-full transition-transform duration-300"
                       tabIndex={isOpen ? 0 : -1}
-                      aria-label={`Navigate to ${item.label} section`}
+                      aria-label={t("menu.aria.navigateTo", {
+                        section: t(`menu.items.${item.key}.label`),
+                      })}
                       style={{
                         transform: isHovered
                           ? "translateX(16px)"
@@ -560,7 +540,7 @@ export default function HamburgerMenu({ isOpen, setPage, onClose }) {
                               : "text-white opacity-90"
                         }`}
                       >
-                        {item.label}
+                        {t(`menu.items.${item.key}.label`)}
                       </span>
 
                       <FiArrowUpRight
@@ -586,9 +566,12 @@ export default function HamburgerMenu({ isOpen, setPage, onClose }) {
                 <>
                   <div className="flex justify-between items-center text-[9px] font-space tracking-widest text-neutral-400">
                     <span className="uppercase text-[#A3E635]">
-                      {displayItem.preview.category}
+                      {t(`menu.items.${displayItem.key}.category`)}
                     </span>
-                    <span>SECTION {displayItem.number}</span>
+
+                    <span>
+                      {t("menu.preview.section")} {displayItem.number}
+                    </span>
                   </div>
 
                   <div className="my-4 aspect-[1.6] w-full rounded-2xl overflow-hidden relative bg-[#0a0a0c] border border-white/5">
@@ -597,13 +580,13 @@ export default function HamburgerMenu({ isOpen, setPage, onClose }) {
 
                   <div className="text-left">
                     <h3 className="text-sm font-space font-bold text-white uppercase tracking-wider mb-1">
-                      {displayItem.preview.title}
+                      {t(`menu.items.${displayItem.key}.title`)}
                     </h3>
                     <span className="text-[10px] font-space text-white/30 uppercase tracking-widest block mb-2">
-                      {displayItem.preview.subtitle}
+                      {t(`menu.items.${displayItem.key}.subtitle`)}
                     </span>
                     <p className="text-xs text-white/60 leading-relaxed font-sans font-medium">
-                      {displayItem.preview.description}
+                      {t(`menu.items.${displayItem.key}.description`)}
                     </p>
                   </div>
                 </>

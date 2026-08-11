@@ -1,14 +1,15 @@
 const experiencesData = [
   {
+    id: 1,
+    key: "lader",
     company: "Agencia Lader",
-    role: "Desarrolladora Web",
     period: "DIC 2024 — JUNIO 2026",
     location: "Buenos Aires, Argentina - (Remoto)",
     tasks: [
-      "Desarrollé y mantuve sitios en WordPress (Elementor, JetEngine, Code Snippets) y tiendas online en WooCommerce y Tienda Nube para múltiples clientes de la agencia.",
-      "Construí componentes e interfaces con React.js y Tailwind CSS, integrando lógica custom con AJAX y PHP.",
-      "Diseñé e implementé automatizaciones con Google AppScript, incluyendo un bot de Telegram conectado a Google Sheets, Drive y Mail para agilizar procesos internos.",
-      "Colaboré directamente con el equipo de diseño para llevar mockups de Figma a producción con alta fidelidad visual.",
+      "about.experience.entries.lader.tasks.task1",
+      "about.experience.entries.lader.tasks.task2",
+      "about.experience.entries.lader.tasks.task3",
+      "about.experience.entries.lader.tasks.task4",
     ],
     stack: [
       "WordPress",
@@ -28,14 +29,15 @@ const experiencesData = [
     ],
   },
   {
+    id: 2,
+    key: "freelance",
     company: "Desarrolladora Freelance",
-    role: "Frontend Developer — Autónomo",
     period: "2024 — ACTUALIDAD",
     location: "Córdoba Capital, Argentina - (Remoto)",
     tasks: [
-      "Gestioné el ciclo completo de proyectos freelance: relevamiento de necesidades, propuesta, desarrollo y entrega, en contacto directo 1 a 1 con cada cliente.",
-      "Desarrollé tiendas online en Tienda Nube y landing pages a medida, priorizando velocidad de carga y conversión.",
-      "Adapté el alcance y los tiempos de cada proyecto a las necesidades puntuales del cliente, manteniendo comunicación clara durante todo el proceso.",
+      "about.experience.entries.freelance.tasks.task1",
+      "about.experience.entries.freelance.tasks.task2",
+      "about.experience.entries.freelance.tasks.task3",
     ],
     stack: [
       "Tienda Nube",
@@ -49,14 +51,15 @@ const experiencesData = [
     ],
   },
   {
+    id: 3,
+    key: "expresia",
     company: "Expresia",
-    role: "Frontend Developer — Autónomo",
     period: "JUL 2024 — DIC 2024",
     location: "Burnaby, Columbia Británica, Canadá (Remoto)",
     tasks: [
-      "Desarrollé interfaces frontend utilizando HTML5, CSS y JavaScript sobre un CMS basado en DXP y Handlebars.js.",
-      "Implementé animaciones y microinteracciones con GSAP para mejorar la experiencia de usuario en distintas secciones del sitio.",
-      "Trabajé con Bootstrap para maquetar componentes responsivos, adaptándome a los estándares del equipo remoto en Canadá.",
+      "about.experience.entries.expresia.tasks.task1",
+      "about.experience.entries.expresia.tasks.task2",
+      "about.experience.entries.expresia.tasks.task3",
     ],
     stack: ["HTML5", "JavaScript", "CSS", "Handlebars.js", "GSAP", "Bootstrap"],
   },

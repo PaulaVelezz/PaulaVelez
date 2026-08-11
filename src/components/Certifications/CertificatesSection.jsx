@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import CertificatesData from "../../data/CertificatesData.js";
 import TextRevealCurtain from "../common/TextRevealCurtain.jsx";
+import { useTranslation } from "react-i18next";
 
 const CertificatesSection = () => {
   const [active, setActive] = useState(CertificatesData[0]);
+  const { t } = useTranslation();
 
   return (
     <section
@@ -46,12 +48,12 @@ const CertificatesSection = () => {
               mb-4
             "
           >
-            // VERIFIED LEARNING
+            // {t("certifications.label")}
           </span>
           <TextRevealCurtain
             as="h2"
             className="text-4xl md:text-6xl font-extrabold font-korium tracking-wider"
-            lines={["CERTIFICATIONS"]}
+            lines={[t("certifications.title")]}
           />
 
           <p
@@ -61,8 +63,7 @@ const CertificatesSection = () => {
               max-w-xl
             "
           >
-            Continuous education, specialized training and technical
-            certifications shaping my frontend and creative development journey.
+            {t("certifications.description")}
           </p>
         </div>
 
@@ -104,7 +105,7 @@ const CertificatesSection = () => {
                         font-korium tracking-wider
                       "
                     >
-                      {certificate.firstTitle}
+                      {t(`certifications.items.${certificate.key}`)}
                     </h3>
                     <p
                       className={`
@@ -192,7 +193,7 @@ const CertificatesSection = () => {
                     bg-[#A3E635]
                   "
                 />
-                Verified
+                {t("certifications.verified")}
               </div>
 
               {/* Image */}
@@ -201,7 +202,7 @@ const CertificatesSection = () => {
                 <img
                   key={active.id}
                   src={active.image}
-                  alt={active.firstTitle}
+                  alt={t(`certifications.items.${active.key}`)}
                   className="
                     w-full
                     h-full
@@ -226,7 +227,7 @@ const CertificatesSection = () => {
                     mb-3
                   "
                 >
-                  Certification
+                  {t("certifications.certificate")}
                 </p>
 
                 <h3
@@ -237,7 +238,10 @@ const CertificatesSection = () => {
                     leading-tight
                   "
                 >
-                  {active.firstTitle.replace("_Certificate ", "")}
+                  {t(`certifications.items.${active.key}`).replace(
+                    "_Certificate ",
+                    "",
+                  )}
                 </h3>
 
                 <p

@@ -3,9 +3,11 @@ import TextRevealCurtain from "../common/TextRevealCurtain.jsx";
 import ExpertiseServicesData from "../../data/ExpertiseServicesData.js";
 import ExpertiseIntroStack from "../Expertise/ExpertiseIntroStack.jsx";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 const ServicesHome = () => {
   const navigate = useNavigate();
+  const { t } = useTranslation();
 
   return (
     <section
@@ -23,18 +25,17 @@ const ServicesHome = () => {
         header={
           <>
             <span className="text-[#6d28d9] uppercase tracking-[0.35em] text-xs block mb-4">
-              // WHAT I DO
+              // {t("services.label")}
             </span>
             <div className="flex justify-center mt-6">
               <TextRevealCurtain
                 as="h2"
                 className="text-4xl md:text-6xl font-extrabold font-korium tracking-wider"
-                lines={["SERVICES"]}
+                lines={[t("services.title")]}
               />
             </div>
             <p className="mt-4 max-w-xl text-zinc-900 mx-auto">
-              I specialize in creating custom solutions that meet objectives and
-              deliver results through design and technology.
+              {t("services.description")}
             </p>
           </>
         }

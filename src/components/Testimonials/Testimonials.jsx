@@ -4,46 +4,39 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import TextRevealCurtain from "../common/TextRevealCurtain";
 import { FaLinkedinIn } from "react-icons/fa";
+import { useTranslation } from "react-i18next";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const TESTIMONIALS_DATA = [
   {
     id: 1,
-    quote:
-      "Paula's attention to motion design and hardware acceleration is unmatched. She brings static wireframes to life with dynamic fluid logic.",
+    key: "motionDesign",
     author: "Elena Rostova",
-    role: "Creative Director",
     company: "Studio Luma",
     linkedin: "https://linkedin....",
     rating: "★★★★★",
   },
   {
     id: 2,
-    quote:
-      "The topographic shaders and loading sequences built for our platform are breathtaking. A wizard of interactive engineering.",
+    key: "interactiveEngineering",
     author: "Marc Vanhoutte",
-    role: "Co-Founder",
     company: "Lusion Systems",
     linkedin: "https://linkedin....",
     rating: "★★★★★",
   },
   {
     id: 3,
-    quote:
-      "Working with Paula is a journey into interactive excellence. The visual performance, timing, and sensory rhythm exceeded all standards.",
+    key: "interactiveExcellence",
     author: "Sophia Alvarez",
-    role: "Product Owner",
     company: "Vertex Labs",
     linkedin: "https://linkedin....",
     rating: "★★★★★",
   },
   {
     id: 4,
-    quote:
-      "The drag-based carousel and custom cursor feedback feel incredibly responsive. The code quality is pristine and highly performant.",
+    key: "responsiveExperience",
     author: "Kenji Sato",
-    role: "Technical Lead",
     company: "Nippon Media",
     linkedin: "https://linkedin....",
     rating: "★★★★★",
@@ -53,6 +46,7 @@ const TESTIMONIALS_DATA = [
 // Interactive 3D Magnetic Tilt Card Component
 function TestimonialCard({ data }) {
   const cardRef = useRef(null);
+  const { t } = useTranslation();
 
   // Motion values for tilt
   const rotateX = useMotionValue(0);
@@ -131,7 +125,7 @@ function TestimonialCard({ data }) {
         }}
         className="text-base sm:text-lg text-white/90 font-grotesk italic leading-relaxed text-left z-10"
       >
-        "{data.quote}"
+        "{t(`testimonials.items.${data.key}.quote`)}"
       </motion.p>
 
       {/* Author details card base */}
@@ -146,7 +140,7 @@ function TestimonialCard({ data }) {
             </h4>
             -
             <p className="text-[10px] text-white/40 uppercase tracking-wider">
-              {data.role}
+              {t(`testimonials.items.${data.key}.role`)}
             </p>
           </div>
 
@@ -159,21 +153,24 @@ function TestimonialCard({ data }) {
           href={data.linkedin}
           target="_blank"
           rel="noopener noreferrer"
+          aria-label={t("testimonials.linkedinLabel", {
+            name: data.author,
+          })}
           className="
-      w-11
-      h-11
-      rounded-full
-      border
-      border-white/10
-      flex
-      items-center
-      justify-center
-      hover:border-[#A3E635]
-      hover:bg-[#A3E635]/10
-      transition-all
-      duration-300
-      group
-    "
+            w-11
+            h-11
+            rounded-full
+            border
+            border-white/10
+            flex
+            items-center
+            justify-center
+            hover:border-[#A3E635]
+            hover:bg-[#A3E635]/10
+            transition-all
+            duration-300
+            group
+          "
         >
           <FaLinkedinIn className="text-lg text-white/60 group-hover:text-[#A3E635]" />
         </a>
@@ -186,6 +183,7 @@ export default function Testimonials() {
   const scrollRef = useRef(null);
   const containerRef = useRef(null);
   const [maxScroll, setMaxScroll] = useState(0);
+  const { t } = useTranslation();
 
   useEffect(() => {
     // Setup stagger reveals on scroll trigger
@@ -238,19 +236,17 @@ export default function Testimonials() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end">
           <div className="lg:col-span-8 text-left">
             <span className="text-[10px] text-[#a3e635] font-space tracking-[0.3em] block mb-3 uppercase">
-              // EXPERIENCES & WORDS
+              {t("testimonials.label")}
             </span>
             <TextRevealCurtain
               as="h2"
               className="text-4xl md:text-6xl font-extrabold font-korium tracking-wider leading-none uppercase text-stone-100"
-              lines={["TRUSTED BY"]}
+              lines={[t("testimonials.title")]}
             />
           </div>
           <div className="lg:col-span-4 text-left lg:text-right">
             <p className="text-xs text-neutral-400 font-grotesk leading-relaxed max-w-sm ml-auto">
-              Clientes, desarrolladores, diseñadores y otros profesionales con
-              quienes tuve la oportunidad de colaborar comparten su experiencia
-              trabajando conmigo.
+              {t("testimonials.description")}
             </p>
           </div>
         </div>
@@ -272,9 +268,9 @@ export default function Testimonials() {
 
         {/* Carousel Drag Hint Navigation */}
         <div className="flex justify-between items-center text-[10px] font-space tracking-widest text-neutral-500 border-t border-white/5 pt-8">
-          <span>[ DRAG CAROUSEL TO NAVIGATE ]</span>
+          <span>[{t("testimonials.dragHint")}]</span>
           <span className="flex items-center gap-2">
-            SWIPE HORIZONTALLY
+            {t("testimonials.swipeHint")}
             <span className="w-1.5 h-1.5 bg-[#a3e635] rounded-full animate-ping" />
           </span>
         </div>
