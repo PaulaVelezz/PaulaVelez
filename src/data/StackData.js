@@ -3,7 +3,6 @@ const stackData = [
     id: 1,
     key: "wordpress",
     category: "WordPress",
-    // subtitle: "Desarrollo, mantenimiento, seguridad y SEO",
     tools: [
       "WordPress",
       "WooCommerce",
@@ -22,7 +21,6 @@ const stackData = [
     id: 2,
     key: "frontend",
     category: "Frontend",
-    // subtitle: "Interfaces reactivas y performantes",
     tools: [
       "HTML5 & CSS3",
       "JavaScript",
@@ -42,7 +40,6 @@ const stackData = [
     id: 3,
     key: "designMotion",
     category: "Design UI & Motion",
-    // subtitle: "Diseño y animación",
     tools: [
       "Figma",
       "Framer Motion",
@@ -59,7 +56,6 @@ const stackData = [
     id: 4,
     key: "aiIntegrations",
     category: "IA e Integraciones",
-    // subtitle: "Inteligencia Artificial y integraciones",
     tools: [
       "AppScript ",
       "n8n",

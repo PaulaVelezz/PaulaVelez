@@ -14,8 +14,8 @@ import {
   FiFigma,
   FiExternalLink,
 } from "react-icons/fi";
-
 import darkbg from "../assets/darkbg.png";
+import { useTranslation } from "react-i18next";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -55,6 +55,7 @@ function ProjectDetailPage({ setPage }) {
   const projectCardRef = useRef(null);
   const overviewRef = useRef(null);
   const challengeRef = useRef(null);
+  const { t } = useTranslation();
 
   const { slug } = useParams();
   const projectDetail = projectDetailData.find(
@@ -68,11 +69,17 @@ function ProjectDetailPage({ setPage }) {
     (p) => p.slug === projectDetail.prevProject,
   );
 
+  const projectText = t(`project.${projectDetail.id}`, {
+    returnObjects: true,
+  });
+
   // Horizontal Scroll Pinning (GSAP ScrollTrigger)
   useEffect(() => {
     const scrollContainer = scrollRef.current;
     const triggerElement = triggerRef.current;
     if (!scrollContainer || !triggerElement) return;
+
+    transitionTriggered.current = false;
 
     const calculateScrollWidth = () => {
       return -(scrollContainer.scrollWidth - window.innerWidth);
@@ -133,7 +140,7 @@ function ProjectDetailPage({ setPage }) {
     return () => {
       pin.scrollTrigger?.kill();
     };
-  }, [setPage]);
+  }, [setPage, slug, nextProjectData]);
 
   useEffect(() => {
     if (
@@ -187,7 +194,7 @@ function ProjectDetailPage({ setPage }) {
                     to="/projects"
                     className="inline-flex items-center gap-2 text-white/60 hover:text-[#A3E635] transition-colors"
                   >
-                    ← Volver a proyectos
+                    ← {t("projects_selected.detail.back")}
                   </Link>
 
                   <TextRevealCurtain
@@ -197,24 +204,24 @@ function ProjectDetailPage({ setPage }) {
                   />
 
                   <p className="mt-10 max-w-3xl text-xl leading-relaxed text-white/80">
-                    {projectDetail.summary}
+                    {projectText.summary}
                   </p>
 
                   {/* Overview */}
                   <section ref={overviewRef} className="mt-20 max-w-5xl">
                     <span className="text-[#A3E635] text-sm tracking-[0.2em] uppercase">
-                      (00) — Project Overview
+                      (00) — {t("projects_selected.detail.overview")}
                     </span>
 
                     <p className="editorial mt-8 text-xl leading-relaxed text-white/90">
-                      {projectDetail.overview}
+                      {projectText.overview}
                     </p>
                   </section>
 
                   {/* Links */}
                   <section ref={overviewRef} className="mt-16 max-w-5xl">
                     <span className="text-[#A3E635] text-sm tracking-[0.2em] uppercase">
-                      (01) — Project Links
+                      (01) — {t("projects_selected.detail.links")}
                     </span>
 
                     <div className="mt-6 flex flex-wrap gap-3">
@@ -271,7 +278,7 @@ function ProjectDetailPage({ setPage }) {
                       {/* Header */}
                       <div className="px-2 pt-2 pb-2 text-center bg-[#6d28d9]/20 border-b border-white/10">
                         <span className="text-[12px] uppercase tracking-[0.35em] font-extrabold text-[#6d28d9]">
-                          Project Info
+                          {t("projects_selected.detail.info")}
                         </span>
                       </div>
 
@@ -279,17 +286,17 @@ function ProjectDetailPage({ setPage }) {
                       <div className="grid grid-cols-2">
                         <div className="border-r border-b border-white/10 p-4 pt-6">
                           <p className="text-[10px] uppercase tracking-[0.25em] text-[#A3E635] mb-3">
-                            Categoría
+                            {t("projects_selected.detail.fields.category")}
                           </p>
 
                           <p className="text-white text-sm font-medium leading-relaxed">
-                            {projectDetail.projectType}
+                            {projectText.projectType?.join(" / ")}
                           </p>
                         </div>
 
                         <div className="border-b border-white/10 p-4">
                           <p className="text-[10px] uppercase tracking-[0.25em] text-[#A3E635] mb-3">
-                            Año
+                            {t("projects_selected.detail.fields.year")}
                           </p>
 
                           <p className="text-white text-sm font-medium">
@@ -299,7 +306,7 @@ function ProjectDetailPage({ setPage }) {
 
                         <div className="border-r border-white/10 p-4">
                           <p className="text-[10px] uppercase tracking-[0.25em] text-[#A3E635] mb-3">
-                            Rol
+                            {t("projects_selected.detail.fields.role")}
                           </p>
 
                           <p className="text-white text-sm font-medium">
@@ -309,11 +316,13 @@ function ProjectDetailPage({ setPage }) {
 
                         <div className="p-4">
                           <p className="text-[10px] uppercase tracking-[0.25em] text-[#A3E635] mb-3">
-                            Cliente
+                            {t("projects_selected.detail.fields.client")}
                           </p>
 
                           <p className="text-white text-sm font-medium">
-                            Trabajo realizado para
+                            {t(
+                              "projects_selected.detail.fields.clientDescription",
+                            )}
                             <br />
                             {projectDetail.client}
                           </p>
@@ -323,13 +332,11 @@ function ProjectDetailPage({ setPage }) {
                       {/* CTA */}
                       <div className="border-t border-white/10 p-6">
                         <h3 className="font-grotesk font-bold tracking-tighter text-xl mb-4">
-                          ¿Tenés un proyecto similar? ¿Queres saber cómo puedo
-                          aportar valor a tu equipo?
+                          {t("projects_selected.detail.cta.title")}
                         </h3>
 
                         <p className="text-sm leading-relaxed text-white/60">
-                          Estoy abierta a nuevas oportunidades, colaboraciones y
-                          proyectos. Hablemos!
+                          {t("projects_selected.detail.cta.description")}
                         </p>
 
                         <div className="mt-5 flex flex-col gap-3 text-sm">
@@ -377,15 +384,19 @@ function ProjectDetailPage({ setPage }) {
             className="container-editorial mb-10 mt-10 grid grid-cols-12 gap-10"
           >
             <div className="col-span-12 md:col-span-6">
-              <div className="text-[#a3e635]">(02) — Challenge</div>
+              <div className="text-[#a3e635]">
+                (02) — {t("projects_selected.detail.sections.challenge")}
+              </div>
               <p className="editorial mt-6 text-xl text-foreground leading-relaxed">
-                {projectDetail.challenge}
+                {projectText.challenge}
               </p>
             </div>
             <div className="col-span-12 md:col-span-6">
-              <div className="text-[#a3e635]">(03) — Learnings</div>
+              <div className="text-[#a3e635]">
+                (03) — {t("projects_selected.detail.sections.learnings")}
+              </div>
               <p className="editorial mt-6 text-xl text-foreground leading-relaxed">
-                {projectDetail.learnings}
+                {projectText.learnings}
               </p>
             </div>
           </section>
@@ -393,7 +404,9 @@ function ProjectDetailPage({ setPage }) {
 
         {/* STACK */}
         <section className="container-editorial mt-20 mb-10 ">
-          <div className="text-[#a3e635]">(04) — Development Stack</div>
+          <div className="text-[#a3e635]">
+            (04) — {t("projects_selected.detail.sections.stack")}
+          </div>
           <ul className="mt-6 flex flex-wrap gap-2">
             {projectDetail.stack.map((s) => (
               <li
@@ -408,9 +421,11 @@ function ProjectDetailPage({ setPage }) {
 
         {/* HIGHLIGHTS */}
         <section className="container-editorial mt-20">
-          <div className="text-[#a3e635]">(05) — Highlights</div>
+          <div className="text-[#a3e635]">
+            (05) — {t("projects_selected.detail.sections.highlights")}
+          </div>
           <div className="grid grid-cols-2 gap-4 mt-10 md:grid-cols-3 lg:grid-cols-4">
-            {projectDetail.highlights.map((h, i) => (
+            {projectText.highlights.map((h, i) => (
               <motion.div
                 key={h}
                 initial={{ opacity: 0, y: 15 }}
@@ -430,7 +445,7 @@ function ProjectDetailPage({ setPage }) {
         {/* 2. Pinned Horizontal Gallery Section (Screenshot 9) */}
         <>
           <div className="container-editorial mt-14 mb-10 text-[#a3e635]">
-            (06) — Gallery
+            (06) — {t("projects_selected.detail.sections.gallery")}
           </div>
           <section
             ref={triggerRef}
@@ -517,7 +532,7 @@ function ProjectDetailPage({ setPage }) {
                     ? setPage(`/project/${nextProjectData.slug}`)
                     : setPage("/")
                 }
-                className="w-[100vw] h-full flex-shrink-0 bg-[#f0f0f5] text-black flex flex-col justify-between p-16 select-none relative overflow-hidden cursor-pointer"
+                className="w-[100vw] h-[calc(100dvh-80px)] mt-[80px] flex-shrink-0 bg-[#f0f0f5] text-black flex flex-col justify-between p-16 select-none relative overflow-hidden cursor-pointer"
                 data-cursor="view"
               >
                 {/* Decorative leaf shadow overlay */}
@@ -576,7 +591,7 @@ function ProjectDetailPage({ setPage }) {
                         {nextProjectData.title}
                       </h2>
                       <p className="editorial mt-6 text-lg md:text-xl text-neutral-600 max-w-xl">
-                        {nextProjectData.summary}
+                        {t(`project.${nextProjectData.id}.summary`)}
                       </p>
                     </div>
 
@@ -592,12 +607,10 @@ function ProjectDetailPage({ setPage }) {
                 ) : (
                   <div className="z-10 text-left max-w-4xl">
                     <h2 className="text-7xl font-extrabold mb-4 mt-4 font-korium tracking-wider text-neutral-800 leading-none">
-                      Eso es todo <br /> por ahora.
+                      {t("projects_selected.detail.end.title")}
                     </h2>
                     <p className="editorial mt-6 text-lg md:text-xl text-neutral-600 max-w-2xl">
-                      Pronto estaré cargando más proyectos, mientras tanto,
-                      puedes explorar mi trabajo anterior o contactarme para
-                      colaborar en tu próximo proyecto.{" "}
+                      {t("projects_selected.detail.end.description")}
                     </p>
                   </div>
                 )}
@@ -606,7 +619,9 @@ function ProjectDetailPage({ setPage }) {
                 <div className="w-full flex justify-between items-center z-10 border-t border-black/10 pt-8 mt-12 max-w-4xl">
                   <div className="flex items-center gap-6">
                     <span className="text-xs font-space font-bold tracking-widest text-neutral-800">
-                      {nextProjectData ? "NEXT PROJECT" : "VOLVER AL INICIO"}
+                      {nextProjectData
+                        ? t("projects_selected.detail.navigation.nextProject")
+                        : t("projects_selected.detail.navigation.backToHome")}
                     </span>
                     <div className="w-36 h-[2px] bg-neutral-300 relative overflow-hidden">
                       <div

@@ -16,8 +16,8 @@ function ExpertiseCardsStack({ services }) {
     const cards = cardsRef.current;
     if (!section || cards.length === 0) return;
 
-    const segmentLength = 500; // px de scroll que "dura" cada transición de card
-    const overlap = 0.35; // qué tan superpuestas se ven entrada/salida (0-1)
+    const segmentLength = 500;
+    const overlap = 0.35;
     const totalScroll = (cards.length - 1) * segmentLength + 300;
 
     const ctx = gsap.context(() => {

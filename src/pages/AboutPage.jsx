@@ -8,6 +8,7 @@ import StackIntroStack from "../components/About/StackIntroStack.jsx";
 import ContactClosing from "../components/Contact/ContactClosing.jsx";
 import { useLocation } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import CTABanner from "../components/Contact/CTABanner.jsx";
 
 const AboutPage = () => {
   const { hash } = useLocation();
@@ -66,7 +67,7 @@ const AboutPage = () => {
           </div>
         }
       />
-
+      <CTABanner fromBg="#0A0A0C" fromText="#F5F5F5" />
       <ContactClosing />
     </>
   );

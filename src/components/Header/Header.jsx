@@ -60,21 +60,21 @@ export default function Header({
   return (
     <header
       className={`
-    fixed
-    top-0
-    left-0
-    right-0
-    z-50
-    border-b
-    transition-all
-    duration-500
-    rounded-b-3xl
-    ${
-      scrolled
-        ? "bg-[#0A0A0C]/75 backdrop-blur-xl border-white/10 shadow-lg"
-        : "bg-[#0A0A0C] border-white/5"
-    }
-  `}
+        fixed
+        top-0
+        left-0
+        right-0
+        z-50
+        border-b
+        transition-all
+        duration-500
+        rounded-b-3xl
+        ${
+          scrolled
+            ? "bg-[#0A0A0C]/75 backdrop-blur-xl border-white/10 shadow-lg"
+            : "bg-[#0A0A0C] border-white/5"
+        }
+      `}
     >
       <div className="w-full px-6 md:px-10 py-4 flex items-center justify-between">
         {/* LOGO */}
@@ -82,20 +82,20 @@ export default function Header({
           type="button"
           onClick={() => setPage("/")}
           className="
-        cursor-pointer
-        select-none
-        font-korium
-        font-bold
-        text-white
-        hover:text-[#A3E635]
-        transition-all
-        duration-300
-        focus-visible:outline-none
-        focus-visible:ring-2
-        focus-visible:ring-[#A3E635]
-        focus-visible:ring-offset-2
-        focus-visible:ring-offset-[#0A0A0C]
-      "
+            cursor-pointer
+            select-none
+            font-korium
+            font-bold
+            text-white
+            hover:text-[#A3E635]
+            transition-all
+            duration-300
+            focus-visible:outline-none
+            focus-visible:ring-2
+            focus-visible:ring-[#A3E635]
+            focus-visible:ring-offset-2
+            focus-visible:ring-offset-[#0A0A0C]
+          "
           data-cursor="magnetic"
           aria-label="Home page logo"
         >
@@ -115,18 +115,18 @@ export default function Header({
           {/* LANGUAGE SWITCHER */}
           <div
             className="
-      h-11
-      px-1.5
-      rounded-full
-      bg-white/10
-      border
-      border-white/10
-      backdrop-blur-md
-      flex
-      items-center
-      gap-1
-      shadow-lg
-    "
+            h-11
+            px-1.5
+            rounded-full
+            bg-white/10
+            border
+            border-white/10
+            backdrop-blur-md
+            flex
+            items-center
+            gap-1
+            shadow-lg
+          "
             role="group"
             aria-label="Language selector"
           >
@@ -134,21 +134,21 @@ export default function Header({
               type="button"
               onClick={() => i18n.changeLanguage("es")}
               className={`
-        h-8
-        px-3
-        rounded-full
-        text-[10px]
-        font-space
-        font-bold
-        tracking-widest
-        transition-all
-        duration-300
-        ${
-          i18n.language === "es"
-            ? "bg-white text-black"
-            : "text-white/50 hover:text-white"
-        }
-      `}
+                h-8
+                px-3
+                rounded-full
+                text-[10px]
+                font-space
+                font-bold
+                tracking-widest
+                transition-all
+                duration-300
+                ${
+                  i18n.language === "es"
+                    ? "bg-white text-black"
+                    : "text-white/50 hover:text-white"
+                }
+              `}
               aria-pressed={i18n.language === "es"}
             >
               ES
@@ -158,21 +158,21 @@ export default function Header({
               type="button"
               onClick={() => i18n.changeLanguage("en")}
               className={`
-        h-8
-        px-3
-        rounded-full
-        text-[10px]
-        font-space
-        font-bold
-        tracking-widest
-        transition-all
-        duration-300
-        ${
-          i18n.language === "en"
-            ? "bg-white text-black"
-            : "text-white/50 hover:text-white"
-        }
-      `}
+                h-8
+                px-3
+                rounded-full
+                text-[10px]
+                font-space
+                font-bold
+                tracking-widest
+                transition-all
+                duration-300
+                ${
+                  i18n.language === "en"
+                    ? "bg-white text-black"
+                    : "text-white/50 hover:text-white"
+                }
+              `}
               aria-pressed={i18n.language === "en"}
             >
               EN
@@ -184,29 +184,29 @@ export default function Header({
             type="button"
             onClick={() => setMenuOpen(!menuOpen)}
             className="
-      h-11
-      px-6
-      rounded-full
-      bg-white
-      hover:bg-neutral-100
-      flex
-      items-center
-      gap-3
-      text-black
-      hover:text-[#6d28d9]
-      text-[11px]
-      font-space
-      font-bold
-      tracking-widest
-      cursor-pointer
-      shadow-lg
-      transition-colors
-      focus-visible:outline-none
-      focus-visible:ring-2
-      focus-visible:ring-[#A3E635]
-      focus-visible:ring-offset-2
-      focus-visible:ring-offset-[#0A0A0C]
-    "
+              h-11
+              px-6
+              rounded-full
+              bg-white
+              hover:bg-neutral-100
+              flex
+              items-center
+              gap-3
+              text-black
+              hover:text-[#6d28d9]
+              text-[11px]
+              font-space
+              font-bold
+              tracking-widest
+              cursor-pointer
+              shadow-lg
+              transition-colors
+              focus-visible:outline-none
+              focus-visible:ring-2
+              focus-visible:ring-[#A3E635]
+              focus-visible:ring-offset-2
+              focus-visible:ring-offset-[#0A0A0C]
+            "
             data-cursor="magnetic"
             aria-expanded={menuOpen}
             aria-controls="main-navigation"

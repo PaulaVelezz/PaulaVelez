@@ -25,7 +25,6 @@ const HomePage = ({ setPage }) => {
         <ProjectDetails />
         <CertificatesSection />
         <Testimonials />
-        {/* <Contact /> */}
         <Footer />
       </div>
     </Suspense>

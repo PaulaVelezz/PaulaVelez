@@ -91,7 +91,10 @@ function ContactClosing({ showFooterVisual = false }) {
   };
 
   return (
-    <section className="relative bg-[#0a0a0c] py-16 px-6 md:px-12">
+    <section
+      id="contact_closing"
+      className="relative bg-[#0a0a0c] py-16 px-6 md:px-12"
+    >
       <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16">
         <div>
           <span className="text-[#6d28d9] uppercase tracking-[0.35em] text-xs block mb-4">

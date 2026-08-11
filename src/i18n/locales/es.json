@@ -35,7 +35,7 @@
       "projects": {
         "label": "Proyectos",
         "title": "Trabajos seleccionados",
-        "subtitle": "Archivo de proyectos (12)",
+        "subtitle": "Archivo de proyectos (20)",
         "category": "Proyectos para clientes",
         "description": "Una selección de proyectos donde exploro interfaces, sistemas visuales y soluciones frontend."
       },
@@ -301,6 +301,352 @@
         "category": "IA e Integraciones",
         "subtitle": "Inteligencia Artificial e integraciones"
       }
+    }
+  },
+  "projects_selected": {
+    "title": "PROYECTOS SELECCIONADOS",
+    "filters": {
+      "category": "CATEGORÍA",
+      "type": "TIPO",
+      "stack": "STACK",
+      "clearAll": "Limpiar todo"
+    },
+    "agencyNote": {
+      "label": "Nota:",
+      "text": "Algunos de estos proyectos fueron desarrollados como parte de mi trabajo en una agencia digital. Colaborando de cerca con equipos de diseño, UX/UI y Project Management, además de participar en reuniones directas con clientes para entender bien la necesidad detrás de cada desarrollo."
+    },
+    "empty": "No hay proyectos que coincidan con estos filtros.",
+    "detail": {
+      "back": "Volver a proyectos",
+      "overview": "Project Overview",
+      "links": "Project Links",
+      "info": "Project Info",
+
+      "fields": {
+        "category": "Categoría",
+        "year": "Año",
+        "role": "Rol",
+        "client": "Cliente",
+        "clientDescription": "Trabajo realizado para"
+      },
+
+      "cta": {
+        "title": "¿Tenés un proyecto similar? ¿Querés saber cómo puedo aportar valor a tu equipo?",
+        "description": "Estoy abierta a nuevas oportunidades, colaboraciones y proyectos. ¡Hablemos!"
+      },
+
+      "sections": {
+        "challenge": "Desafíos",
+        "learnings": "Aprendizajes",
+        "stack": "Tecnologías y Herramientas",
+        "highlights": "Funcionalidades destacadas",
+        "gallery": "Galería"
+      },
+
+      "navigation": {
+        "nextProject": "NEXT PROJECT",
+        "backToProjects": "Volver a Proyectos",
+        "backToHome": "VOLVER AL INICIO"
+      },
+
+      "end": {
+        "title": "Eso es todo por ahora.",
+        "description": "Pronto estaré cargando más proyectos. Mientras tanto, podés explorar mi trabajo anterior o contactarme para colaborar en tu próximo proyecto."
+      }
+    }
+  },
+  "project": {
+    "real_billion": {
+      "projectType": ["Landing Comercial"],
+      "summary": "Landing comercial desarrollada para promocionar oficinas en alquiler, destacando los beneficios del proyecto y facilitando la captación de consultas mediante una experiencia enfocada en la conversión.",
+      "overview": "Real Billion Oficinas presenta la propuesta comercial del desarrollo a través de una experiencia visual moderna que combina imágenes, información del proyecto y llamados a la acción. El recorrido fue pensado para comunicar rápidamente el valor de la propuesta y acompañar al usuario hasta el contacto.",
+      "challenge": "El mayor desafío fue sintetizar información comercial en una landing clara y atractiva, manteniendo una fuerte jerarquía visual y un recorrido que favoreciera la generación de leads sin distraer al usuario.",
+      "learnings": "Este proyecto me permitió profundizar en el desarrollo de landing pages orientadas a conversión, combinando estrategia visual, optimización de contenido y experiencias responsive enfocadas en maximizar las consultas comerciales.",
+      "highlights": [
+        "Landing orientada a conversión",
+        "Generación de leads",
+        "Diseño responsive",
+        "UI moderna",
+        "Optimización de CTA",
+        "Mobile First"
+      ]
+    },
+    "atlantic_village": {
+      "projectType": ["Landing Comercial"],
+      "summary": "Landing comercial desarrollada para promocionar los espacios de leasing de Atlantic Village, un desarrollo de uso mixto en el sur de Florida que integra oficinas, comercios, gastronomía y bienestar en un mismo entorno.",
+      "overview": "Atlantic Village Leasing presenta la propuesta comercial del desarrollo a través de una experiencia visual moderna, destacando la ubicación, los distintos espacios disponibles y el concepto de comunidad que define al proyecto. El recorrido acompaña al usuario mediante información clara, recursos visuales y llamados a la acción orientados a la captación de potenciales locatarios.",
+      "challenge": "El desafío fue transmitir la magnitud de un desarrollo inmobiliario multifuncional sin perder claridad en la comunicación. Se trabajó sobre una narrativa visual que permitiera presentar los diferentes usos del proyecto y guiar al usuario hacia el contacto comercial.",
+      "learnings": "Este proyecto reforzó mi experiencia desarrollando landing pages inmobiliarias orientadas a la conversión, combinando jerarquía visual, contenido estratégico y una experiencia responsive enfocada en generar oportunidades comerciales.",
+      "highlights": [
+        "Leasing Comercial",
+        "Landing Inmobiliaria",
+        "Generación de Leads",
+        "Diseño Responsive",
+        "UI Moderna",
+        "Enfoque en Conversión"
+      ]
+    },
+    "maprim_sur": {
+      "projectType": ["Sitio Web Corporativo"],
+      "summary": "Sitio web corporativo desarrollado para presentar la empresa, organizar su catálogo de productos y comunicar sus soluciones mediante una experiencia moderna, clara y orientada al cliente.",
+      "overview": "Maprim Sur reúne la información institucional de la empresa junto con su catálogo de productos y soluciones para la industria. El sitio fue diseñado para organizar una gran cantidad de contenido de manera clara, facilitando la navegación y fortaleciendo la presencia digital de la marca mediante una experiencia responsive y de fácil administración.",
+      "challenge": "El principal desafío fue estructurar un sitio con múltiples categorías de productos sin comprometer la claridad de la navegación. Se trabajó sobre una arquitectura de información escalable que permitiera encontrar rápidamente cada solución y mantener una experiencia consistente en todos los dispositivos.",
+      "learnings": "Este proyecto reforzó mi experiencia desarrollando sitios corporativos con grandes volúmenes de contenido, profundizando en arquitectura de información, reutilización de componentes y optimización de la experiencia de usuario dentro de WordPress.",
+      "highlights": [
+        "Sitio Web Corporativo",
+        "Catálogo de Productos",
+        "Arquitectura de Información",
+        "Diseño Responsive",
+        "Componentes Escalables",
+        "UI Moderna"
+      ]
+    },
+    "modena_autos": {
+      "projectType": ["Catálogo Dinámico"],
+      "summary": "Plataforma de catálogo desarrollada para administrar y exhibir el stock de vehículos mediante filtros dinámicos, automatización de precios y una experiencia optimizada para la gestión comercial.",
+      "overview": "El módulo Stock de Modena Autos fue desarrollado sobre WordPress utilizando JetEngine para gestionar un catálogo dinámico de vehículos. La plataforma incorpora filtros avanzados de búsqueda, fichas individuales y una lógica personalizada que permite actualizar la cotización del dólar desde el panel de administración, impactando automáticamente en los precios publicados de cada unidad.",
+      "challenge": "El desafío consistió en construir una plataforma flexible para administrar un catálogo que cambia constantemente, automatizando la actualización de precios mediante una solución personalizada y manteniendo una experiencia rápida e intuitiva para el usuario final.",
+      "learnings": "Este proyecto consolidó mi experiencia extendiendo WordPress mediante JetEngine y desarrollos personalizados, integrando lógica de negocio con herramientas de administración para construir una plataforma escalable, fácil de mantener y adaptada a los procesos del cliente.",
+      "highlights": [
+        "JetEngine",
+        "Desarrollo WordPress Personalizado",
+        "Catálogo Dinámico de Vehículos",
+        "Filtros Avanzados",
+        "Actualización Automática de Precios",
+        "Optimización de CMS"
+      ]
+    },
+    "grupo_pensar": {
+      "projectType": ["Sitio Web Corporativo"],
+      "summary": "Sitio institucional desarrollado para una desarrolladora inmobiliaria, diseñado para presentar sus proyectos, comunicar la identidad de la marca y potenciar la generación de consultas comerciales.",
+      "overview": "Grupo Pensar Urbanizaciones reúne la información institucional de la desarrolladora junto con sus proyectos inmobiliarios, transmitiendo una propuesta basada en planificación, calidad y desarrollo urbano. El sitio fue diseñado para destacar los diferenciales de cada emprendimiento mediante una experiencia visual moderna, ordenada y orientada a convertir el interés en consultas calificadas.",
+      "challenge": "El desafío fue comunicar la identidad de una desarrolladora con distintos proyectos inmobiliarios manteniendo una experiencia clara y coherente. Se trabajó sobre la jerarquía de contenidos, la organización de la información y un recorrido pensado para acompañar al usuario desde el descubrimiento del proyecto hasta el contacto comercial.",
+      "learnings": "Este proyecto fortaleció mi experiencia desarrollando sitios para el sector inmobiliario, combinando arquitectura de información, diseño orientado a conversión y una estructura escalable preparada para incorporar nuevos desarrollos en el futuro.",
+      "highlights": [
+        "Sitio Web Corporativo",
+        "Sector Inmobiliario",
+        "Generación de Leads",
+        "Diseño Responsive",
+        "UI Moderna",
+        "Arquitectura Escalable"
+      ]
+    },
+    "red_apache": {
+      "projectType": ["Sitio Web Corporativo"],
+      "summary": "Sitio web corporativo desarrollado para una empresa de alquiler de vehículos, diseñado para presentar su flota, comunicar sus servicios y facilitar el contacto con potenciales clientes.",
+      "overview": "Red Apache Rent a Car presenta su propuesta de alquiler de vehículos mediante una plataforma corporativa que organiza la información sobre su flota, servicios y cobertura. El sitio fue diseñado para transmitir confianza, facilitar la navegación y acompañar al usuario durante el proceso de búsqueda y consulta.",
+      "challenge": "El principal desafío fue estructurar un sitio con gran cantidad de información comercial y distintos tipos de vehículos, manteniendo una navegación simple y una experiencia consistente tanto en escritorio como en dispositivos móviles.",
+      "learnings": "Este proyecto consolidó mi experiencia desarrollando sitios corporativos con catálogos de contenido, reforzando criterios de arquitectura de información, reutilización de componentes y optimización de la experiencia de usuario dentro de WordPress.",
+      "highlights": [
+        "Sitio Web Corporativo",
+        "Catálogo de Vehículos",
+        "Arquitectura de Información",
+        "Diseño Responsive",
+        "UI Moderna",
+        "Optimización de Performance"
+      ]
+    },
+    "valtoria_marmoles": {
+      "projectType": ["Landing Page"],
+      "summary": "Landing comercial desarrollada para presentar la línea de mesas y objetos de decoración en mármol de Valtoria, destacando el diseño, la calidad de los materiales y el valor artesanal de cada pieza.",
+      "overview": "Valtoria presenta una colección de mesas y objetos decorativos elaborados en mármol mediante una experiencia visual limpia y sofisticada. La landing fue diseñada para resaltar los materiales, los detalles de fabricación y la identidad premium de la marca, acompañando al usuario hacia la consulta comercial.",
+      "challenge": "El principal desafío fue transmitir la calidad y el carácter premium de los productos desde una experiencia completamente digital. Se trabajó sobre una estética minimalista, una fuerte presencia visual y una estructura enfocada en destacar el producto como protagonista.",
+      "learnings": "Este proyecto fortaleció mi experiencia desarrollando landing pages centradas en producto, entendiendo cómo la composición visual, la fotografía y la jerarquía del contenido influyen directamente en la percepción de valor de una marca.",
+      "highlights": [
+        "Landing de Producto",
+        "Marca Premium",
+        "Diseño Responsive",
+        "Narrativa Visual",
+        "UI Moderna",
+        "Enfoque en Conversión"
+      ]
+    },
+    "pragma_abogados": {
+      "projectType": ["Sitio Web Corporativo"],
+      "summary": "Sitio web institucional desarrollado para un estudio jurídico, diseñado para transmitir confianza, profesionalismo y facilitar el acceso a sus principales áreas de práctica y canales de contacto.",
+      "overview": "Pragma Abogados presenta al estudio, su equipo y sus principales servicios legales mediante una experiencia moderna y ordenada. El sitio fue desarrollado para comunicar la trayectoria y el enfoque personalizado del estudio, priorizando una navegación clara y una identidad visual alineada con los valores de confianza y profesionalismo.",
+      "challenge": "El desafío fue construir una experiencia que transmitiera credibilidad y cercanía sin sobrecargar la interfaz. Se trabajó sobre una estructura de contenidos clara, una jerarquía visual consistente y una navegación simple que facilitara el acceso a la información y al contacto.",
+      "learnings": "Este proyecto reforzó mi experiencia desarrollando sitios institucionales donde la identidad visual y la organización del contenido son fundamentales para construir confianza y comunicar servicios profesionales de manera efectiva.",
+      "highlights": [
+        "Sitio Web Corporativo",
+        "Servicios Profesionales",
+        "Diseño Responsive",
+        "Arquitectura de Información",
+        "UI Moderna",
+        "Optimización de Performance"
+      ]
+    },
+    "daser_agro": {
+      "projectType": ["Sitio Web Corporativo"],
+      "summary": "Sitio institucional desarrollado para una empresa del sector agropecuario, diseñado para comunicar sus soluciones, organizar una amplia oferta de productos y fortalecer su presencia digital.",
+      "overview": "Daser Agro reúne la información institucional de la empresa junto con su catálogo de productos, servicios y soluciones para el sector agropecuario. El sitio fue desarrollado para comunicar la trayectoria de la marca, ordenar una gran cantidad de contenido y ofrecer una experiencia moderna, clara y adaptable a cualquier dispositivo.",
+      "challenge": "El principal desafío fue estructurar un sitio con múltiples líneas de negocio, productos y servicios sin afectar la claridad de la navegación. Se trabajó sobre una arquitectura de información escalable, priorizando la organización del contenido y la facilidad de administración dentro de WordPress.",
+      "learnings": "Este proyecto fortaleció mi experiencia desarrollando plataformas corporativas con grandes volúmenes de información, profundizando en arquitectura de contenidos, reutilización de componentes y experiencias orientadas a mejorar la usabilidad y el rendimiento.",
+      "highlights": [
+        "Sitio Web Corporativo",
+        "Arquitectura de Información",
+        "Gestión de Contenidos",
+        "Diseño Responsive",
+        "Optimización de Performance",
+        "UI Moderna"
+      ]
+    },
+    "impulso_academico": {
+      "projectType": ["Plataforma LMS"],
+      "summary": "Plataforma e-learning desarrollada sobre WordPress, WooCommerce y LearnDash, diseñada para gestionar cursos online, inscripciones, evaluaciones y el seguimiento completo de los estudiantes.",
+      "overview": "Impulso Académico centraliza la oferta educativa del instituto mediante una plataforma LMS que integra WooCommerce y LearnDash para administrar la inscripción, el acceso a los cursos y el progreso de cada estudiante. El proyecto incluye la gestión de contenidos, evaluaciones, certificados y automatizaciones, brindando una experiencia completa tanto para alumnos como para administradores.",
+      "challenge": "El mayor desafío fue implementar una plataforma con más de 30 cursos, configurando lecciones, cuestionarios, certificados, notificaciones automáticas y reglas de acceso personalizadas. Además, se desarrollaron funcionalidades mediante Code Snippets para adaptar LearnDash y WooCommerce a los procesos internos del instituto.",
+      "learnings": "Este proyecto consolidó mi experiencia desarrollando plataformas educativas sobre WordPress, integrando múltiples herramientas dentro de un mismo ecosistema. También profundicé en la personalización de LearnDash, la automatización de procesos académicos y el desarrollo de soluciones escalables enfocadas en la experiencia del usuario.",
+      "highlights": [
+        "LearnDash LMS",
+        "Integración con WooCommerce",
+        "Desarrollo WordPress personalizado",
+        "Gestión de cursos",
+        "Certificados automatizados",
+        "Code Snippets personalizados"
+      ]
+    },
+    "barrio_mirabello": {
+      "projectType": ["Landing Page"],
+      "summary": "Landing inmobiliaria desarrollada para el lanzamiento de Barrio Privado Mirabello, diseñada para comunicar la propuesta del proyecto y potenciar la captación de consultas mediante una experiencia enfocada en la conversión.",
+      "overview": "Barrio Privado Mirabello presenta un nuevo desarrollo residencial destacando ubicación, amenities, beneficios de lanzamiento y oportunidades de inversión. La landing fue diseñada para comunicar la propuesta de valor de forma clara, acompañando al usuario mediante una experiencia visual moderna y orientada a generar consultas comerciales.",
+      "challenge": "El desafío fue sintetizar la información del desarrollo en un recorrido dinámico y persuasivo, priorizando la jerarquía visual y los llamados a la acción para acompañar el proceso de decisión de potenciales compradores.",
+      "learnings": "Este proyecto reforzó mi experiencia desarrollando landing pages para el sector inmobiliario, profundizando en estrategias de conversión, organización de contenidos y optimización de experiencias responsive orientadas a la generación de leads.",
+      "highlights": [
+        "Landing Page",
+        "Real Estate",
+        "Lead Generation",
+        "Responsive Design",
+        "Conversion Focus",
+        "Modern UI"
+      ]
+    },
+    "groven_agency": {
+      "projectType": ["Landing Page"],
+      "summary": "Landing desarrollada para una agencia de marketing digital, implementando de forma pixel-perfect un diseño provisto en Figma dentro de un entorno WordPress totalmente responsive.",
+      "overview": "Groven Agency presenta su propuesta de servicios mediante una landing moderna orientada a transmitir innovación y captar nuevas oportunidades comerciales. El desarrollo consistió en trasladar un diseño final de Figma a WordPress respetando cada detalle visual, las animaciones y el comportamiento responsive para lograr una implementación completamente fiel al diseño original.",
+      "challenge": "El principal desafío fue alcanzar una implementación pixel-perfect manteniendo la flexibilidad de WordPress como CMS. Se replicaron cuidadosamente layouts, tipografías, espaciados, microinteracciones y animaciones, asegurando consistencia entre el diseño y el producto final en todos los dispositivos.",
+      "learnings": "Este proyecto consolidó mi experiencia transformando interfaces de Figma en desarrollos completamente funcionales, reforzando criterios de precisión visual, reutilización de componentes y optimización frontend para mantener una experiencia fluida sin comprometer el rendimiento.",
+      "highlights": [
+        "Desarrollo Pixel Perfect",
+        "Figma a WordPress",
+        "Implementación Responsive",
+        "Animaciones con GSAP",
+        "UI Moderna",
+        "Optimización de Performance"
+      ]
+    },
+    "ilove_tango": {
+      "projectType": ["E-commerce"],
+      "summary": "Tienda online desarrollada sobre Tiendanube, personalizada para ofrecer una experiencia de compra simple, moderna y optimizada, alineada con la identidad de la marca.",
+      "overview": "I Love Tango comercializa productos inspirados en la cultura del tango a través de una tienda desarrollada sobre Tiendanube. El proyecto consistió en personalizar la experiencia de compra, adaptando la interfaz a la identidad visual de la marca y optimizando la navegación para facilitar el recorrido del usuario desde el catálogo hasta la compra.",
+      "challenge": "El desafío fue trabajar dentro de las limitaciones propias de Tiendanube, personalizando componentes y estilos sin perder compatibilidad con la plataforma. Se buscó mejorar la experiencia de navegación y reforzar la identidad visual de la tienda manteniendo un proceso de compra simple y eficiente.",
+      "learnings": "Este proyecto fortaleció mi experiencia desarrollando soluciones sobre Tiendanube, comprendiendo las posibilidades de personalización de la plataforma y optimizando la experiencia de usuario mediante ajustes visuales, componentes reutilizables y mejoras en el flujo de compra.",
+      "highlights": [
+        "Tiendanube",
+        "E-commerce",
+        "Tema personalizado",
+        "Experiencia de compra",
+        "Diseño Responsive",
+        "Personalización de UI"
+      ]
+    },
+    "grupo_desinar": {
+      "projectType": ["Sitio Corporativo"],
+      "summary": "Actualización y modernización de un sitio institucional, incorporando nuevos desarrollos inmobiliarios, mejoras visuales, animaciones e importantes optimizaciones de rendimiento y posicionamiento SEO.",
+      "overview": "Grupo Desinar requería evolucionar su presencia digital sin perder el posicionamiento alcanzado. El proyecto incluyó la actualización de distintas secciones del sitio, la incorporación de nuevos desarrollos inmobiliarios, mejoras en la navegación, nuevas animaciones y una optimización integral orientada al rendimiento, la accesibilidad y el SEO.",
+      "challenge": "El principal desafío fue modernizar un sitio existente manteniendo la compatibilidad con el contenido ya publicado. Se reorganizaron componentes, se optimizaron tiempos de carga, se incorporaron nuevas interacciones y se preparó la estructura para acompañar el crecimiento futuro de la empresa.",
+      "learnings": "Este proyecto reforzó mi experiencia trabajando sobre productos ya existentes, entendiendo cómo evolucionar una plataforma sin afectar su estabilidad. También profundicé en optimización SEO, performance, reutilización de componentes y mejoras progresivas de la experiencia de usuario.",
+      "highlights": [
+        "Modernización de Sitio Web",
+        "Optimización SEO",
+        "Mejoras de Performance",
+        "Animaciones con GSAP",
+        "Diseño Responsive",
+        "Arquitectura Escalable"
+      ]
+    },
+    "emecra": {
+      "projectType": ["Sitio Corporativo"],
+      "summary": "Rediseño y modernización del sitio institucional de Emecra, actualizando su identidad visual y mejorando la experiencia de navegación mediante una interfaz más clara, moderna y responsive.",
+      "overview": "Emecra necesitaba renovar su presencia digital mediante un sitio que representara mejor la actualidad de la empresa. El proyecto consistió en actualizar la estética general, reorganizar los contenidos y optimizar la navegación para ofrecer una experiencia más moderna, clara y alineada con la identidad de la marca, manteniendo una plataforma fácil de administrar desde WordPress.",
+      "challenge": "El desafío fue evolucionar un sitio existente sin afectar su estructura de contenidos ni el posicionamiento logrado. Se modernizó la interfaz, se optimizó el rendimiento y se mejoró la experiencia responsive, manteniendo una administración simple para el equipo del cliente.",
+      "learnings": "Este proyecto reforzó mi experiencia modernizando plataformas en producción, priorizando mejoras progresivas en diseño, usabilidad y performance sin comprometer la estabilidad del sitio. También profundicé en estrategias de optimización y reutilización de componentes dentro de WordPress.",
+      "highlights": [
+        "Modernización de Sitio Web",
+        "Diseño Responsive",
+        "Optimización de Performance",
+        "Mejora de UX",
+        "UI Moderna",
+        "WordPress"
+      ]
+    },
+    "lyfe_resort": {
+      "projectType": ["Plataforma de Reservas"],
+      "summary": "Sitio institucional desarrollado para un resort, integrando un motor de reservas online para ofrecer una experiencia de navegación fluida y facilitar la conversión directa de huéspedes.",
+      "overview": "Lyfe Resort & Residences presenta su propuesta de alojamiento mediante una experiencia visual enfocada en transmitir confort, diseño y hospitalidad. El sitio fue desarrollado para destacar las instalaciones, los servicios y simplificar el proceso de reserva mediante la integración del Cloudbeds Booking Engine, permitiendo a los usuarios consultar disponibilidad y reservar de forma directa desde la plataforma.",
+      "challenge": "El principal desafío fue integrar el motor de reservas Cloudbeds dentro de una experiencia completamente personalizada, manteniendo consistencia visual, una navegación intuitiva y un proceso de reserva fluido entre el sitio institucional y la plataforma externa.",
+      "learnings": "Este proyecto consolidó mi experiencia integrando servicios de terceros dentro de WordPress, comprendiendo la importancia de construir experiencias continuas entre diferentes plataformas sin afectar la identidad visual, el rendimiento ni la experiencia del usuario.",
+      "highlights": [
+        "Integración con Cloudbeds",
+        "Plataforma de Reservas",
+        "Sitio Web de Hospitality",
+        "Diseño Responsive",
+        "Integración de Terceros",
+        "Optimización de Conversión"
+      ]
+    },
+    "saas_landing": {
+      "projectType": ["Landing Page"],
+      "summary": "Desarrollo de una landing page para un producto SaaS. Priorizando la experiencia de usuario, la página no solo presenta el valor del producto, sino que también guía a los visitantes de forma fluida hacia la conversión.",
+      "overview": "Desarrollo de una landing page con una experiencia de usuario altamente intuitiva y una interfaz moderna adaptada a todos los dispositivos. El objetivo fue aplicar estos principios para construir una experiencia digital clara, funcional y consistente.",
+      "challenge": "El desafío fue diseñar y desarrollar una landing page moderna capaz de comunicar rápidamente el valor de un producto SaaS, manteniendo una experiencia intuitiva y optimizada para diferentes dispositivos.",
+      "learnings": "Este proyecto me permitió profundizar en el desarrollo de interfaces orientadas al usuario, trabajando con React, Vite, Tailwind CSS y Framer Motion para construir una experiencia moderna, responsive y enfocada en la conversión.",
+      "highlights": [
+        "Interfaz de Usuario Intuitiva",
+        "Diseño Adaptable a Todos los Dispositivos",
+        "Diseño Centrado en el Usuario",
+        "Enfoque en Optimización"
+      ]
+    },
+    "educlass": {
+      "projectType": ["Aplicación Web"],
+      "summary": "Desarrollo de una plataforma de gestión educativa para optimizar los procesos de comunicación y seguimiento entre la institución, docentes y estudiantes, brindando transparencia, comodidad e inmediatez.",
+      "overview": "Plataforma de gestión educativa que optimiza los procesos de comunicación y seguimiento entre la institución, docentes y estudiantes. La herramienta permite superar las limitaciones de los canales de comunicación tradicionales, reduciendo mensajes incoherentes y la pérdida de información.",
+      "challenge": "El desafío fue desarrollar una plataforma que centralizara la comunicación y el seguimiento académico, facilitando el acceso a la información y reduciendo la dispersión de mensajes entre los distintos actores de la institución.",
+      "learnings": "Este proyecto me permitió profundizar en el desarrollo de aplicaciones web con React, gestión de formularios, consumo de APIs y autenticación, trabajando sobre una plataforma orientada a resolver necesidades concretas de comunicación y gestión educativa.",
+      "highlights": [
+        "Actualizaciones en Tiempo Real y Notificaciones Filtradas",
+        "Gestión de Asistencia",
+        "Seguimiento de Calificaciones Académicas",
+        "Autorización y Confirmación"
+      ]
+    },
+    "reparame": {
+      "projectType": ["Aplicación Web"],
+      "summary": "Desarrollo de una WebApp que conecta proveedores de servicios con clientes en tiempo real, reduciendo la brecha entre la digitalización y los oficios tradicionales.",
+      "overview": "WebApp que conecta proveedores de servicios confiables con clientes en tiempo real, ofreciendo soluciones rápidas para problemas del hogar. La plataforma busca brindar una experiencia positiva y segura mediante un sistema de calificaciones y comentarios.",
+      "challenge": "El desafío fue desarrollar una plataforma capaz de conectar clientes y proveedores de servicios de manera rápida y confiable, incorporando herramientas que facilitaran la búsqueda, selección y seguimiento de los servicios solicitados.",
+      "learnings": "Este proyecto me permitió profundizar en el desarrollo de aplicaciones web con React y Next.js, trabajando con autenticación, gestión de estado, consumo de APIs y filtros personalizados para construir una experiencia orientada a las necesidades de los usuarios.",
+      "highlights": [
+        "Filtrado Personalizado",
+        "Perfiles Detallados y Reseñas",
+        "Seguimiento de Solicitudes de Servicio",
+        "Disponibilidad en Tiempo Real"
+      ]
+    },
+    "learn_with_me": {
+      "projectType": ["Aplicación Web"],
+      "summary": "Desarrollo de una plataforma virtual de aprendizaje enfocada en adaptar el contenido al estilo cognitivo de cada usuario, haciendo que el aprendizaje sea atractivo, interactivo y verdaderamente personalizado.",
+      "overview": "Desarrollo de una plataforma virtual de aprendizaje que ofrece recorridos personalizados, adaptando el contenido a los estilos de aprendizaje individuales para favorecer una mejor comprensión y participación mediante tecnología de aprendizaje adaptativo.",
+      "challenge": "El desafío fue desarrollar una experiencia de aprendizaje capaz de adaptarse a las necesidades individuales de cada usuario, combinando contenido personalizado con una interfaz clara, interactiva y fácil de navegar.",
+      "learnings": "Este proyecto me permitió profundizar en el desarrollo de experiencias educativas personalizadas, trabajando con React y Next.js para construir interfaces dinámicas y estructuras de navegación orientadas a diferentes recorridos de aprendizaje.",
+      "highlights": [
+        "Recorridos de Aprendizaje Personalizados",
+        "Dashboard Dinámico",
+        "Roadmap Interactivo",
+        "Tecnología de Aprendizaje Adaptativo"
+      ]
     }
   }
 }

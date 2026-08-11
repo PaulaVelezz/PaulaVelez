@@ -3,8 +3,8 @@ import { gsap } from "gsap";
 import { FiArrowUpRight, FiGithub, FiLinkedin } from "react-icons/fi";
 import { FaWhatsapp } from "react-icons/fa";
 import abstractBg from "../../assets/abstract-6.webp";
-import devinImg from "../../assets/devin_project.png";
-import fluidImg from "../../assets/fluid_project.png";
+import IMGP2 from "../../assets/Mp2.webp";
+import IMGP5 from "../../assets/Mp5.webp";
 import { SERVICES, openWhatsApp } from "../../services/whatsAppService.js";
 import { useTranslation } from "react-i18next";
 
@@ -267,23 +267,23 @@ export default function HamburgerMenu({ isOpen, setPage, onClose }) {
         return (
           <div className="w-full h-full bg-[#0a0a0c] border border-white/5 rounded-2xl flex flex-col justify-between p-5 relative overflow-hidden text-left">
             <div className="flex justify-between items-center text-[9px] font-space tracking-widest text-neutral-400">
-              <span>PROJECTS INDEX (12)</span>
+              <span>PROJECTS INDEX (20)</span>
               <span className="text-[#A3E635]">SELECTED CASE STUDIES</span>
             </div>
 
             <div className="grid grid-cols-2 gap-3 my-auto z-10">
               <div className="group/mini relative aspect-video rounded-lg overflow-hidden border border-white/10 bg-neutral-900">
                 <img
-                  src={devinImg}
-                  alt="Devin Platform mini"
+                  src={IMGP2}
+                  alt="REPARAME"
                   className="w-full h-full object-cover grayscale opacity-80"
                 />
                 <div className="absolute inset-0 bg-[#6D28D9]/20 opacity-0 group-hover/mini:opacity-100 transition-opacity duration-300" />
               </div>
               <div className="group/mini relative aspect-video rounded-lg overflow-hidden border border-white/10 bg-neutral-900">
                 <img
-                  src={fluidImg}
-                  alt="Fluid dynamics mini"
+                  src={IMGP5}
+                  alt="SAAS LANDING PAGE"
                   className="w-full h-full object-cover grayscale opacity-80"
                 />
                 <div className="absolute inset-0 bg-[#A3E635]/20 opacity-0 group-hover/mini:opacity-100 transition-opacity duration-300" />
@@ -291,8 +291,8 @@ export default function HamburgerMenu({ isOpen, setPage, onClose }) {
             </div>
 
             <div className="flex justify-between items-center text-[9px] font-space text-white/40 tracking-wider">
-              <span>DEVIN PLATFORM</span>
-              <span>FLUID VECTOR FIELD</span>
+              <span>REPARAME</span>
+              <span>SAAS LANDING PAGE</span>
             </div>
           </div>
         );
