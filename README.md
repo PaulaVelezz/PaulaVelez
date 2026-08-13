@@ -120,7 +120,7 @@ This project is licensed under the terms described in the **LICENSE.md** file.
 
 Designed & developed by **Paula Velez.**
 
-**Frontend Developer • UI Designer • Creative Developer**
+** WordPress Developer & Frontend (React) • Creative Developer**
 
 - 🌐 GitHub: https://github.com/PaulaVelezz
 - 💼 Portfolio: _Coming soon_

@@ -42,7 +42,7 @@ function Hero({ setPage }) {
               <TextRevealCurtain
                 as="h1"
                 className="text-4xl md:text-6xl font-extrabold font-korium tracking-wider leading-none text-white"
-                lines={["Frontend & "]}
+                lines={["WordPress Developer &"]}
               />
             </div>
 
@@ -50,7 +50,7 @@ function Hero({ setPage }) {
               <TextRevealCurtain
                 as="h1"
                 className="text-4xl md:text-6xl font-extrabold font-korium tracking-wider leading-none text-neutral-500"
-                lines={["Creative Developer."]}
+                lines={["Frontend [React.js]"]}
                 onComplete={() => setStartSecondaryReveal(true)}
               />
             </div>

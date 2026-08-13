@@ -256,8 +256,8 @@ export default function HamburgerMenu({ isOpen, setPage, onClose }) {
           <div className="w-full h-full bg-[#0a0a0c] border border-white/5 rounded-2xl flex flex-col justify-between p-5 relative overflow-hidden text-left">
             <div className="my-auto z-10">
               <h4 className="text-xl sm:text-2xl font-syne font-black tracking-tight text-white leading-[1.1]">
-                Frontend & <br />
-                <span className="text-[#A3E635]">Creative Developer.</span>
+                WordPress Developer & <br />
+                <span className="text-[#A3E635]">Frontend [React.js].</span>
               </h4>
             </div>
           </div>
