@@ -7,6 +7,7 @@ import IMGP2 from "../../assets/Mp2.webp";
 import IMGP5 from "../../assets/Mp5.webp";
 import { SERVICES, openWhatsApp } from "../../services/whatsAppService.js";
 import { useTranslation } from "react-i18next";
+import { useLocation } from "react-router-dom";
 
 export default function HamburgerMenu({ isOpen, setPage, onClose }) {
   const containerRef = useRef(null);
@@ -21,6 +22,7 @@ export default function HamburgerMenu({ isOpen, setPage, onClose }) {
   const [hoveredIdx, setHoveredIdx] = useState(null);
   const [activeItem, setActiveItem] = useState(null);
   const [displayItem, setDisplayItem] = useState(null);
+  const { hash } = useLocation();
 
   const menuItems = [
     {
@@ -57,7 +59,7 @@ export default function HamburgerMenu({ isOpen, setPage, onClose }) {
     },
     {
       key: "contact",
-      page: "/contact",
+      page: "/#footer",
       number: "05",
       preview: {
         type: "contact",
@@ -75,6 +77,21 @@ export default function HamburgerMenu({ isOpen, setPage, onClose }) {
       setActiveItem(menuItems[hoveredIdx]);
     }
   }, [hoveredIdx]);
+
+  useEffect(() => {
+    if (!hash) return;
+
+    const section = document.querySelector(hash);
+
+    if (section) {
+      setTimeout(() => {
+        section.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+      }, 150);
+    }
+  }, [hash]);
 
   useEffect(() => {
     const card = previewRef.current;

@@ -61,6 +61,7 @@ function ExperienceTimeline({ experiences, header }) {
 
   return (
     <section
+      id="experience"
       ref={sectionRef}
       className="relative bg-[#0a0a0c] py-32 px-6 md:px-12"
     >

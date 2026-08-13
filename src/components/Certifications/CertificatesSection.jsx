@@ -37,44 +37,26 @@ const CertificatesSection = () => {
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         {/* Header */}
 
-        <div className="mb-24">
-          <span
-            className="
-              text-[#A3E635]
-              uppercase
-              tracking-[0.35em]
-              text-xs
-              block
-              mb-4
-            "
-          >
-            // {t("certifications.label")}
-          </span>
-          <TextRevealCurtain
-            as="h2"
-            className="text-4xl md:text-6xl font-extrabold font-korium tracking-wider"
-            lines={[t("certifications.title")]}
-          />
-
-          <p
-            className="
-              mt-4
-              text-white/50
-              max-w-xl
-            "
-          >
-            {t("certifications.description")}
-          </p>
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end mb-24">
+          <div className="lg:col-span-8 text-left">
+            <span className="text-[10px] text-[#a3e635] font-space tracking-[0.3em] block mb-3 uppercase">
+              {t("certifications.label")}
+            </span>
+            <TextRevealCurtain
+              as="h2"
+              className="text-4xl md:text-6xl font-extrabold font-korium tracking-wider leading-none uppercase text-stone-100"
+              lines={[t("certifications.title")]}
+            />
+          </div>
+          <div className="lg:col-span-4 text-left lg:text-right">
+            <p className="text-[14px] text-neutral-400 font-grotesk leading-relaxed max-w-sm ml-auto">
+              {t("certifications.description")}
+            </p>
+          </div>
         </div>
 
         {/* Content */}
-        <div
-          className="
-            grid
-            lg:grid-cols-12
-            gap-12
-          "
-        >
+        <div className="grid lg:grid-cols-12 gap-12">
           {/* LIST */}
           <div className="lg:col-span-7">
             {CertificatesData.map((certificate) => (

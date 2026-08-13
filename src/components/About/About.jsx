@@ -208,7 +208,12 @@ const About = () => {
                 </div>
               </div>
               <button
-                onClick={() => setPage("experience")}
+                onClick={() => {
+                  document.getElementById("experience")?.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start",
+                  });
+                }}
                 className="
                   text-zinc-900
                     bg-white

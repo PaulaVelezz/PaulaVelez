@@ -214,11 +214,11 @@ export default function Testimonials() {
   return (
     <section
       ref={containerRef}
-      className="relative w-full bg-[#0a0a0c] text-white py-24 md:py-36 z-10 overflow-hidden border-b border-white/5"
+      className="relative w-full bg-[#0a0a0c] text-white py-24 md:py-30 z-10 overflow-hidden border-b border-white/5"
       aria-labelledby="testimonials-heading"
     >
       <div className="max-w-7xl mx-auto w-full px-6 md:px-12 flex flex-col gap-16 select-none">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end mb-6">
           <div className="lg:col-span-8 text-left">
             <span className="text-[10px] text-[#a3e635] font-space tracking-[0.3em] block mb-3 uppercase">
               {t("testimonials.label")}
@@ -230,7 +230,7 @@ export default function Testimonials() {
             />
           </div>
           <div className="lg:col-span-4 text-left lg:text-right">
-            <p className="text-xs text-neutral-400 font-grotesk leading-relaxed max-w-sm ml-auto">
+            <p className="text-[13px] text-neutral-400 font-grotesk leading-relaxed max-w-sm ml-auto">
               {t("testimonials.description")}
             </p>
           </div>
