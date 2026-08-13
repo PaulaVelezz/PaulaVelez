@@ -11,6 +11,7 @@ import HamburgerMenu from "./components/Header/HamburgerMenu";
 import { gsap } from "gsap";
 import PageTransitionOverlay from "./components/PageTransitionOverlay";
 import AboutPage from "./pages/AboutPage";
+import { Analytics } from "@vercel/analytics/react";
 
 function App() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -63,6 +64,7 @@ function App() {
         <Route path="/contact" element={<ContactPage setPage={changePage} />} />
       </Routes>
       <FloatingWhatsApp />
+      <Analytics />
     </>
   );
 }
