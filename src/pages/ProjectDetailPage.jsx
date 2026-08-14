@@ -55,9 +55,12 @@ function ProjectDetailPage({ setPage }) {
   const projectCardRef = useRef(null);
   const overviewRef = useRef(null);
   const challengeRef = useRef(null);
-  const { t } = useTranslation();
+  const heroRowRef = useRef(null);
+  const linksRef = useRef(null);
 
+  const { t } = useTranslation();
   const { slug } = useParams();
+
   const projectDetail = projectDetailData.find(
     (p) => p.slug === slug || p.id === slug,
   );
@@ -143,39 +146,21 @@ function ProjectDetailPage({ setPage }) {
   }, [setPage, slug, nextProjectData]);
 
   useEffect(() => {
-    if (
-      !projectCardRef.current ||
-      !overviewRef.current ||
-      !challengeRef.current
-    )
+    if (!projectCardRef.current || !heroRowRef.current || !linksRef.current) {
       return;
+    }
 
-    const card = projectCardRef.current;
-
-    gsap.to(card, {
-      y: 280,
-
-      ease: "none",
-
-      scrollTrigger: {
-        trigger: overviewRef.current,
-
-        start: "top top+=120",
-
-        endTrigger: challengeRef.current,
-
-        end: "top center",
-
-        scrub: true,
-      },
+    const st = ScrollTrigger.create({
+      trigger: heroRowRef.current,
+      start: "top top+=120",
+      endTrigger: linksRef.current,
+      end: "bottom bottom",
+      pin: projectCardRef.current,
+      pinSpacing: false,
     });
 
-    return () => {
-      ScrollTrigger.getAll().forEach((st) => {
-        if (st.trigger === overviewRef.current) st.kill();
-      });
-    };
-  }, []);
+    return () => st.kill();
+  }, [slug]);
 
   return (
     <>
@@ -187,7 +172,10 @@ function ProjectDetailPage({ setPage }) {
           {/* HERO */}
           <header className="relative pt-32 pb-14">
             <div className="container-editorial">
-              <div className="grid grid-cols-12 gap-20 items-start">
+              <div
+                ref={heroRowRef}
+                className="grid grid-cols-12 gap-20 items-start"
+              >
                 {/* LEFT COLUMN */}
                 <div className="col-span-12 lg:col-span-7">
                   <Link
@@ -219,7 +207,7 @@ function ProjectDetailPage({ setPage }) {
                   </section>
 
                   {/* Links */}
-                  <section ref={overviewRef} className="mt-16 max-w-5xl">
+                  <section ref={linksRef} className="mt-16 max-w-5xl">
                     <span className="text-[#A3E635] text-sm tracking-[0.2em] uppercase">
                       (01) — {t("projects_selected.detail.links")}
                     </span>
