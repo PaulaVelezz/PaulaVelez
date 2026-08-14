@@ -56,13 +56,10 @@ function Hero({ setPage }) {
             </div>
           </div>
 
-          <div className="hero-sub-reveal opacity-0 max-w-[540px]">
-            <p className="text-sm md:text-base text-neutral-400 font-grotesk">
-              {t("hero.description")}
-              <br />
-              <br />
-              {t("hero.availability")}
-            </p>
+          <div className="hero-sub-reveal opacity-0 max-w-[540px] flex flex-col justify-center gap-3 text-sm md:text-base text-neutral-400 font-grotesk ">
+            <span>{t("hero.description")}</span>
+            <span>{t("hero.second_description")} </span>
+            <span> {t("hero.availability")}</span>
           </div>
 
           {/* Interactive CTAs */}

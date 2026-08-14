@@ -56,8 +56,9 @@
     }
   },
   "hero": {
-    "description": "I'm Paula. I specialize in building modern, responsive, and accessible digital experiences, with a strong focus on design, user experience, and motion that makes every product feel thoughtfully crafted.",
-    "availability": "I'm currently open to remote and hybrid opportunities where I can contribute value, continue growing professionally, and collaborate with teams building meaningful digital products.",
+    "description": "I'm Paula. I specialize in building modern, responsive, and accessible interfaces, with close attention to design and user experience.",
+    "second_description": "I've worked at digital marketing agencies from complex architectures with ACF, CPT, and JetEngine to a production security incident that I resolved end to end.",
+    "availability": "I'm currently open to remote and hybrid opportunities where I can contribute value, continue growing professionally.",
     "cv": "CV / RESUME",
     "exploreWork": "EXPLORE WORK"
   },
@@ -92,7 +93,8 @@
       }
     },
     "common": {
-      "viewMore": "VIEW MORE"
+      "viewMore": "VIEW MORE",
+      "viewMoreProjects": "VIEW MORE PROJECTS"
     }
   },
   "projects": {
@@ -123,24 +125,24 @@
     "swipeHint": "SWIPE HORIZONTALLY",
     "linkedinLabel": "View {{name}}'s LinkedIn profile",
     "items": {
-      "motionDesign": {
-        "quote": "Paula's attention to motion design and hardware acceleration is unmatched. She brings static wireframes to life with dynamic fluid logic.",
-        "role": "Creative Director"
+      "comprension_requerimientos": {
+        "quote": "Paula doesn't just implement: she understands the requirements, asks the right questions, and suggests solutions. She communicates clearly with both clients and technical teams.",
+        "role": "Project Manager"
       },
 
-      "interactiveEngineering": {
-        "quote": "The topographic shaders and loading sequences built for our platform are breathtaking. A wizard of interactive engineering.",
-        "role": "Co-Founder"
+      "wordPress": {
+        "quote": "She has a strong command of WordPress and understands what goes on behind each implementation. She's comfortable with Elementor, code, and custom solutions, always looking for the best way to solve a problem.",
+        "role": "Frontend Developer"
       },
 
-      "interactiveExcellence": {
-        "quote": "Working with Paula is a journey into interactive excellence. The visual performance, timing, and sensory rhythm exceeded all standards.",
-        "role": "Product Owner"
+      "criterio_visual": {
+        "quote": "Paula combines a strong visual sense with a technical mindset. She pays attention to detail while keeping responsiveness, performance, and usability in mind.",
+        "role": "UI/UX Designer"
       },
 
-      "responsiveExperience": {
-        "quote": "The drag-based carousel and custom cursor feedback feel incredibly responsive. The code quality is pristine and highly performant.",
-        "role": "Technical Lead"
+      "iniciativa_autonomia": {
+        "quote": "She takes initiative and works independently when it comes to learning and solving problems. She researches, experiments, and suggests new tools or processes when they can improve the work.",
+        "role": "Project Manager"
       }
     }
   },

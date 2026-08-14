@@ -4,6 +4,7 @@ import projectDetailData from "../../data/ProjectDetailData.js";
 import { motion, useScroll, useSpring } from "framer-motion";
 import TextRevealCurtain from "../common/TextRevealCurtain.jsx";
 import { useTranslation } from "react-i18next";
+import { FiArrowRight } from "react-icons/fi";
 
 const PROJECTS_TO_SHOW = [
   "impulso_academico",
@@ -14,7 +15,7 @@ const PROJECTS_TO_SHOW = [
   "real_billion",
 ];
 
-const ProjectDetails = () => {
+const ProjectDetails = ({ setPage }) => {
   const ProjectRef = useRef(null);
   const { t } = useTranslation();
   const { scrollYProgress } = useScroll({
@@ -60,6 +61,16 @@ const ProjectDetails = () => {
             AbsBG={project.AbsBG}
           />
         ))}
+      </div>
+      <div className="max-w-xs mx-auto p-5 pt-0">
+        <button
+          onClick={() => setPage("projects")}
+          className="w-full h-11 px-8 border-[#6d28d9] text-[#6d28d9] bg-[#6d28d9]/20 hover:bg-[#6d28d9] rounded-xl border flex items-center font-bold tracking-widest uppercase justify-center gap-2 py-2 text-[12px] hover:text-white transition-colors cursor-pointer"
+          data-cursor="pointer"
+        >
+          {t("common.viewMoreProjects")}
+          <FiArrowRight className="w-3.5 h-3.5" />
+        </button>
       </div>
     </section>
   );

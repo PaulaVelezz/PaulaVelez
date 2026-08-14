@@ -144,7 +144,7 @@ function StackIntroStack({ id, stacks, header }) {
         {header}
       </div>
 
-      <div className="relative w-[320px] md:w-[360px] h-[460px] md:h-[520px] z-20">
+      <div className="relative w-[320px] md:w-[360px] h-[410px] md:h-[410px] z-20">
         {stacks.map((stackItem, i) => (
           <div
             key={stackItem.key}

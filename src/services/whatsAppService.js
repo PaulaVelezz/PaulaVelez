@@ -18,7 +18,7 @@ export const SERVICES = [
     id: "portfolio-contact",
     phone: PHONE.web,
     message:
-      "Hola Paula, vengo de tu portfolio y me interesan tus servicios de desarrollo frontend. ¿Tenés un momento para charlar?",
+      "Hola Paula, vengo desde tu portfolio y me interesan tus servicios de desarrollo wordpress / frontend. ¿Tenés un momento para charlar?",
   },
 ];
 

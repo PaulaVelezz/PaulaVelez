@@ -56,8 +56,9 @@
     }
   },
   "hero": {
-    "description": "Soy Paula. Me especializo en desarrollar soluciones digitales e interfaces modernas, responsivas y accesibles, con especial atención al diseño, la experiencia de usuario y las animaciones que hacen que un producto se sienta cuidado.",
-    "availability": "Actualmente estoy abierta a oportunidades remotas e híbridas donde pueda aportar valor, seguir creciendo profesionalmente y colaborar con equipos en la creación de productos digitales con impacto.",
+    "description": "Soy Paula, construyo interfaces modernas, responsivas y accesibles, con atención al detalle en el diseño y la experiencia de usuario.",
+    "second_description": "Trabajé en agencias de marketing digital resolviendo desde arquitecturas complejas con ACF, CPT y JetEngine hasta incidentes de seguridad en producción, que resolví de punta a punta.",
+    "availability": "Actualmente estoy abierta a oportunidades remotas e híbridas donde pueda aportar valor, seguir creciendo profesionalmente.",
     "cv": "CV / RESUMEN",
     "exploreWork": "EXPLORAR PROYECTOS"
   },
@@ -93,7 +94,8 @@
     }
   },
   "common": {
-    "viewMore": "VER MÁS"
+    "viewMore": "VER MÁS",
+    "viewMoreProjects": "VER MÁS PROYECTOS"
   },
   "projects": {
     "label": "// PROYECTOS",
@@ -123,24 +125,24 @@
     "swipeHint": "DESLIZÁ HORIZONTALMENTE",
     "linkedinLabel": "Ver perfil de LinkedIn de {{name}}",
     "items": {
-      "motionDesign": {
-        "quote": "La atención de Paula al motion design y la aceleración por hardware es excepcional. Logra transformar wireframes estáticos en experiencias vivas mediante una lógica fluida y dinámica.",
-        "role": "Directora Creativa"
+      "comprension_requerimientos": {
+        "quote": "Paula no se limita a implementar: entiende el requerimiento, hace las preguntas correctas y propone soluciones. Puede comunicarse con el cliente y con el equipo técnico con la misma claridad.",
+        "role": "Project Manager"
       },
 
-      "interactiveEngineering": {
-        "quote": "Los shaders topográficos y las secuencias de carga que desarrolló para nuestra plataforma son increíbles. Una verdadera especialista en ingeniería interactiva.",
-        "role": "Co-Fundador"
+      "wordPress": {
+        "quote": "Tiene un manejo sólido de WordPress y entiende lo que hay detrás de cada implementación. Puede trabajar con Elementor, código y soluciones personalizadas, siempre buscando la mejor forma de resolver el problema.",
+        "role": "Frontend Developer"
       },
 
-      "interactiveExcellence": {
-        "quote": "Trabajar con Paula es una experiencia de excelencia interactiva. El rendimiento visual, los tiempos y el ritmo de la experiencia superaron todos los estándares.",
-        "role": "Product Owner"
+      "criterio_visual": {
+        "quote": "Paula combina muy buen criterio visual con una mirada técnica. Cuida los detalles sin perder de vista responsive, performance y usabilidad.",
+        "role": "Diseñador UI/UX"
       },
 
-      "responsiveExperience": {
-        "quote": "El carrusel basado en drag y las respuestas del cursor personalizado se sienten increíblemente fluidos. La calidad del código es impecable y altamente performante.",
-        "role": "Líder Técnico"
+      "iniciativa_autonomia": {
+        "quote": "Tiene mucha iniciativa y autonomía para aprender y resolver. Investiga, prueba y propone nuevas herramientas o procesos cuando pueden mejorar el trabajo.",
+        "role": "Project Manager"
       }
     }
   },
@@ -359,13 +361,13 @@
     "real_billion": {
       "projectType": ["Landing Comercial"],
       "summary": "Landing comercial desarrollada para promocionar oficinas en alquiler, destacando los beneficios del proyecto y facilitando la captación de consultas mediante una experiencia enfocada en la conversión.",
-      "overview": "Real Billion Oficinas presenta la propuesta comercial del desarrollo a través de una experiencia visual moderna que combina imágenes, información del proyecto y llamados a la acción. El recorrido fue pensado para comunicar rápidamente el valor de la propuesta y acompañar al usuario hasta el contacto.",
-      "challenge": "El mayor desafío fue sintetizar información comercial en una landing clara y atractiva, manteniendo una fuerte jerarquía visual y un recorrido que favoreciera la generación de leads sin distraer al usuario.",
+      "overview": "Real Billion Oficinas presenta la propuesta comercial del desarrollo a través de una experiencia visual moderna. Diseñé la propuesta visual con Lovable y mi propio criterio, la presenté al cliente, incorporé su feedback y luego llevé el diseño a alta fidelidad sobre WordPress y Elementor, sumando code snippets y shortcodes puntuales para algunas secciones.",
+      "challenge": "El desafío fue doble: diseñar una propuesta visual propia que sintetizara la información comercial de forma clara y atractiva, e incorporar el feedback del cliente para llevar ese diseño a alta fidelidad, manteniendo una fuerte jerarquía visual y un recorrido orientado a la generación de leads.",
       "learnings": "Este proyecto me permitió profundizar en el desarrollo de landing pages orientadas a conversión, combinando estrategia visual, optimización de contenido y experiencias responsive enfocadas en maximizar las consultas comerciales.",
       "highlights": [
+        "Diseño Propio (Lovable)",
         "Landing orientada a conversión",
-        "Generación de leads",
-        "Diseño responsive",
+        "Code Snippets & Shortcodes",
         "UI moderna",
         "Optimización de CTA",
         "Mobile First"
@@ -374,15 +376,17 @@
     "atlantic_village": {
       "projectType": ["Landing Comercial"],
       "summary": "Landing comercial desarrollada para promocionar los espacios de leasing de Atlantic Village, un desarrollo de uso mixto en el sur de Florida que integra oficinas, comercios, gastronomía y bienestar en un mismo entorno.",
-      "overview": "Atlantic Village Leasing presenta la propuesta comercial del desarrollo a través de una experiencia visual moderna, destacando la ubicación, los distintos espacios disponibles y el concepto de comunidad que define al proyecto. El recorrido acompaña al usuario mediante información clara, recursos visuales y llamados a la acción orientados a la captación de potenciales locatarios.",
-      "challenge": "El desafío fue transmitir la magnitud de un desarrollo inmobiliario multifuncional sin perder claridad en la comunicación. Se trabajó sobre una narrativa visual que permitiera presentar los diferentes usos del proyecto y guiar al usuario hacia el contacto comercial.",
-      "learnings": "Este proyecto reforzó mi experiencia desarrollando landing pages inmobiliarias orientadas a la conversión, combinando jerarquía visual, contenido estratégico y una experiencia responsive enfocada en generar oportunidades comerciales.",
+      "overview": "Atlantic Village Leasing presenta la propuesta comercial del desarrollo a través de una experiencia visual moderna, destacando la ubicación, los distintos espacios disponibles y el concepto de comunidad que define al proyecto. El recorrido acompaña al usuario mediante información clara, recursos visuales y llamados a la acción orientados a la captación de potenciales locatarios. Diseñé y desarrollé este proyecto de punta a punta.",
+      "challenge": "El desafío fue doble. Por un lado, diseñar la propuesta visual del proyecto con criterio propio (usando Lovable como herramienta de prototipado). Por otro, construir la arquitectura de datos para gestionar el leasing comercial: implementé CPT y taxonomías personalizadas para organizar las propiedades disponibles, sumé filtros de búsqueda personalizados, y en cada publicación integré campos específicos con ACF (metros cuadrados, número de unidad, uso ideal del espacio, video, galería de fotos) para estructurar la información de cada propiedad.",
+      "learnings": "Este proyecto reforzó tanto mi criterio de diseño —llevar una propuesta visual propia de punta a punta hasta la aprobación del cliente— como mi capacidad para estructurar datos complejos en WordPress: CPT, taxonomías, ACF y filtros personalizados trabajando en conjunto para que la carga de propiedades fuera simple para el cliente y la búsqueda fuera rápida para el usuario final.",
       "highlights": [
         "Leasing Comercial",
-        "Landing Inmobiliaria",
-        "Generación de Leads",
-        "Diseño Responsive",
-        "UI Moderna",
+        "Diseño Propio (Lovable)",
+        "Custom Post Types & Taxonomies",
+        "ACF — Campos Personalizados",
+        "Filtros de Búsqueda Personalizados",
+        "Shortcodes & Code Snippets",
+        "Structured Data Management",
         "Enfoque en Conversión"
       ]
     },
@@ -405,15 +409,16 @@
       "projectType": ["Catálogo Dinámico"],
       "summary": "Plataforma de catálogo desarrollada para administrar y exhibir el stock de vehículos mediante filtros dinámicos, automatización de precios y una experiencia optimizada para la gestión comercial.",
       "overview": "El módulo Stock de Modena Autos fue desarrollado sobre WordPress utilizando JetEngine para gestionar un catálogo dinámico de vehículos. La plataforma incorpora filtros avanzados de búsqueda, fichas individuales y una lógica personalizada que permite actualizar la cotización del dólar desde el panel de administración, impactando automáticamente en los precios publicados de cada unidad.",
-      "challenge": "El desafío consistió en construir una plataforma flexible para administrar un catálogo que cambia constantemente, automatizando la actualización de precios mediante una solución personalizada y manteniendo una experiencia rápida e intuitiva para el usuario final.",
+      "challenge": "El desafío consistió en construir una plataforma flexible para administrar un catálogo de vehículos en constante cambio. Implementé CPT y taxonomías con JetEngine, sumando campos personalizados para el panel de carga (Marca, Modelo, Precio ARS/USD, Kilómetros, Tipo de combustible, Tipo de carrocería) y campos por publicación para galería de fotos, descripción del vehículo y campos booleanos para mostrar u ocultar información como la garantía. La landing dinámica de cada vehículo se armó con shortcodes y code snippets a medida.",
       "learnings": "Este proyecto consolidó mi experiencia extendiendo WordPress mediante JetEngine y desarrollos personalizados, integrando lógica de negocio con herramientas de administración para construir una plataforma escalable, fácil de mantener y adaptada a los procesos del cliente.",
       "highlights": [
         "JetEngine",
         "Desarrollo WordPress Personalizado",
         "Catálogo Dinámico de Vehículos",
         "Filtros Avanzados",
-        "Actualización Automática de Precios",
-        "Optimización de CMS"
+        "Custom Post Types & Taxonomías",
+        "Actualización Automática de Precios ARS/USD",
+        "Shortcodes & Code Snippets"
       ]
     },
     "grupo_pensar": {
@@ -495,15 +500,17 @@
       "projectType": ["Plataforma LMS"],
       "summary": "Plataforma e-learning desarrollada sobre WordPress, WooCommerce y LearnDash, diseñada para gestionar cursos online, inscripciones, evaluaciones y el seguimiento completo de los estudiantes.",
       "overview": "Impulso Académico centraliza la oferta educativa del instituto mediante una plataforma LMS que integra WooCommerce y LearnDash para administrar la inscripción, el acceso a los cursos y el progreso de cada estudiante. El proyecto incluye la gestión de contenidos, evaluaciones, certificados y automatizaciones, brindando una experiencia completa tanto para alumnos como para administradores.",
-      "challenge": "El mayor desafío fue implementar una plataforma con más de 30 cursos, configurando lecciones, cuestionarios, certificados, notificaciones automáticas y reglas de acceso personalizadas. Además, se desarrollaron funcionalidades mediante Code Snippets para adaptar LearnDash y WooCommerce a los procesos internos del instituto.",
-      "learnings": "Este proyecto consolidó mi experiencia desarrollando plataformas educativas sobre WordPress, integrando múltiples herramientas dentro de un mismo ecosistema. También profundicé en la personalización de LearnDash, la automatización de procesos académicos y el desarrollo de soluciones escalables enfocadas en la experiencia del usuario.",
+      "challenge": "El mayor desafío fue implementar una plataforma con más de 30 cursos y tres roles de usuario distintos —administrador, personal administrativo y alumnos— cada uno con permisos y vistas diferenciadas. Integré WooCommerce y LearnDash, desarrollando funcionalidades personalizadas mediante shortcodes y Code Snippets para adaptar ambas herramientas a los procesos internos del instituto: reglas de acceso por rol, certificados automáticos y notificaciones.",
+      "learnings": "Este proyecto consolidó mi experiencia integrando múltiples plugins dentro de un mismo ecosistema WordPress y gestionando permisos diferenciados por rol de usuario. Además, mantuve contacto directo y constante con la clienta durante todo el proyecto, incluyendo la grabación de tutoriales para acompañarla en el uso de su nueva plataforma — algo que reforzó mi capacidad de traducir soluciones técnicas en algo simple de usar para alguien no técnico.",
       "highlights": [
         "LearnDash LMS",
         "Integración con WooCommerce",
         "Desarrollo WordPress personalizado",
         "Gestión de cursos",
+        "Gestión de Roles y Permisos",
         "Certificados automatizados",
-        "Code Snippets personalizados"
+        "Shortcodes & Code Snippets",
+        "Soporte y Documentación al Cliente"
       ]
     },
     "barrio_mirabello": {
@@ -530,8 +537,9 @@
       "highlights": [
         "Desarrollo Pixel Perfect",
         "Figma a WordPress",
+        "Consistencia de Branding",
         "Implementación Responsive",
-        "Animaciones con GSAP",
+        "Animaciones",
         "UI Moderna",
         "Optimización de Performance"
       ]
@@ -585,15 +593,13 @@
       "projectType": ["Plataforma de Reservas"],
       "summary": "Sitio institucional desarrollado para un resort, integrando un motor de reservas online para ofrecer una experiencia de navegación fluida y facilitar la conversión directa de huéspedes.",
       "overview": "Lyfe Resort & Residences presenta su propuesta de alojamiento mediante una experiencia visual enfocada en transmitir confort, diseño y hospitalidad. El sitio fue desarrollado para destacar las instalaciones, los servicios y simplificar el proceso de reserva mediante la integración del Cloudbeds Booking Engine, permitiendo a los usuarios consultar disponibilidad y reservar de forma directa desde la plataforma.",
-      "challenge": "El principal desafío fue integrar el motor de reservas Cloudbeds dentro de una experiencia completamente personalizada, manteniendo consistencia visual, una navegación intuitiva y un proceso de reserva fluido entre el sitio institucional y la plataforma externa.",
+      "challenge": "El principal desafío fue integrar el motor de búsqueda de reservas Cloudbeds (API/webhooks de terceros) dentro de una experiencia completamente personalizada, manteniendo consistencia visual, una navegación intuitiva y un proceso de reserva fluido entre el sitio institucional y la plataforma externa.",
       "learnings": "Este proyecto consolidó mi experiencia integrando servicios de terceros dentro de WordPress, comprendiendo la importancia de construir experiencias continuas entre diferentes plataformas sin afectar la identidad visual, el rendimiento ni la experiencia del usuario.",
       "highlights": [
         "Integración con Cloudbeds",
         "Plataforma de Reservas",
-        "Sitio Web de Hospitality",
         "Diseño Responsive",
-        "Integración de Terceros",
-        "Optimización de Conversión"
+        "Integración de Terceros"
       ]
     },
     "saas_landing": {

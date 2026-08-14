@@ -137,7 +137,7 @@ function ExpertiseIntroStack({ services, header, onViewMore }) {
         {header}
       </div>
 
-      <div className="relative w-[300px] md:w-[340px] h-[440px] md:h-[480px] z-20">
+      <div className="relative w-[300px] md:w-[340px] h-[410px] md:h-[410px] z-20">
         {services.map((service, i) => (
           <div
             key={service.key}
@@ -171,7 +171,7 @@ function ExpertiseIntroStack({ services, header, onViewMore }) {
               <div className="p-5 pt-0">
                 <button
                   onClick={() => onViewMore?.(service)}
-                  className="w-full border-[#6d28d9] bg-[#6d28d9]/10 hover:bg-[#6d28d9] rounded-full border flex items-center justify-center gap-2 px-5 py-2 text-[12px] font-bold text-white transition-colors"
+                  className="w-full border-[#6d28d9] bg-[#6d28d9]/10 hover:bg-[#6d28d9] rounded-2xl border flex items-center justify-center gap-2 px-5 py-2 text-[12px] font-bold text-white transition-colors"
                   data-cursor="pointer"
                 >
                   {t("common.viewMore")}

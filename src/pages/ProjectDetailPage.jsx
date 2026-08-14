@@ -309,8 +309,15 @@ function ProjectDetailPage({ setPage }) {
                             {t("projects_selected.detail.fields.role")}
                           </p>
 
-                          <p className="text-white text-sm font-medium">
-                            {projectDetail.role}
+                          <p className="text-white text-sm font-medium leading-relaxed">
+                            {Array.isArray(projectDetail.role)
+                              ? projectDetail.role.map((role, index) => (
+                                  <span key={role}>
+                                    {index > 0 && <br />}
+                                    {role}
+                                  </span>
+                                ))
+                              : projectDetail.role}
                           </p>
                         </div>
 
@@ -550,14 +557,14 @@ function ProjectDetailPage({ setPage }) {
                 <div className="z-10 flex justify-between items-start">
                   <button
                     onClick={(e) => {
-                      e.stopPropagation(); // evita que dispare el click del panel (que va al next)
+                      e.stopPropagation();
                       if (prevProjectData) {
                         setPage(`/project/${prevProjectData.slug}`);
                       } else {
                         setPage("/projects");
                       }
                     }}
-                    className="cursor-pointer inline-flex items-center gap-3 text-xs font-space font-bold tracking-widest text-neutral-800 hover:text-[#84cc16] transition-colors"
+                    className="cursor-pointer inline-flex items-center gap-3 text-[13px] font-space font-bold tracking-widest text-neutral-800 hover:text-[#84cc16] transition-colors"
                   >
                     <svg
                       className="w-4 h-4"
@@ -582,15 +589,15 @@ function ProjectDetailPage({ setPage }) {
 
                 {/* Giant Title + mini descripción + thumbnail del próximo proyecto */}
                 {nextProjectData ? (
-                  <div className="z-10 flex items-end justify-between gap-8 max-w-5xl">
+                  <div className="z-10 flex items-end justify-between gap-8 max-w-6xl">
                     <div className="text-left max-w-2xl">
                       <h2
                         ref={nextTitleRef}
-                        className="text-7xl font-extrabold mb-4 mt-4 font-korium tracking-wider text-neutral-800 leading-none origin-left transition-transform duration-75"
+                        className="text-7xl font-extrabold mb-4 mt-6 font-korium tracking-wider text-neutral-800 leading-none origin-left transition-transform duration-75"
                       >
                         {nextProjectData.title}
                       </h2>
-                      <p className="editorial mt-6 text-lg md:text-xl text-neutral-600 max-w-xl">
+                      <p className="editorial mt-6 text-[18px] text-neutral-600 max-w-xl">
                         {t(`project.${nextProjectData.id}.summary`)}
                       </p>
                     </div>
@@ -616,7 +623,7 @@ function ProjectDetailPage({ setPage }) {
                 )}
 
                 {/* Next Project Link & Line Indicator */}
-                <div className="w-full flex justify-between items-center z-10 border-t border-black/10 pt-8 mt-12 max-w-4xl">
+                <div className="w-full flex justify-between items-center z-10 border-t border-black/10 pt-8 mt-12 max-w-6xl">
                   <div className="flex items-center gap-6">
                     <span className="text-xs font-space font-bold tracking-widest text-neutral-800">
                       {nextProjectData

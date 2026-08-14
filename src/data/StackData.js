@@ -11,8 +11,7 @@ const stackData = [
       "JetEngine / JetEngine Pro",
       "Rank Math SEO / Yoast SEO",
       "Honeypot / reCAPTCHA",
-      "Google Analytics",
-      "Google Tag Manager",
+      "CPT & Taxonomies",
       "ACF Pro",
       "Code Snippets",
     ],
@@ -32,8 +31,6 @@ const stackData = [
       "React-Query",
       "GIT & GitHub",
       "VS Code & Antigravity",
-      "Docker",
-      "Postman",
     ],
   },
   {
