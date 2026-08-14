@@ -228,6 +228,9 @@ export default function Testimonials() {
               className="text-4xl md:text-6xl font-extrabold font-korium tracking-wider leading-none uppercase text-stone-100"
               lines={[t("testimonials.title")]}
             />
+            <span className="rounded-full border border-[#a3e635]/40 bg-[#a3e635]/5 px-3 py-1 font-mono text-[9px] uppercase tracking-[0.15em] text-[#a3e635]">
+              Sample Content · Real Testimonials Soon
+            </span>
           </div>
           <div className="lg:col-span-4 text-left lg:text-right">
             <p className="text-[13px] text-neutral-400 font-grotesk leading-relaxed max-w-sm ml-auto">
