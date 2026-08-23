@@ -82,6 +82,7 @@ function ProjectDetailPage({ setPage }) {
     const triggerElement = triggerRef.current;
     if (!scrollContainer || !triggerElement) return;
 
+    window.scrollTo(0, 0);
     transitionTriggered.current = false;
 
     const calculateScrollWidth = () => {
@@ -90,6 +91,10 @@ function ProjectDetailPage({ setPage }) {
 
     // Extra scroll depth for filling progress loader at the end
     const extraScroll = 900;
+
+    requestAnimationFrame(() => {
+      ScrollTrigger.refresh();
+    });
 
     const pin = gsap.fromTo(
       scrollContainer,
