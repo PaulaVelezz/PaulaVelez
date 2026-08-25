@@ -125,24 +125,23 @@
     "swipeHint": "SWIPE HORIZONTALLY",
     "linkedinLabel": "View {{name}}'s LinkedIn profile",
     "items": {
-      "comprension_requerimientos": {
-        "quote": "Paula doesn't just implement: she understands the requirements, asks the right questions, and suggests solutions. She communicates clearly with both clients and technical teams.",
-        "role": "Project Manager"
+      "florencia_copertari": {
+        "quote": "Working with Paula was very smooth. She understands marketing needs, translates them into concrete technical solutions, and is very receptive to feedback. She communicates clearly and adapts quickly to changes.",
+        "role": "Media Buyer SSR | Creative Strategist"
       },
 
-      "wordPress": {
-        "quote": "She has a strong command of WordPress and understands what goes on behind each implementation. She's comfortable with Elementor, code, and custom solutions, always looking for the best way to solve a problem.",
-        "role": "Frontend Developer"
+      "maria_zarate": {
+        "quote": "I was lucky to have Paula as my mentor, and it was a pleasure to share that experience with her. She was always willing to help, guide me through the process, and answer every question with kindness and professionalism.",
+        "role": "Web Developer Intern"
       },
 
-      "criterio_visual": {
-        "quote": "Paula combines a strong visual sense with a technical mindset. She pays attention to detail while keeping responsiveness, performance, and usability in mind.",
-        "role": "UI/UX Designer"
+      "alejandro_ruiz_diaz": {
+        "quote": "I worked with Paula for two years and watched her grow from an intern into a solid developer with a strong technical skillset. She stands out for her adaptability, eagerness to learn, and proactive approach to problem-solving, even under tight deadlines.",
+        "role": "Frontend Developer SSR"
       },
-
-      "iniciativa_autonomia": {
-        "quote": "She takes initiative and works independently when it comes to learning and solving problems. She researches, experiments, and suggests new tools or processes when they can improve the work.",
-        "role": "Project Manager"
+      "more_soon": {
+        "quote": "More real experiences and testimonials coming soon.",
+        "role": "Coming soon"
       }
     }
   },

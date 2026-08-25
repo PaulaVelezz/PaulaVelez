@@ -11,33 +11,33 @@ gsap.registerPlugin(ScrollTrigger);
 const TESTIMONIALS_DATA = [
   {
     id: 1,
-    key: "comprension_requerimientos",
-    author: "Elena Rostova",
-    company: "Studio Luma",
-    linkedin: "https://www.linkedin.com/",
+    key: "alejandro_ruiz_diaz",
+    author: "Alejandro Ruiz Diaz",
+    company: "Agencia Lader",
+    linkedin: "https://www.linkedin.com/in/alee-ruiz/",
     rating: "★★★★★",
   },
   {
     id: 2,
-    key: "wordPress",
-    author: "Marc Vanhoutte",
-    company: "Lusion Systems",
-    linkedin: "https://www.linkedin.com/",
+    key: "florencia_copertari",
+    author: "Florencia Copertari",
+    company: "Agencia Lader",
+    linkedin: "https://www.linkedin.com/in/florencia-copertari/",
     rating: "★★★★★",
   },
   {
     id: 3,
-    key: "criterio_visual",
-    author: "Sophia Alvarez",
-    company: "Vertex Labs",
-    linkedin: "https://www.linkedin.com/",
+    key: "maria_zarate",
+    author: "María Zárate",
+    company: "Agencia Lader",
+    linkedin: "https://www.linkedin.com/in/belenzar/",
     rating: "★★★★★",
   },
   {
     id: 4,
-    key: "iniciativa_autonomia",
-    author: "Kenji Sato",
-    company: "Nippon Media",
+    key: "more_soon",
+    author: "More testimonials",
+    company: "Soon",
     linkedin: "https://www.linkedin.com/",
     rating: "★★★★★",
   },
@@ -85,7 +85,7 @@ function TestimonialCard({ data }) {
         rotateY: springRotateY,
         transformStyle: "preserve-3d",
       }}
-      className="testimonial-card flex-shrink-0 w-[340px] sm:w-[420px] h-[360px] bg-[#121316] border border-white/5 rounded-3xl p-8 flex flex-col justify-between shadow-2xl relative overflow-hidden group select-none hover:border-[#a3e635]/30 transition-colors cursor-grab active:cursor-grabbing"
+      className="testimonial-card flex-shrink-0 w-[360px] sm:w-[450px] h-[370px] bg-[#121316] border border-white/5 rounded-3xl p-8 flex flex-col justify-between shadow-2xl relative overflow-hidden group select-none hover:border-[#a3e635]/30 transition-colors cursor-grab active:cursor-grabbing"
       tabIndex={0}
       aria-label={`Testimonial from ${data.author} at ${data.company}`}
     >
@@ -128,13 +128,13 @@ function TestimonialCard({ data }) {
               {data.author}
             </h4>
             -
-            <p className="text-[10px] text-white/40 uppercase tracking-wider">
-              {t(`testimonials.items.${data.key}.role`)}
+            <p className="text-[13px] text-[#a3e635] uppercase tracking-wider">
+              {data.company}
             </p>
           </div>
 
-          <p className="text-[10px] text-[#a3e635] uppercase tracking-wider mt-1">
-            {data.company}
+          <p className="mt-1 text-[10px] text-white/40 uppercase tracking-wider">
+            {t(`testimonials.items.${data.key}.role`)}
           </p>
         </div>
 
@@ -228,9 +228,6 @@ export default function Testimonials() {
               className="text-4xl md:text-6xl font-extrabold font-korium tracking-wider leading-none uppercase text-stone-100"
               lines={[t("testimonials.title")]}
             />
-            <span className="rounded-full border border-[#a3e635]/40 bg-[#a3e635]/5 px-3 py-1 font-mono text-[9px] uppercase tracking-[0.15em] text-[#a3e635]">
-              Sample Content · Real Testimonials Soon
-            </span>
           </div>
           <div className="lg:col-span-4 text-left lg:text-right">
             <p className="text-[13px] text-neutral-400 font-grotesk leading-relaxed max-w-sm ml-auto">

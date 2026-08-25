@@ -125,24 +125,23 @@
     "swipeHint": "DESLIZÁ HORIZONTALMENTE",
     "linkedinLabel": "Ver perfil de LinkedIn de {{name}}",
     "items": {
-      "comprension_requerimientos": {
-        "quote": "Paula no se limita a implementar: entiende el requerimiento, hace las preguntas correctas y propone soluciones. Puede comunicarse con el cliente y con el equipo técnico con la misma claridad.",
-        "role": "Project Manager"
+      "florencia_copertari": {
+        "quote": "Trabajar con Paula fue muy fluido. Entiende las necesidades del equipo de marketing, las traduce en soluciones técnicas concretas y tiene muy buena recepción al feedback. Se comunica con claridad y se adapta rápido a los cambios.",
+        "role": "Media Buyer SSR | Creative Strategist"
       },
 
-      "wordPress": {
-        "quote": "Tiene un manejo sólido de WordPress y entiende lo que hay detrás de cada implementación. Puede trabajar con Elementor, código y soluciones personalizadas, siempre buscando la mejor forma de resolver el problema.",
-        "role": "Frontend Developer"
+      "maria_zarate": {
+        "quote": "Tuve la suerte de tener a Paula como mentora y fue un placer compartir este proceso con ella. Siempre estuvo predispuesta a ayudarme, acompañarme y responder cada consulta con mucha amabilidad y profesionalismo.",
+        "role": "Practicante Desarrollo Web"
       },
 
-      "criterio_visual": {
-        "quote": "Paula combina muy buen criterio visual con una mirada técnica. Cuida los detalles sin perder de vista responsive, performance y usabilidad.",
-        "role": "Diseñador UI/UX"
+      "alejandro_ruiz_diaz": {
+        "quote": "Trabajé con Paula y la vi crecer desde practicante hasta convertirse en una desarrolladora sólida, con muy buen nivel técnico. Se destaca por su capacidad de adaptación, sus ganas de aprender y su forma resolutiva de enfrentar problemas, incluso cuando hay tiempos ajustados.",
+        "role": "Desarrollador Frontend SSR"
       },
-
-      "iniciativa_autonomia": {
-        "quote": "Tiene mucha iniciativa y autonomía para aprender y resolver. Investiga, prueba y propone nuevas herramientas o procesos cuando pueden mejorar el trabajo.",
-        "role": "Project Manager"
+      "more_soon": {
+        "quote": "Más experiencias y testimonios reales próximamente.",
+        "role": "Próximamente"
       }
     }
   },
