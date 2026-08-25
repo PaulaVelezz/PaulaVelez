@@ -123,5 +123,5 @@ Designed & developed by **Paula Velez.**
 ** WordPress Developer & Frontend (React) • Creative Developer**
 
 - 🌐 GitHub: https://github.com/PaulaVelezz
-- 💼 Portfolio: _Coming soon_
+- 💼 Portfolio: https://paula-velez-portfolio.vercel.app/ 
 - 🤝 Open to freelance projects, company opportunities, and creative collaborations.
