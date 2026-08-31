@@ -101,40 +101,44 @@ function Hero({ setPage }) {
                   href={ResumeESP}
                   target="_blank"
                   rel="noopener noreferrer"
-                  arialabel="Spanish resume link"
+                  aria-label="Spanish resume link"
                   className="
-                  block
-                  px-5
-                  py-4
-                  text-xs
-                  tracking-widest
-                  font-space
-                  text-white
-                  hover:bg-white/5
-                "
+                    flex
+                    items-center
+                    px-5
+                    py-4
+                    text-xs
+                    tracking-widest
+                    font-space
+                    text-white
+                    hover:bg-white/5
+                  "
                 >
-                  CV (ESP) <LiaFileDownloadSolid />
+                  <span>CV (ESP)</span>
+                  <LiaFileDownloadSolid className="ml-auto text-base" />
                 </a>
 
                 <a
                   href={ResumeENG}
                   target="_blank"
                   rel="noopener noreferrer"
-                  arialabel="English resume link"
+                  aria-label="English resume link"
                   className="
-                  block
-                  px-5
-                  py-4
-                  text-xs
-                  tracking-widest
-                  font-space
-                  text-white
-                  hover:bg-white/5
-                  border-t
-                  border-white/10
-                "
+                    flex
+                    items-center
+                    px-5
+                    py-4
+                    text-xs
+                    tracking-widest
+                    font-space
+                    text-white
+                    hover:bg-white/5
+                    border-t
+                    border-white/10
+                  "
                 >
-                  CV (ENG) <LiaFileDownloadSolid />
+                  <span>CV (ENG)</span>
+                  <LiaFileDownloadSolid className="ml-auto text-base" />
                 </a>
               </div>
             </div>
