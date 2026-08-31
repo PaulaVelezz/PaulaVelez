@@ -88,7 +88,7 @@ function HighlightCard({ text }) {
           transform: "translateZ(40px)",
         }}
         className="
-          text-base
+          md:text-base text-sm
           leading-relaxed
           font-grotesk
           text-white/90

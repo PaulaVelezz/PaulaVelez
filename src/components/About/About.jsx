@@ -109,7 +109,7 @@ const About = () => {
             {/* Interactive CTAs */}
             <div
               ref={buttonsRef}
-              className="opacity-0 translate-y-6 mt-8 flex flex-wrap items-center gap-4"
+              className="opacity-0 translate-y-6 mt-8 flex items-center gap-4"
             >
               <div className="relative group">
                 <button

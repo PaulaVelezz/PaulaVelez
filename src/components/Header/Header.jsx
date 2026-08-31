@@ -101,13 +101,20 @@ export default function Header({
         >
           <span
             className={`
-          inline-block
-          transition-all
-          duration-500
-          ${scrolled ? "text-3xl md:text-4xl" : "text-3xl md:text-4xl"}
-        `}
+            inline-block
+            transition-all
+            duration-500
+            ${scrolled ? "text-3xl md:text-4xl" : "text-3xl md:text-4xl"}
+          `}
           >
-            {scrolled ? "PV" : "PAULA VELEZ"}
+            {/* Mobile */}
+            <span className="md:hidden">PV</span>
+
+            {/* Desktop dinámico según scroll */}
+            <span className="hidden md:inline">
+              {scrolled ? "PV" : "PAULA VELEZ"}
+            </span>
+
             <span className="text-[#A3E635]">.</span>
           </span>
         </button>

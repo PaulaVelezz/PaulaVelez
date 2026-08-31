@@ -2,12 +2,6 @@
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
 
-/* @font-face {
-  font-family: "T1Korium";
-  src: url("/fonts/T1Korium-Bold.ttf") format("truetype");
-  font-display: swap;
-} */
-
 @font-face {
   font-family: "T1Korium";
   src: url("/fonts/T1Korium-Variable.woff2") format("woff2-variations");

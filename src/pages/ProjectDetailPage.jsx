@@ -196,17 +196,20 @@ function ProjectDetailPage({ setPage }) {
                     lines={[projectDetail.title]}
                   />
 
-                  <p className="mt-10 max-w-3xl text-xl leading-relaxed text-white/80">
+                  <p className="mt-10  md:max-w-3xl max-w-md md:text-xl text-sm leading-relaxed text-white/80">
                     {projectText.summary}
                   </p>
 
                   {/* Overview */}
-                  <section ref={overviewRef} className="mt-20 max-w-5xl">
+                  <section
+                    ref={overviewRef}
+                    className="mt-20 md:max-w-5xl max-w-md"
+                  >
                     <span className="text-[#A3E635] text-sm tracking-[0.2em] uppercase">
                       (00) — {t("projects_selected.detail.overview")}
                     </span>
 
-                    <p className="editorial mt-8 text-xl leading-relaxed text-white/90">
+                    <p className="editorial mt-8 md:text-xl text-sm leading-relaxed text-white/90">
                       {projectText.overview}
                     </p>
                   </section>
@@ -387,7 +390,7 @@ function ProjectDetailPage({ setPage }) {
               <div className="text-[#a3e635]">
                 (02) — {t("projects_selected.detail.sections.challenge")}
               </div>
-              <p className="editorial mt-6 text-xl text-foreground leading-relaxed">
+              <p className="editorial mt-6 md:text-xl text-sm text-foreground leading-relaxed">
                 {projectText.challenge}
               </p>
             </div>
@@ -395,7 +398,7 @@ function ProjectDetailPage({ setPage }) {
               <div className="text-[#a3e635]">
                 (03) — {t("projects_selected.detail.sections.learnings")}
               </div>
-              <p className="editorial mt-6 text-xl text-foreground leading-relaxed">
+              <p className="editorial mt-6 md:text-xl text-sm text-foreground leading-relaxed">
                 {projectText.learnings}
               </p>
             </div>
@@ -586,11 +589,11 @@ function ProjectDetailPage({ setPage }) {
                     <div className="text-left max-w-2xl">
                       <h2
                         ref={nextTitleRef}
-                        className="text-7xl font-extrabold mb-4 mt-6 font-korium tracking-wider text-neutral-800 leading-none origin-left transition-transform duration-75"
+                        className="text-5xl md:text-7xl font-extrabold mb-4 mt-6 font-korium tracking-wider text-neutral-800 leading-none origin-left transition-transform duration-75"
                       >
                         {nextProjectData.title}
                       </h2>
-                      <p className="editorial mt-6 text-[18px] text-neutral-600 max-w-xl">
+                      <p className="editorial mt-6 md:text-[18px] text-base text-neutral-600 max-w-xl">
                         {t(`project.${nextProjectData.id}.summary`)}
                       </p>
                     </div>
