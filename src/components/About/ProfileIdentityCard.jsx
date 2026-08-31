@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import PROFILE from "/Perfil_2026.png";
+import PROFILE from "/Perfil_2026.webp";
 import { useTranslation } from "react-i18next";
 
 const ProfileIdentityCard = () => {

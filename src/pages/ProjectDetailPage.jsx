@@ -14,7 +14,7 @@ import {
   FiFigma,
   FiExternalLink,
 } from "react-icons/fi";
-import darkbg from "../assets/darkbg.png";
+import darkbg from "../assets/darkbg.webp";
 import { useTranslation } from "react-i18next";
 
 gsap.registerPlugin(ScrollTrigger);

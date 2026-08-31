@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 
-const IMAGE_SRC = "/Perfil_2026.png";
+const IMAGE_SRC = "/Perfil_2026.webp";
 
 class TextHeatReveal {
   constructor(canvas, imgSrc, options = {}) {
@@ -468,6 +468,7 @@ export default function AsciiPortrait() {
       <img
         src={IMAGE_SRC}
         alt="Paula Velez"
+        fetchPriority="high"
         className="
           absolute inset-0 z-0
           w-full h-full object-cover

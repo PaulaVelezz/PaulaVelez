@@ -30,101 +30,101 @@ import ABS5 from "../assets/abstract/abstract-7-SteveJohnson.webp";
 import ABS6 from "../assets/abstract/abstract-1-SteveJohnson.webp";
 import ABS7 from "../assets/abstract/abstract-2-SteveJohnson.webp";
 
-import RealBillionMockup from "../assets/proyectos individuales/Real Billion/Real Billion Mockup.png";
-import SRB1 from "../assets/proyectos individuales/Real Billion/SRB1.png";
-import SRB2 from "../assets/proyectos individuales/Real Billion/SRB2.png";
-import SRB3 from "../assets/proyectos individuales/Real Billion/SRB3.png";
-import SRB4 from "../assets/proyectos individuales/Real Billion/SRB4.png";
-import SRB5 from "../assets/proyectos individuales/Real Billion/SRB5.png";
+import RealBillionMockup from "../assets/proyectos individuales/Real Billion/Real Billion Mockup.webp";
+import SRB1 from "../assets/proyectos individuales/Real Billion/SRB1.webp";
+import SRB2 from "../assets/proyectos individuales/Real Billion/SRB2.webp";
+import SRB3 from "../assets/proyectos individuales/Real Billion/SRB3.webp";
+import SRB4 from "../assets/proyectos individuales/Real Billion/SRB4.webp";
+import SRB5 from "../assets/proyectos individuales/Real Billion/SRB5.webp";
 
-import AtlanticVillageMockup from "../assets/proyectos individuales/Atlantic Village/Atlantic Village Mockup.png";
-import SAV1 from "../assets/proyectos individuales/Atlantic Village/SAV1.png";
-import SAV2 from "../assets/proyectos individuales/Atlantic Village/SAV2.png";
-import SAV3 from "../assets/proyectos individuales/Atlantic Village/SAV3.png";
-import SAV4 from "../assets/proyectos individuales/Atlantic Village/SAV4.png";
-import SAV5 from "../assets/proyectos individuales/Atlantic Village/SAV5.png";
-import SAV6 from "../assets/proyectos individuales/Atlantic Village/SAV6.png";
+import AtlanticVillageMockup from "../assets/proyectos individuales/Atlantic Village/Atlantic Village Mockup.webp";
+import SAV1 from "../assets/proyectos individuales/Atlantic Village/SAV1.webp";
+import SAV2 from "../assets/proyectos individuales/Atlantic Village/SAV2.webp";
+import SAV3 from "../assets/proyectos individuales/Atlantic Village/SAV3.webp";
+import SAV4 from "../assets/proyectos individuales/Atlantic Village/SAV4.webp";
+import SAV5 from "../assets/proyectos individuales/Atlantic Village/SAV5.webp";
+import SAV6 from "../assets/proyectos individuales/Atlantic Village/SAV6.webp";
 
-import MaprimMockup from "../assets/proyectos individuales/Maprim/Maprim Mockup.png";
-import SM1 from "../assets/proyectos individuales/Maprim/SM1.png";
-import SM2 from "../assets/proyectos individuales/Maprim/SM2.png";
-import SM3 from "../assets/proyectos individuales/Maprim/SM3.png";
-import SM4 from "../assets/proyectos individuales/Maprim/SM4.png";
+import MaprimMockup from "../assets/proyectos individuales/Maprim/Maprim Mockup.webp";
+import SM1 from "../assets/proyectos individuales/Maprim/SM1.webp";
+import SM2 from "../assets/proyectos individuales/Maprim/SM2.webp";
+import SM3 from "../assets/proyectos individuales/Maprim/SM3.webp";
+import SM4 from "../assets/proyectos individuales/Maprim/SM4.webp";
 
-import ModenaMockup from "../assets/proyectos individuales/Modena Autos/Modena Autos Mockup.png";
-import SMA1 from "../assets/proyectos individuales/Modena Autos/SMA1.png";
-import SMA2 from "../assets/proyectos individuales/Modena Autos/SMA2.png";
-import SMA3 from "../assets/proyectos individuales/Modena Autos/SMA3.png";
-import SMA4 from "../assets/proyectos individuales/Modena Autos/SMA4.png";
+import ModenaMockup from "../assets/proyectos individuales/Modena Autos/Modena Autos Mockup.webp";
+import SMA1 from "../assets/proyectos individuales/Modena Autos/SMA1.webp";
+import SMA2 from "../assets/proyectos individuales/Modena Autos/SMA2.webp";
+import SMA3 from "../assets/proyectos individuales/Modena Autos/SMA3.webp";
+import SMA4 from "../assets/proyectos individuales/Modena Autos/SMA4.webp";
 
-import GrupoPensarMockup from "../assets/proyectos individuales/Grupo Pensar/GPMockup.png";
-import SGP1 from "../assets/proyectos individuales/Grupo Pensar/SGP1.png";
-import SGP2 from "../assets/proyectos individuales/Grupo Pensar/SGP2.png";
-import SGP3 from "../assets/proyectos individuales/Grupo Pensar/SGP3.png";
-import SGP4 from "../assets/proyectos individuales/Grupo Pensar/SGP4.png";
+import GrupoPensarMockup from "../assets/proyectos individuales/Grupo Pensar/GPMockup.webp";
+import SGP1 from "../assets/proyectos individuales/Grupo Pensar/SGP1.webp";
+import SGP2 from "../assets/proyectos individuales/Grupo Pensar/SGP2.webp";
+import SGP3 from "../assets/proyectos individuales/Grupo Pensar/SGP3.webp";
+import SGP4 from "../assets/proyectos individuales/Grupo Pensar/SGP4.webp";
 
-import RedApacheMockup from "../assets/proyectos individuales/Redapache/Redapache Mockup.png";
-import SR1 from "../assets/proyectos individuales/Redapache/SR1.png";
-import SR2 from "../assets/proyectos individuales/Redapache/SR2.png";
-import SR3 from "../assets/proyectos individuales/Redapache/SR3.png";
+import RedApacheMockup from "../assets/proyectos individuales/Redapache/Redapache Mockup.webp";
+import SR1 from "../assets/proyectos individuales/Redapache/SR1.webp";
+import SR2 from "../assets/proyectos individuales/Redapache/SR2.webp";
+import SR3 from "../assets/proyectos individuales/Redapache/SR3.webp";
 
-import ValtoriaMockup from "../assets/proyectos individuales/Valtoria Marmoles/Valtoria-Marmoles Mockup.png";
-import SVM1 from "../assets/proyectos individuales/Valtoria Marmoles/SVM1.png";
-import SVM2 from "../assets/proyectos individuales/Valtoria Marmoles/SVM2.png";
-import SVM3 from "../assets/proyectos individuales/Valtoria Marmoles/SVM3.png";
-import SVM4 from "../assets/proyectos individuales/Valtoria Marmoles/SVM4.png";
+import ValtoriaMockup from "../assets/proyectos individuales/Valtoria Marmoles/Valtoria-Marmoles Mockup.webp";
+import SVM1 from "../assets/proyectos individuales/Valtoria Marmoles/SVM1.webp";
+import SVM2 from "../assets/proyectos individuales/Valtoria Marmoles/SVM2.webp";
+import SVM3 from "../assets/proyectos individuales/Valtoria Marmoles/SVM3.webp";
+import SVM4 from "../assets/proyectos individuales/Valtoria Marmoles/SVM4.webp";
 
-import PragmaMockup from "../assets/proyectos individuales/Pragma/Pragma Abogados Mockup.png";
-import SPA1 from "../assets/proyectos individuales/Pragma/SPA1.png";
-import SPA2 from "../assets/proyectos individuales/Pragma/SPA2.png";
-import SPA3 from "../assets/proyectos individuales/Pragma/SPA3.png";
-import SPA4 from "../assets/proyectos individuales/Pragma/SPA4.png";
+import PragmaMockup from "../assets/proyectos individuales/Pragma/Pragma Abogados Mockup.webp";
+import SPA1 from "../assets/proyectos individuales/Pragma/SPA1.webp";
+import SPA2 from "../assets/proyectos individuales/Pragma/SPA2.webp";
+import SPA3 from "../assets/proyectos individuales/Pragma/SPA3.webp";
+import SPA4 from "../assets/proyectos individuales/Pragma/SPA4.webp";
 
-import DaserMockup from "../assets/proyectos individuales/Daser/Daser Agro Mockup.png";
-import SDA1 from "../assets/proyectos individuales/Daser/SDA1.png";
-import SDA2 from "../assets/proyectos individuales/Daser/SDA2.png";
-import SDA3 from "../assets/proyectos individuales/Daser/SDA3.png";
-import SDA4 from "../assets/proyectos individuales/Daser/SDA4.png";
+import DaserMockup from "../assets/proyectos individuales/Daser/Daser Agro Mockup.webp";
+import SDA1 from "../assets/proyectos individuales/Daser/SDA1.webp";
+import SDA2 from "../assets/proyectos individuales/Daser/SDA2.webp";
+import SDA3 from "../assets/proyectos individuales/Daser/SDA3.webp";
+import SDA4 from "../assets/proyectos individuales/Daser/SDA4.webp";
 
-import ImpulsoMockup from "../assets/proyectos individuales/Impulso Academico/Impulso Academico Mockup.png";
-import SIA1 from "../assets/proyectos individuales/Impulso Academico/SIA1.png";
-import SIA2 from "../assets/proyectos individuales/Impulso Academico/SIA2.png";
-import SIA3 from "../assets/proyectos individuales/Impulso Academico/SIA3.png";
+import ImpulsoMockup from "../assets/proyectos individuales/Impulso Academico/Impulso Academico Mockup.webp";
+import SIA1 from "../assets/proyectos individuales/Impulso Academico/SIA1.webp";
+import SIA2 from "../assets/proyectos individuales/Impulso Academico/SIA2.webp";
+import SIA3 from "../assets/proyectos individuales/Impulso Academico/SIA3.webp";
 
-import MirabelloMockup from "../assets/proyectos individuales/Barrio Mirabello/Barrio Mirabello Mockup.png";
-import SBM1 from "../assets//proyectos individuales/Barrio Mirabello/SBM1.png";
-import SBM2 from "../assets//proyectos individuales/Barrio Mirabello/SBM2.png";
-import SBM3 from "../assets//proyectos individuales/Barrio Mirabello/SBM3.png";
-import SBM4 from "../assets//proyectos individuales/Barrio Mirabello/SBM4.png";
+import MirabelloMockup from "../assets/proyectos individuales/Barrio Mirabello/Barrio Mirabello Mockup.webp";
+import SBM1 from "../assets//proyectos individuales/Barrio Mirabello/SBM1.webp";
+import SBM2 from "../assets//proyectos individuales/Barrio Mirabello/SBM2.webp";
+import SBM3 from "../assets//proyectos individuales/Barrio Mirabello/SBM3.webp";
+import SBM4 from "../assets//proyectos individuales/Barrio Mirabello/SBM4.webp";
 
-import GrovenMockup from "../assets/proyectos individuales/Groven/Groven Agency Mockup.png";
-import SGA1 from "../assets/proyectos individuales/Groven/SGA1.png";
-import SGA2 from "../assets/proyectos individuales/Groven/SGA2.png";
-import SGA3 from "../assets/proyectos individuales/Groven/SGA3.png";
-import SGA4 from "../assets/proyectos individuales/Groven/SGA4.png";
+import GrovenMockup from "../assets/proyectos individuales/Groven/Groven Agency Mockup.webp";
+import SGA1 from "../assets/proyectos individuales/Groven/SGA1.webp";
+import SGA2 from "../assets/proyectos individuales/Groven/SGA2.webp";
+import SGA3 from "../assets/proyectos individuales/Groven/SGA3.webp";
+import SGA4 from "../assets/proyectos individuales/Groven/SGA4.webp";
 
-import ILTMockup from "../assets/proyectos individuales/ILT/I Love Tango Mockup.png";
-import SILT1 from "../assets/proyectos individuales/ILT/SILT1.png";
-import SILT2 from "../assets/proyectos individuales/ILT/SILT2.png";
-import SILT3 from "../assets/proyectos individuales/ILT/SILT3.png";
-import SILT4 from "../assets/proyectos individuales/ILT/SILT4.png";
+import ILTMockup from "../assets/proyectos individuales/ILT/I Love Tango Mockup.webp";
+import SILT1 from "../assets/proyectos individuales/ILT/SILT1.webp";
+import SILT2 from "../assets/proyectos individuales/ILT/SILT2.webp";
+import SILT3 from "../assets/proyectos individuales/ILT/SILT3.webp";
+import SILT4 from "../assets/proyectos individuales/ILT/SILT4.webp";
 
-import DesinarMockup from "../assets/proyectos individuales/Desinar/Desinar Mockup.png";
-import SGD1 from "../assets/proyectos individuales/Desinar/SGD1.png";
-import SGD2 from "../assets/proyectos individuales/Desinar/SGD2.png";
-import SGD3 from "../assets/proyectos individuales/Desinar/SGD3.png";
+import DesinarMockup from "../assets/proyectos individuales/Desinar/Desinar Mockup.webp";
+import SGD1 from "../assets/proyectos individuales/Desinar/SGD1.webp";
+import SGD2 from "../assets/proyectos individuales/Desinar/SGD2.webp";
+import SGD3 from "../assets/proyectos individuales/Desinar/SGD3.webp";
 
-import EmecraMockup from "../assets/proyectos individuales/Emecra/Emecra Mockup.png";
-import SE1 from "../assets/proyectos individuales/Emecra/SE1.png";
-import SE2 from "../assets/proyectos individuales/Emecra/SE2.png";
-import SE3 from "../assets/proyectos individuales/Emecra/SE3.png";
-import SE4 from "../assets/proyectos individuales/Emecra/SE4.png";
+import EmecraMockup from "../assets/proyectos individuales/Emecra/Emecra Mockup.webp";
+import SE1 from "../assets/proyectos individuales/Emecra/SE1.webp";
+import SE2 from "../assets/proyectos individuales/Emecra/SE2.webp";
+import SE3 from "../assets/proyectos individuales/Emecra/SE3.webp";
+import SE4 from "../assets/proyectos individuales/Emecra/SE4.webp";
 
-import LyfeMockup from "../assets/proyectos individuales/Lyfe Resort & Residences/Lyfe Resort Mockup.png";
-import LRR1 from "../assets/proyectos individuales/Lyfe Resort & Residences/LRR1.png";
-import LRR2 from "../assets/proyectos individuales/Lyfe Resort & Residences/LRR2.png";
-import LRR3 from "../assets/proyectos individuales/Lyfe Resort & Residences/LRR3.png";
-import LRR4 from "../assets/proyectos individuales/Lyfe Resort & Residences/LRR4.png";
+import LyfeMockup from "../assets/proyectos individuales/Lyfe Resort & Residences/Lyfe Resort Mockup.webp";
+import LRR1 from "../assets/proyectos individuales/Lyfe Resort & Residences/LRR1.webp";
+import LRR2 from "../assets/proyectos individuales/Lyfe Resort & Residences/LRR2.webp";
+import LRR3 from "../assets/proyectos individuales/Lyfe Resort & Residences/LRR3.webp";
+import LRR4 from "../assets/proyectos individuales/Lyfe Resort & Residences/LRR4.webp";
 
 const projectDetailData = [
   {
